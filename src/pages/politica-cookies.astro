@@ -1,0 +1,22 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { EMPRESA } from '../config.mjs';
+---
+<Layout title={`Política de cookies | ${EMPRESA.nombre}`} description="Información sobre el uso de cookies en este sitio web." noindex={true}>
+  <Header />
+  <div class="ig-wrap">
+    <section class="ig-sec ig-sec--blanco">
+      <div class="ig-inner ig-inner--medio ig-prose">
+        <h1 class="ig-h2">Política de cookies</h1>
+        <p>Este sitio web utiliza únicamente las cookies técnicas necesarias para su funcionamiento. No se emplean cookies de análisis, publicidad ni de terceros sin tu consentimiento.</p>
+        <p>Si en el futuro se incorporan cookies de analítica (por ejemplo, Google Analytics) o de terceros, se solicitará tu consentimiento previo mediante un banner y se detallarán aquí su finalidad y duración.</p>
+        <p>Puedes configurar o eliminar las cookies desde las opciones de tu navegador en cualquier momento.</p>
+        <p>Para cualquier duda sobre esta política, escríbenos a {EMPRESA.email}.</p>
+        <p><em>⚠️ Texto orientativo. Actualízalo según las cookies que acabes usando.</em></p>
+      </div>
+    </section>
+  </div>
+  <Footer />
+</Layout>

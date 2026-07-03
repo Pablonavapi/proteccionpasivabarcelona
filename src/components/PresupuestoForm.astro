@@ -1,0 +1,199 @@
+---
+// =====================================================================
+// FORMULARIO DE PRESUPUESTO orientado a obra. Admite 2 variantes:
+//   compact = true  → versión corta para el hero (menos campos)
+//   compact = false → versión completa (sección de conversión)
+// Sin backend: si config.mjs no tiene formEndpoint, al enviar abre el
+// correo del cliente ya rellenado hacia tu email. Si defines el endpoint
+// (Google Apps Script), envía el lead allí.
+// =====================================================================
+import { EMPRESA } from '../config.mjs';
+
+export interface Props {
+  compact?: boolean;
+  anchorId?: string;
+  titulo?: string;
+  sub?: string;
+  origen?: string;
+}
+const {
+  compact = false,
+  anchorId,
+  titulo = 'Pide tu presupuesto de ignifugación',
+  sub = 'Cuéntanos los datos de tu obra y te damos precio orientativo hoy y presupuesto cerrado en 24-48 h.',
+  origen = compact ? 'Hero' : 'Formulario principal',
+} = Astro.props;
+
+// Prefijo único para los id de campo (hay 2 formularios en la misma página)
+const uid = anchorId ?? (compact ? 'hero' : 'main');
+const rOpciones = ['No lo sé (os paso el proyecto)', 'R30', 'R60', 'R90', 'R120', 'R180', 'Sectorización EI', 'Sellado cortafuegos'];
+---
+
+<div
+  class="ig-form-card ig-form"
+  id={anchorId}
+  data-endpoint={EMPRESA.formEndpoint}
+  data-email={EMPRESA.email}
+  data-empresa={EMPRESA.nombre}
+  data-origen={origen}
+>
+  <div class="ig-form-head">
+    <p class="ig-form-titulo">{titulo}</p>
+    <p>{sub}</p>
+    <span class="ig-form-flash">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+      Certificado de aplicación visado incluido
+    </span>
+  </div>
+
+  <form class="ig-form-body" data-fgen="form" novalidate>
+    <div class="ig-form-grid">
+      <div class="ig-field">
+        <label class="ig-label" for={`${uid}-nombre`}>Nombre</label>
+        <input type="text" class="ig-input" id={`${uid}-nombre`} name="nombre" data-fgen="nombre" placeholder="Tu nombre o empresa" autocomplete="name" required />
+      </div>
+      <div class="ig-field">
+        <label class="ig-label" for={`${uid}-tel`}>Teléfono</label>
+        <input type="tel" class="ig-input" id={`${uid}-tel`} name="telefono" data-fgen="tel" placeholder="600 000 000" autocomplete="tel" required />
+      </div>
+
+      {!compact && (
+        <div class="ig-field ig-form-full">
+          <label class="ig-label" for={`${uid}-email`}>Email</label>
+          <input type="email" class="ig-input" id={`${uid}-email`} name="email" data-fgen="email" placeholder="tu@email.com" autocomplete="email" />
+        </div>
+      )}
+
+      <div class="ig-field">
+        <label class="ig-label" for={`${uid}-m2`}>m² aproximados</label>
+        <input type="text" class="ig-input" id={`${uid}-m2`} name="m2" data-fgen="m2" placeholder="Ej. 1.200 m²" inputmode="numeric" />
+      </div>
+      <div class="ig-field">
+        <label class="ig-label" for={`${uid}-rf`}>Resistencia al fuego (R/EI)</label>
+        <select class="ig-select" id={`${uid}-rf`} name="resistencia" data-fgen="rf">
+          {rOpciones.map((o) => <option value={o}>{o}</option>)}
+        </select>
+      </div>
+
+      {!compact && (
+        <div class="ig-field ig-form-full">
+          <label class="ig-label" for={`${uid}-ubicacion`}>Ubicación de la obra</label>
+          <input type="text" class="ig-input" id={`${uid}-ubicacion`} name="ubicacion" data-fgen="ubicacion" placeholder="Población / polígono / dirección de la obra" />
+        </div>
+      )}
+      {!compact && (
+        <div class="ig-field ig-form-full">
+          <label class="ig-label" for={`${uid}-detalle`}>Detalles de la obra (opcional)</label>
+          <textarea class="ig-textarea" id={`${uid}-detalle`} name="detalle" data-fgen="detalle" placeholder="Tipo de estructura, plazo, si tienes proyecto/planos, etc."></textarea>
+        </div>
+      )}
+    </div>
+
+    <label class="ig-priv">
+      <input type="checkbox" class="ig-checkbox" id={`${uid}-priv`} data-fgen="priv" />
+      <span class="ig-priv-txt">Acepto la <a href="/politica-privacidad/">política de privacidad</a>. Usaremos tus datos solo para preparar tu presupuesto.</span>
+    </label>
+
+    <div class="ig-form-error" data-fgen="error" role="alert"></div>
+
+    <button type="submit" class="ig-btn ig-btn-fuego ig-form-btn" data-fgen="btn">
+      Solicitar presupuesto
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </button>
+
+    <div class="ig-form-trust">
+      <span class="ig-form-trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Sin compromiso</span>
+      <span class="ig-form-trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Respuesta en 24-48 h</span>
+      <span class="ig-form-trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Visita a obra gratuita</span>
+    </div>
+  </form>
+
+  <div class="ig-form-exito" data-fgen="exito">
+    <div class="ig-form-exito-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg></div>
+    <h3>¡Solicitud enviada!</h3>
+    <p>Hemos recibido los datos de tu obra. Te damos precio orientativo hoy mismo y presupuesto cerrado en 24-48 h. Si tu correo no se ha abierto o prefieres, llámanos ahora.</p>
+    <a href={`tel:+${EMPRESA.telefonoLink}`} class="ig-btn ig-btn-out">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      {EMPRESA.telefonoMostrar}
+    </a>
+  </div>
+</div>
+
+<script>
+  // Vincula TODOS los formularios de la página de forma aislada.
+  function bindForm(wrap) {
+    const form = wrap.querySelector('[data-fgen="form"]');
+    if (!form || form.dataset.bound === 'true') return;
+    form.dataset.bound = 'true';
+
+    const field = (n) => wrap.querySelector(`[data-fgen="${n}"]`);
+    const val = (n) => { const el = field(n); return el ? el.value.trim() : ''; };
+    const btn = field('btn');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const errorBox = field('error');
+      const showError = (m) => { if (errorBox) { errorBox.textContent = m; errorBox.classList.add('show'); } };
+      if (errorBox) errorBox.classList.remove('show');
+
+      const nombre = val('nombre');
+      const tel = val('tel');
+      const email = val('email');
+      const m2 = val('m2');
+      const rf = val('rf');
+      const ubicacion = val('ubicacion');
+      const detalle = val('detalle');
+      const privEl = field('priv');
+      const priv = privEl ? privEl.checked : false;
+
+      if (!nombre || !tel) return showError('Por favor, indícanos al menos tu nombre y un teléfono de contacto.');
+      if (email && !/\S+@\S+\.\S+/.test(email)) return showError('Revisa el email: no parece válido.');
+      if (!priv) return showError('Debes aceptar la política de privacidad para continuar.');
+
+      if (btn) { btn.setAttribute('disabled', 'true'); btn.textContent = 'Enviando...'; }
+
+      const endpoint = wrap.dataset.endpoint;
+      const emailEmpresa = wrap.dataset.email || '';
+      const origen = wrap.dataset.origen || '';
+      const datos = { nombre, telefono: tel, email, m2, resistencia: rf, ubicacion, detalle, origen };
+
+      const finish = () => {
+        const body = wrap.querySelector('[data-fgen="form"]');
+        const exito = wrap.querySelector('[data-fgen="exito"]');
+        if (body) body.style.display = 'none';
+        if (exito) exito.classList.add('show');
+      };
+
+      try {
+        if (endpoint) {
+          const params = new URLSearchParams(datos);
+          await fetch(`${endpoint}?${params.toString()}`, { method: 'GET', mode: 'no-cors' });
+          finish();
+        } else {
+          // Sin backend: abrimos el correo del cliente ya rellenado hacia el email de la empresa.
+          const asunto = `Solicitud de presupuesto de ignifugación — ${nombre}`;
+          const cuerpo =
+            `Nombre / empresa: ${nombre}\n` +
+            `Teléfono: ${tel}\n` +
+            (email ? `Email: ${email}\n` : '') +
+            (ubicacion ? `Ubicación de la obra: ${ubicacion}\n` : '') +
+            (m2 ? `m² aproximados: ${m2}\n` : '') +
+            (rf ? `Resistencia (R/EI): ${rf}\n` : '') +
+            (detalle ? `Detalles: ${detalle}\n` : '') +
+            `\n(Enviado desde el formulario web · ${origen})`;
+          window.location.href =
+            `mailto:${emailEmpresa}?subject=${encodeURIComponent(asunto)}&body=${encodeURIComponent(cuerpo)}`;
+          finish();
+        }
+      } catch (err) {
+        showError('No se ha podido enviar. Llámanos o escríbenos directamente, por favor.');
+        if (btn) { btn.removeAttribute('disabled'); btn.textContent = 'Solicitar presupuesto'; }
+      }
+    });
+  }
+
+  function initForms() { document.querySelectorAll('.ig-form').forEach(bindForm); }
+  initForms();
+  document.addEventListener('astro:page-load', initForms);
+</script>

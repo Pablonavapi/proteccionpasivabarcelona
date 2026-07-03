@@ -1,0 +1,612 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import StickyMobile from '../components/StickyMobile.astro';
+import PresupuestoForm from '../components/PresupuestoForm.astro';
+import ContactButtons from '../components/ContactButtons.astro';
+import { EMPRESA } from '../config.mjs';
+
+import fs from 'node:fs';
+import path from 'node:path';
+
+const tel = `tel:+${EMPRESA.telefonoLink}`;
+const wa = `https://wa.me/${EMPRESA.whatsapp}`;
+const mail = `mailto:${EMPRESA.email}`;
+const showWa = !!EMPRESA.whatsapp;
+
+// ---------------------------------------------------------------------
+// IMÁGENES (guárdalas en public/img/ con estos nombres).
+// El código detecta solo si existen: si no están, no se rompe nada.
+// ---------------------------------------------------------------------
+const IMG = {
+  mortero: '/img/ignifugacion-mortero.jpg',        // obrero rociando mortero en el techo
+  intumescente: '/img/ignifugacion-intumescente.jpg', // pintando el pilar con intumescente
+  estructura: '/img/estructura-metalica.jpg',      // estructura metálica de la nave
+  furgoneta: '/img/furgoneta-grupo-ignifugo.jpg',  // furgoneta rotulada de la empresa
+};
+const publicHas = (rel) => {
+  try { return fs.existsSync(path.join(process.cwd(), 'public', rel)); }
+  catch { return false; }
+};
+const img = (rel) => (publicHas(rel) ? rel : null);
+const heroImg = img(IMG.mortero);
+const furgoImg = img(IMG.furgoneta);
+const heroStyle = heroImg
+  ? `background-image: linear-gradient(100deg, rgba(12,26,46,0.92) 0%, rgba(12,26,46,0.72) 44%, rgba(12,26,46,0.32) 100%), url('${heroImg}');`
+  : undefined;
+
+// ---------------------------------------------------------------------
+// SERVICIOS (cada uno alineado a niveles de resistencia al fuego)
+// ---------------------------------------------------------------------
+const servicios = [
+  {
+    titulo: 'Ignifugación de estructura metálica con pintura intumescente',
+    desc: 'Protegemos pilares, vigas y perfiles de acero conservando el perfil visto. La pintura reacciona con el calor formando una espuma aislante que retrasa el colapso de la estructura.',
+    rf: 'R30 · R60 · R90 · R120',
+    icon: '<path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/>',
+  },
+  {
+    titulo: 'Mortero ignífugo proyectado (perlita y vermiculita)',
+    desc: 'Proyección de mortero mineral incombustible sobre estructura oculta, forjados y naves. Muy competitivo por m² y capaz de alcanzar resistencias altas.',
+    rf: 'Hasta R180',
+    icon: '<path d="M2 20h20"/><path d="M4 20V8l8-4 8 4v12"/><path d="m4 12 8 4 8-4"/>',
+  },
+  {
+    titulo: 'Lana de roca proyectada en forjados y techos',
+    desc: 'Material incombustible (Euroclase A1/A2) para proteger forjados, cubiertas y sectorización: aporta resistencia al fuego (R/EI) además de aislamiento térmico y acústico.',
+    rf: 'Incombustible A1/A2',
+    icon: '<path d="M17.5 19a4.5 4.5 0 0 0 0-9h-.7A6 6 0 1 0 6 15"/><path d="M8 19h9"/><path d="M6 15v4"/>',
+  },
+  {
+    titulo: 'Ignifugación de madera con barniz intumescente',
+    desc: 'Tratamiento de vigas y estructura de madera vista con barnices y pinturas intumescentes que mejoran su reacción al fuego sin perder el acabado natural.',
+    rf: 'UNE-EN 16755',
+    icon: '<path d="M12 22V8"/><path d="M5 12H2a10 10 0 0 0 20 0h-3"/><path d="M12 8a4 4 0 0 0 4-4 4 4 0 0 0-8 0 4 4 0 0 0 4 4z"/>',
+  },
+  {
+    titulo: 'Sellado cortafuegos de pasos de instalaciones',
+    desc: 'Sellado de las penetraciones de cables, bandejas, tuberías y conductos que atraviesan muros y forjados, restableciendo la resistencia del elemento atravesado.',
+    rf: 'Hasta EI-120',
+    icon: '<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/>',
+  },
+  {
+    titulo: 'Sectorización contra incendios',
+    desc: 'División del edificio en sectores que contienen el fuego con muros y tabiques EI, puertas y compuertas cortafuego, para cumplir el CTE y el RSCIEI.',
+    rf: 'EI / REI 30 a 120',
+    icon: '<rect x="3" y="3" width="7" height="18" rx="1"/><rect x="14" y="3" width="7" height="18" rx="1"/>',
+  },
+  {
+    titulo: 'Protección con paneles rígidos (silicato cálcico)',
+    desc: 'Montaje en seco de placas rígidas tipo Promatect para proteger estructura, construir conductos resistentes al fuego y compartimentar sin obra húmeda.',
+    rf: 'EI 60 · EI 90 · EI 120',
+    icon: '<rect x="3" y="4" width="18" height="16" rx="1"/><path d="M3 10h18"/><path d="M3 15h18"/><path d="M9 4v16"/>',
+  },
+  {
+    titulo: 'Ignifugación de hormigón y elementos mixtos',
+    desc: 'Protección de forjados de hormigón, losas y elementos mixtos acero-hormigón cuando el proyecto exige una resistencia superior a la del elemento desnudo.',
+    rf: 'Según proyecto',
+    icon: '<path d="M2 20h20"/><rect x="4" y="9" width="16" height="6"/><path d="M4 9V6h16v3"/><path d="M9 9v6"/><path d="M15 9v6"/>',
+  },
+];
+
+// ---------------------------------------------------------------------
+// SECTORES
+// ---------------------------------------------------------------------
+const sectores = [
+  { titulo: 'Naves industriales y logística', desc: 'Grandes superficies en Zona Franca, Mercabarna y polígonos del área metropolitana, con rendimiento y medios para no comerte el plazo.', rf: 'Riesgo intrínseco · RSCIEI', icon: '<path d="M3 21V8l6-4v4l6-4v4l6-4v13"/><path d="M3 21h18"/><path d="M8 21v-4"/><path d="M14 21v-4"/>' },
+  { titulo: 'Parkings y garajes', desc: 'Protección de estructura metálica y de hormigón en aparcamientos, donde el CTE exige resistencias exigentes.', rf: 'R90 · R120', icon: '<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 17V7h4a3 3 0 0 1 0 6H9"/>' },
+  { titulo: 'Obra nueva y rehabilitación', desc: 'Coordinación con la dirección facultativa y el resto de gremios para entregar el certificado a tiempo de la recepción.', rf: 'CTE DB-SI', icon: '<path d="M2 22h20"/><path d="M4 22V6l8-4 8 4v16"/><path d="M9 22v-5h6v5"/>' },
+  { titulo: 'Retail, comercios y pública concurrencia', desc: 'Locales comerciales, centros y espacios de pública concurrencia que necesitan el certificado para la licencia de actividad.', rf: 'R90 · R120', icon: '<path d="M3 9 4 4h16l1 5"/><path d="M4 9v11h16V9"/><path d="M9 20v-6h6v6"/>' },
+  { titulo: 'Sanitario, hotelería y restauración', desc: 'Hospitales, hoteles y restaurantes con requisitos elevados de resistencia y sectorización por su ocupación.', rf: 'R120 · EI', icon: '<path d="M12 3v18"/><path d="M8 3v6a4 4 0 0 0 8 0V3"/><path d="M19 3v18"/>' },
+  { titulo: 'Instalaciones técnicas, energía y comunidades', desc: 'Salas técnicas, subestaciones, garajes de comunidades y espacios donde la protección pasiva es obligatoria.', rf: 'EI / REI', icon: '<path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/>' },
+];
+
+// ---------------------------------------------------------------------
+// CASOS DE OBRA · ⚠️ EJEMPLOS — sustitúyelos por obras y fotos reales
+// ---------------------------------------------------------------------
+const casos = [
+  { sector: 'Nave logística', titulo: 'Estructura metálica de nave en Zona Franca', desc: 'Ignifugación de la estructura metálica vista de una nave logística con pintura intumescente, coordinada con el montaje de instalaciones.', m2: '4.200 m²', metodo: 'Intumescente', rf: 'R60', plazo: '9 días', img: img(IMG.estructura), alt: 'Estructura metálica de una nave industrial ignifugada en Barcelona' },
+  { sector: 'Parking', titulo: 'Aparcamiento subterráneo en L\'Hospitalet', desc: 'Protección con pintura intumescente de la estructura de un parking de dos plantas para cumplir la resistencia exigida por el CTE.', m2: '2.800 m²', metodo: 'Intumescente', rf: 'R120', plazo: '7 días', img: img(IMG.intumescente), alt: 'Aplicación de pintura intumescente sobre pilar metálico en un parking de Barcelona' },
+  { sector: 'Obra nueva', titulo: 'Mortero ignífugo en nave industrial', desc: 'Proyección de mortero ignífugo sobre forjado y estructura metálica en obra nueva, con emisión del certificado de aplicación.', m2: '3.500 m²', metodo: 'Mortero', rf: 'R90', plazo: '11 días', img: img(IMG.mortero), alt: 'Proyección de mortero ignífugo sobre estructura metálica en Barcelona' },
+];
+
+// ---------------------------------------------------------------------
+// FAQ (única fuente: se usa para el texto Y para el esquema de Google)
+// ---------------------------------------------------------------------
+const faq = [
+  {
+    q: '¿Cuánto cuesta ignifugar una estructura metálica por m² en Barcelona?',
+    a: 'A modo orientativo, la pintura intumescente suele moverse entre 12 y 35 €/m² y el mortero ignífugo proyectado entre 9 y 22 €/m², pero el precio final depende de cuatro factores: la resistencia exigida (no es lo mismo R30 que R120), la masividad de cada perfil, el estado del soporte (una estructura oxidada puede sumar un 15-30 % de preparación) y la superficie total, que abarata el m² en grandes naves. Pásanos los m² y la R (o el proyecto) y te damos precio orientativo hoy y cerrado en 24-48 h.',
+  },
+  {
+    q: '¿Cuánto cuesta ignifugar una nave industrial?',
+    a: 'En naves el precio por m² baja por economía de escala, pero depende de la resistencia que exija el RSCIEI según el riesgo intrínseco y la configuración del establecimiento (tipo A, B o C) y de la masividad de los perfiles. Damos precio cerrado tras ver los planos o la obra, con visita técnica gratuita en 24-48 h, y el certificado va siempre incluido en el presupuesto.',
+  },
+  {
+    q: '¿Es obligatorio ignifugar una nave industrial o un edificio?',
+    a: 'Sí, cuando el acero desnudo no alcanza la resistencia al fuego que exige la normativa. En edificación se aplica el CTE DB-SI (Sección SI 6) y en establecimientos industriales el nuevo RSCIEI (RD 164/2025, en vigor desde mayo de 2025). Sin la protección pasiva y su certificado no se puede recibir la obra ni conceder la licencia de actividad.',
+  },
+  {
+    q: '¿Qué diferencia hay entre pintura intumescente y mortero ignífugo, y cuál elijo?',
+    a: 'La pintura intumescente se hincha con el calor formando una espuma aislante y mantiene el perfil metálico visto, ideal para estructura vista hasta R90-R120. El mortero proyectado (perlita-vermiculita o lana de roca) es más económico por m² y alcanza resistencias muy altas (hasta R180, o superiores en sistemas específicos), pero con acabado rugoso, ideal para estructura oculta y naves. Elegimos uno u otro según la resistencia exigida, la estética y el presupuesto.',
+  },
+  {
+    q: '¿Qué significan R30, R60, R90 y R120 (antes RF)?',
+    a: 'Es el tiempo en minutos que el elemento mantiene su función frente al fuego. La R indica la capacidad portante (estructura), la E la integridad y la I el aislamiento; se combinan en EI y REI para la sectorización. «RF» era la designación antigua (NBE-CPI); la normativa vigente (UNE-EN 13501-2, que aplican el CTE DB-SI y el RSCIEI) usa R/EI. La resistencia exigida la marca tu proyecto según el uso, la altura de evacuación y el riesgo. Si no sabes qué R te piden, nos envías el proyecto y lo comprobamos.',
+  },
+  {
+    q: '¿El certificado de ignifugación va incluido en el presupuesto?',
+    a: 'Sí. Entregamos siempre el certificado de aplicación firmado y visado por técnico competente, con el producto aplicado, los espesores medidos (acta de espesores), la clasificación R/EI obtenida y reportaje fotográfico. Es válido para la recepción de obra, la licencia de actividad, la inspección de bomberos, la OCA y el seguro, y va incluido: no es un extra.',
+  },
+  {
+    q: '¿Quién puede emitir y firmar el certificado de ignifugación?',
+    a: 'Lo emite la empresa aplicadora habilitada como instaladora/mantenedora de PCI (conforme al RIPCI, RD 513/2017) y lo firma un técnico competente. En Cataluña, cuando aplica, se valida mediante un Organismo de Control (OCA/EIC) acreditado. El certificado debe recoger el producto, los espesores realmente aplicados y la clasificación de resistencia según UNE-EN 13501-2.',
+  },
+  {
+    q: '¿La ignifugación es imprescindible para la licencia de apertura?',
+    a: 'En la mayoría de los casos, sí: el ayuntamiento y el técnico exigen el certificado de ignifugación para conceder la licencia de actividad, y sin él la actividad no puede abrir. Por eso trabajamos contra tu calendario de obra para entregarlo a tiempo.',
+  },
+  {
+    q: '¿La pintura intumescente caduca o necesita mantenimiento?',
+    a: 'El sistema es duradero, pero conviene revisar periódicamente el estado del recubrimiento, algo coherente con las inspecciones cada 5 años que introduce el nuevo RSCIEI. Ofrecemos mantenimiento y revisión de las protecciones para conservar la resistencia certificada y mantener la documentación al día.',
+  },
+  {
+    q: '¿Se puede aplicar pintura intumescente sobre una estructura ya pintada u oxidada?',
+    a: 'Depende del estado del soporte. Si hay pintura incompatible u óxido, hace falta preparación previa (saneado, chorreado e imprimación) para garantizar la adherencia y la resistencia certificada. Lo valoramos en la visita técnica y, si hace falta, lo incluimos en el presupuesto desde el principio, sin sorpresas a mitad de obra.',
+  },
+  {
+    q: '¿Cuánto tardáis y me lo entregáis a tiempo del fin de obra?',
+    a: 'Hacemos visita a obra o presupuesto por planos en 24-48 h y planificamos cuadrilla y medios (equipo airless y de proyección propio) para grandes superficies, coordinándonos con el resto de gremios. Nuestro compromiso es no bloquear tu fin de obra y entregar el certificado a tiempo de la recepción.',
+  },
+  {
+    q: '¿Trabajáis para constructoras como subcontrata en toda Barcelona?',
+    a: 'Sí. Cubrimos Barcelona ciudad, el área metropolitana, los polígonos (Zona Franca, Mercabarna) y la provincia. Nos subcontratamos directamente con tu constructora o con el industrial de estructura metálica y nos coordinamos con tu jefe de obra; es nuestra forma habitual de trabajar.',
+  },
+];
+
+// ---------------------------------------------------------------------
+// SEO / Schema.org de la página
+// ---------------------------------------------------------------------
+const metaTitle = 'Ignifugaciones Barcelona | Presupuesto y certificado 24-48h';
+const metaDesc = 'Ignifugaciones en Barcelona de estructura metálica: pintura intumescente y mortero ignífugo con certificado visado. Presupuesto y visita a obra en 24-48 h.';
+
+const jsonLd = [
+  {
+    '@type': 'WebSite',
+    '@id': `${EMPRESA.dominio}/#website`,
+    url: EMPRESA.dominio,
+    name: EMPRESA.nombre,
+    inLanguage: 'es-ES',
+    publisher: { '@id': `${EMPRESA.dominio}/#empresa` },
+  },
+  {
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Inicio', item: EMPRESA.dominio },
+      { '@type': 'ListItem', position: 2, name: 'Ignifugaciones Barcelona', item: `${EMPRESA.dominio}/` },
+    ],
+  },
+  {
+    '@type': 'Service',
+    name: 'Ignifugación y protección pasiva contra incendios',
+    serviceType: 'Ignifugación de estructura metálica',
+    provider: { '@id': `${EMPRESA.dominio}/#empresa` },
+    areaServed: { '@type': 'City', name: 'Barcelona' },
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Servicios de ignifugación en Barcelona',
+      itemListElement: servicios.map((s) => ({
+        '@type': 'Offer',
+        itemOffered: { '@type': 'Service', name: s.titulo },
+      })),
+    },
+  },
+  {
+    '@type': 'FAQPage',
+    mainEntity: faq.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  },
+];
+---
+
+<Layout title={metaTitle} description={metaDesc} jsonLd={jsonLd}>
+  <Header />
+
+  <div class="ig-wrap">
+
+    <!-- ============ HERO ============ -->
+    <section class="ig-hero" style={heroStyle}>
+      <div class="ig-hero-inner">
+        <div class="ig-hero-text">
+          <span class="ig-eyebrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
+            Protección pasiva contra incendios · Barcelona y provincia
+          </span>
+          <h1 class="ig-h1">Empresa de ignifugación en Barcelona: <em>protección pasiva de incendios</em></h1>
+          <p class="ig-hero-sub">Ignifugamos estructura metálica, forjados y naves con pintura intumescente y mortero ignífugo. Presupuesto rápido y el certificado a tiempo para tu fin de obra, tu licencia y la inspección de bomberos.</p>
+
+          <ul class="ig-hero-promesas">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> <span><strong>Presupuesto y visita a obra en 24-48 h.</strong> Te damos precio orientativo hoy mismo.</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9c1.5 0 2.91.37 4.15 1.02"/></svg> <span><strong>Certificado de aplicación visado incluido</strong>, válido para licencia, bomberos y seguro.</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> <span><strong>No bloqueamos tu fin de obra:</strong> nos coordinamos con el resto de gremios.</span></li>
+          </ul>
+
+          <ContactButtons />
+
+          <div class="ig-hero-badges">
+            <span class="ig-hero-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg> Empresa habilitada PCI</span>
+            <span class="ig-hero-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.5 9 8 11 4.5-2 8-6 8-11V5l-8-3z"/></svg> Seguro RC {EMPRESA.seguroRC}</span>
+            <span class="ig-hero-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M8.21 13.89 7 22l5-3 5 3-1.21-8.11"/></svg> Ensayos en laboratorio ENAC</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EMPRESA / FURGONETA ============ -->
+    {furgoImg && (
+      <section class="ig-sec ig-sec--gris" id="empresa">
+        <div class="ig-inner">
+          <div class="ig-furgo-grid">
+            <figure class="ig-furgo-img">
+              <img src={furgoImg} alt="Furgoneta rotulada de Grupo Ignífugo, empresa de ignifugación en Barcelona, con plataforma elevadora" loading="lazy" decoding="async" width="1200" height="900" />
+            </figure>
+            <div class="ig-furgo-txt">
+              <span class="ig-kicker">Equipo y medios propios</span>
+              <h2 class="ig-h2">Servicios de ignifugación en Barcelona y Catalunya:</h2>
+              <p class="ig-lead">Somos <strong>Grupo Ignífugo S.L.</strong>, especialistas en ignifugación y protección pasiva contra incendios. Trabajamos con equipo propio y unidad móvil con plataforma elevadora, listos para desplazarnos a tu obra.</p>
+              <ul class="ig-cert-list">
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Vehículo y plataforma elevadora propios</strong> para trabajos en altura sin depender de terceros.</span></li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Equipo propio sin subcontratas:</strong> controlamos la calidad y el plazo de principio a fin.</span></li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Cobertura en toda Barcelona</strong> y provincia, con respuesta y visita a obra en 24-48 h.</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- ============ BANNER CTA ============ -->
+    <div class="ig-cta-band ig-bleed">
+      <div class="ig-cta-band-inner">
+        <div class="ig-cta-band-txt">
+          <h2>¿Necesitas ignifugar una obra en Barcelona? Te llamamos hoy mismo</h2>
+          <p>Envíanos los planos o las mediciones y te damos precio cerrado en 24-48 h.</p>
+        </div>
+        <div class="ig-cta-band-side">
+          <ContactButtons />
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ SERVICIOS ============ -->
+    <section class="ig-sec ig-sec--blanco" id="servicios">
+      <div class="ig-inner">
+        <div class="ig-sec-head ig-sec-head--center">
+          <span class="ig-kicker">Servicios</span>
+          <h2 class="ig-h2">Ignifugación y protección pasiva contra incendios</h2>
+          <p class="ig-lead">Cubrimos todas las técnicas de protección pasiva, siempre ancladas a un grado de resistencia al fuego certificable según el CTE y el RSCIEI.</p>
+        </div>
+        <div class="ig-serv-grid">
+          {servicios.map((s) => (
+            <article class="ig-serv">
+              <span class="ig-serv-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><Fragment set:html={s.icon} /></svg></span>
+              <h3>{s.titulo}</h3>
+              <p>{s.desc}</p>
+              <span class="ig-serv-rf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg> {s.rf}</span>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PRECIOS ============ -->
+    <section class="ig-sec ig-sec--gris" id="precios">
+      <div class="ig-inner">
+        <div class="ig-sec-head">
+          <span class="ig-kicker">Precios orientativos</span>
+          <h2 class="ig-h2">¿Cuánto cuesta ignifugar una estructura metálica en Barcelona?</h2>
+          <p class="ig-lead">Es la duda número uno y aquí la respondemos con claridad. Estos son rangos orientativos; el precio cerrado solo se puede dar tras ver la obra o el proyecto.</p>
+        </div>
+
+        <div class="ig-precio-grid">
+          <div>
+            <!-- ⚠️ REVISA estos rangos y ajústalos a tus precios reales -->
+            <div class="ig-table-wrap">
+            <table class="ig-precio-table">
+              <thead>
+                <tr><th>Servicio</th><th>Precio orientativo</th></tr>
+              </thead>
+              <tbody>
+                <tr><td class="ig-precio-serv">Pintura intumescente<small>Estructura metálica vista, según R y masividad</small></td><td class="ig-precio-val">12 – 35 €/m²</td></tr>
+                <tr><td class="ig-precio-serv">Mortero ignífugo proyectado<small>Perlita-vermiculita o lana de roca</small></td><td class="ig-precio-val">9 – 22 €/m²</td></tr>
+                <tr><td class="ig-precio-serv">Sellado cortafuegos<small>Pasos de instalaciones, por penetración</small></td><td class="ig-precio-val">desde 30 €/ud</td></tr>
+                <tr><td class="ig-precio-serv">Sectorización con placa rígida<small>Muros y tabiques EI</small></td><td class="ig-precio-val">45 – 95 €/m²</td></tr>
+              </tbody>
+            </table>
+            </div>
+            <p class="ig-precio-nota"><strong>Compara peras con peras:</strong> un presupuesto solo es comparable si incluye la misma resistencia, la preparación de superficie, la imprimación, el control de espesores y el certificado. Muchos presupuestos baratos no llevan certificado ni preparación, y eso se acaba pagando en la inspección.</p>
+          </div>
+
+          <div>
+            <h3 class="ig-h2" style="font-size:22px;margin-bottom:20px;">Qué determina el precio</h3>
+            <ul class="ig-factores">
+              <li class="ig-factor"><span class="ig-factor-n">1</span><div><h4>La resistencia exigida (R)</h4><p>No es lo mismo un R30 que un R120: a mayor resistencia, más espesor de producto y más coste por m².</p></div></li>
+              <li class="ig-factor"><span class="ig-factor-n">2</span><div><h4>La masividad del perfil (Hp/A)</h4><p>Cuanto más esbelto es el perfil, más rápido se calienta el acero y más protección necesita.</p></div></li>
+              <li class="ig-factor"><span class="ig-factor-n">3</span><div><h4>El estado del soporte</h4><p>Una estructura oxidada o mal pintada exige preparación previa, que puede sumar un 15-30 % al presupuesto.</p></div></li>
+              <li class="ig-factor"><span class="ig-factor-n">4</span><div><h4>La superficie total</h4><p>En naves y grandes m² el precio por metro baja por economía de escala.</p></div></li>
+            </ul>
+            <div class="ig-hero-cta" style="margin-top:26px;">
+              <a href="#presupuesto" class="ig-btn ig-btn-fuego">Pásanos m² y R y te damos precio hoy</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROCESO ============ -->
+    <section class="ig-sec ig-sec--navy ig-bleed" id="proceso">
+      <div class="ig-inner">
+        <div class="ig-sec-head">
+          <span class="ig-kicker">Cómo trabajamos</span>
+          <h2 class="ig-h2">De la visita a obra al certificado, en 5 pasos</h2>
+          <p class="ig-lead">Un flujo pensado para no bloquear tu obra: rápido, coordinado con el resto de gremios y con la documentación cerrada al terminar.</p>
+        </div>
+        <div class="ig-pasos">
+          <div class="ig-paso"><span class="ig-paso-n">01</span><h3>Visita o envío de planos</h3><p>Visita técnica gratuita a obra en 24-48 h, o nos envías los planos y la memoria de PCI por email o WhatsApp.</p></div>
+          <div class="ig-paso"><span class="ig-paso-n">02</span><h3>Presupuesto cerrado</h3><p>Precio desglosado con producto, preparación, aplicación, control de espesores y certificado incluido.</p></div>
+          <div class="ig-paso"><span class="ig-paso-n">03</span><h3>Planificación con tu obra</h3><p>Coordinamos cuadrilla y medios con el resto de gremios para entrar cuando la estructura esté lista.</p></div>
+          <div class="ig-paso"><span class="ig-paso-n">04</span><h3>Aplicación y control</h3><p>Preparación del soporte y aplicación con equipo propio (airless/proyección), con control del espesor de película seca.</p></div>
+          <div class="ig-paso"><span class="ig-paso-n">05</span><h3>Certificado y dossier</h3><p>Entrega del certificado de aplicación visado por técnico competente y el dossier documental completo.</p></div>
+        </div>
+        <div class="ig-paso-cta">
+          <a href="#presupuesto" class="ig-btn ig-btn-fuego">Pide presupuesto</a>
+        </div>
+        <div class="ig-paso-contact"><ContactButtons /></div>
+      </div>
+    </section>
+
+    <!-- ============ NORMATIVA ============ -->
+    <section class="ig-sec ig-sec--navy ig-bleed" id="normativa" style="background-image:radial-gradient(circle at 88% 100%, rgba(255,138,91,0.13), transparent 45%);">
+      <div class="ig-inner">
+        <div class="ig-sec-head">
+          <span class="ig-kicker">Normativa</span>
+          <h2 class="ig-h2">Cuándo es obligatorio ignifugar: CTE DB-SI y el nuevo RSCIEI</h2>
+          <p class="ig-lead">Trabajamos con la normativa actualizada al día. Cuando el acero desnudo no alcanza la resistencia que exige tu proyecto, la protección pasiva es obligatoria.</p>
+        </div>
+        <div class="ig-norma-grid">
+          <div class="ig-norma">
+            <span class="ig-norma-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+            <h3>CTE DB-SI (edificación)</h3>
+            <p>La Sección SI 6 exige que la estructura mantenga su capacidad portante (clase <strong>R</strong>) un tiempo mínimo según el uso y la altura de evacuación: desde <strong>R30</strong> en vivienda hasta <strong>R180</strong> en usos exigentes. Los aparcamientos suelen requerir R90 o R120.</p>
+            <span class="ig-tag">Edificación no industrial</span>
+          </div>
+          <div class="ig-norma">
+            <span class="ig-norma-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21V8l6-4v4l6-4v4l6-4v13"/><path d="M3 21h18"/></svg></span>
+            <h3>Nuevo RSCIEI · RD 164/2025</h3>
+            <p>El reglamento de establecimientos industriales, <strong>que deroga el RD 2267/2004</strong>, está en vigor desde mayo de 2025 (obligatorio para nuevos proyectos desde noviembre de 2025). Fija la estabilidad al fuego según el <strong>riesgo intrínseco</strong> y la configuración (tipo A, B o C) e introduce la inspección única cada 5 años.</p>
+            <span class="ig-tag">Naves y establecimientos industriales</span>
+          </div>
+          <div class="ig-norma">
+            <span class="ig-norma-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>
+            <h3>Qué significa R, E, I, EI y REI</h3>
+            <p><strong>R</strong> = capacidad portante (estructura), <strong>E</strong> = integridad, <strong>I</strong> = aislamiento térmico. Se combinan en <strong>EI</strong> y <strong>REI</strong> para la sectorización, seguidos del tiempo en minutos (30, 60, 90, 120…) según UNE-EN 13501-2.</p>
+            <span class="ig-tag">Clasificación</span>
+          </div>
+          <div class="ig-norma">
+            <span class="ig-norma-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7h-9"/><path d="M14 17H5"/><circle cx="17" cy="17" r="3"/><circle cx="7" cy="7" r="3"/></svg></span>
+            <h3>Espesor: masividad y temperatura crítica</h3>
+            <p>El espesor de protección se calcula perfil a perfil según su <strong>masividad</strong> (factor de forma Hp/A) y la temperatura crítica del acero (~500-550 °C). Usamos productos ensayados según <strong>EN 13381-8</strong> (intumescentes) y <strong>EN 13381-4</strong> (morteros).</p>
+            <span class="ig-tag">Cálculo técnico</span>
+          </div>
+        </div>
+
+        <div class="ig-table-wrap">
+        <table class="ig-rf-table">
+          <thead><tr><th>Uso / tipo de edificio</th><th>Resistencia al fuego habitual</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Vivienda unifamiliar</strong></td><td class="ig-rf-val">R30</td></tr>
+            <tr><td><strong>Residencial / administrativo / docente</strong> (≤15 m)</td><td class="ig-rf-val">R60</td></tr>
+            <tr><td><strong>Comercial / pública concurrencia / hospitalario</strong> (≤15 m)</td><td class="ig-rf-val">R90</td></tr>
+            <tr><td><strong>Aparcamiento</strong></td><td class="ig-rf-val">R90 – R120</td></tr>
+            <tr><td><strong>Plantas de sótano</strong></td><td class="ig-rf-val">R120</td></tr>
+            <tr><td><strong>Nave industrial</strong> (según riesgo intrínseco y tipo)</td><td class="ig-rf-val">R30 – R180</td></tr>
+          </tbody>
+        </table>
+        </div>
+        <p class="ig-lead" style="font-size:13.5px;margin-top:14px;color:#A9BAD0;">Valores orientativos de referencia. La resistencia exacta la fija tu proyecto de PCI. ¿No sabes qué R te piden? Envíanos el proyecto y lo comprobamos gratis.</p>
+      </div>
+    </section>
+
+    <!-- ============ CERTIFICADO ============ -->
+    <section class="ig-sec ig-sec--blanco" id="certificado">
+      <div class="ig-inner">
+        <div class="ig-cert-grid">
+          <div>
+            <span class="ig-kicker">El entregable que de verdad importa</span>
+            <h2 class="ig-h2">El certificado de ignifugación, incluido y a tiempo</h2>
+            <p class="ig-lead">Sin el certificado no se recibe la obra ni se concede la licencia. Por eso es el centro de todo lo que hacemos: lo entregamos firmado, visado y listo para presentar.</p>
+            <ul class="ig-cert-list">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Producto, espesores y clasificación:</strong> acta de espesores medidos (DFT) y la R/EI obtenida.</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Reportaje fotográfico</strong> y lote del material aplicado, con marcado CE y ficha técnica.</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Válido para</strong> recepción de obra, licencia de actividad, bomberos, OCA y aseguradora.</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><strong>Firmado por técnico competente</strong> y, en Cataluña cuando aplica, validado por Organismo de Control (OCA/EIC).</span></li>
+            </ul>
+          </div>
+
+          <div class="ig-cert-doc" aria-hidden="true">
+            <div class="ig-cert-doc-head">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+              <div>
+                <h3>Certificado de aplicación</h3>
+                <span>Protección pasiva contra incendios</span>
+              </div>
+            </div>
+            <div class="ig-cert-doc-body">
+              <div class="ig-cert-row"><span>Sistema aplicado</span><strong>Pintura intumescente</strong></div>
+              <div class="ig-cert-row"><span>Elemento protegido</span><strong>Estructura metálica</strong></div>
+              <div class="ig-cert-row"><span>Resistencia obtenida</span><strong>R90</strong></div>
+              <div class="ig-cert-row"><span>Espesor medio (DFT)</span><strong>1.150 µm</strong></div>
+              <div class="ig-cert-row"><span>Ensayo de referencia</span><strong>UNE-EN 13381-8</strong></div>
+              <div class="ig-cert-row"><span>Norma de clasificación</span><strong>UNE-EN 13501-2</strong></div>
+              <span class="ig-cert-seal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M8.21 13.89 7 22l5-3 5 3-1.21-8.11"/></svg> Firmado y visado por técnico competente</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SECTORES ============ -->
+    <section class="ig-sec ig-sec--gris" id="sectores">
+      <div class="ig-inner">
+        <div class="ig-sec-head ig-sec-head--center">
+          <span class="ig-kicker">Dónde trabajamos</span>
+          <h2 class="ig-h2">Sectores en Barcelona y provincia</h2>
+          <p class="ig-lead">Trabajamos en toda Barcelona, el área metropolitana y sus polígonos, adaptándonos a la resistencia y los plazos de cada tipo de obra.</p>
+        </div>
+        <div class="ig-sector-grid">
+          {sectores.map((s) => (
+            <article class="ig-sector">
+              <span class="ig-sector-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><Fragment set:html={s.icon} /></svg></span>
+              <div>
+                <h3>{s.titulo}</h3>
+                <p>{s.desc}</p>
+                <span class="ig-sector-rf">{s.rf}</span>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ OBRAS / CASOS ============ -->
+    <section class="ig-sec ig-sec--navy ig-bleed" id="obras">
+      <div class="ig-inner">
+        <div class="ig-sec-head ig-sec-head--center">
+          <span class="ig-kicker">Obras realizadas</span>
+          <h2 class="ig-h2">Ignifugaciones ejecutadas en Barcelona</h2>
+          <p class="ig-lead">Estructura metálica, parkings y edificios terciarios protegidos y certificados. Prueba real, no promesas.</p>
+        </div>
+
+        <div class="ig-stats" style="margin-bottom:36px;">
+          <div class="ig-stat"><span class="ig-stat-n">+{EMPRESA.m2Ejecutados}</span><span class="ig-stat-lbl">m² ignifugados</span></div>
+          <div class="ig-stat"><span class="ig-stat-n">+{EMPRESA.numObras}</span><span class="ig-stat-lbl">obras en Barcelona</span></div>
+          <div class="ig-stat"><span class="ig-stat-n">{EMPRESA.anosExperiencia}</span><span class="ig-stat-lbl">años de experiencia</span></div>
+          <div class="ig-stat"><span class="ig-stat-n">100%</span><span class="ig-stat-lbl">obras certificadas</span></div>
+        </div>
+
+        <div class="ig-casos-grid">
+          {casos.map((c) => (
+            <article class="ig-caso">
+              <div class="ig-caso-img">
+                <span class="ig-caso-rf">{c.rf}</span>
+                {c.img
+                  ? <img src={c.img} alt={c.alt} loading="lazy" decoding="async" width="600" height="400" />
+                  : <span class="ig-caso-img-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg></span>}
+              </div>
+              <div class="ig-caso-body">
+                <span class="ig-caso-sector">{c.sector}</span>
+                <h3>{c.titulo}</h3>
+                <p>{c.desc}</p>
+                <div class="ig-caso-meta">
+                  <div><strong>{c.m2}</strong>superficie</div>
+                  <div><strong>{c.metodo}</strong>método</div>
+                  <div><strong>{c.plazo}</strong>ejecución</div>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+        <p class="ig-lead" style="text-align:center;margin-top:24px;font-size:13.5px;color:#A9BAD0;">¿Quieres referencias de obras como la tuya? Te damos el contacto de otros jefes de obra con los que trabajamos.</p>
+      </div>
+    </section>
+
+    <!-- ============ POR QUÉ ELEGIRNOS ============ -->
+    <section class="ig-sec ig-sec--blanco">
+      <div class="ig-inner">
+        <div class="ig-sec-head ig-sec-head--center">
+          <span class="ig-kicker">Por qué elegirnos</span>
+          <h2 class="ig-h2">Solvencia verificable, no promesas</h2>
+          <p class="ig-lead">En un sector regulado, la diferencia está en los datos objetivos que respaldan cada certificado que firmamos.</p>
+        </div>
+        <div class="ig-why-grid">
+          <div class="ig-why">
+            <span class="ig-why-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.5 9 8 11 4.5-2 8-6 8-11V5l-8-3z"/></svg></span>
+            <h3>Empresa habilitada y con seguro</h3>
+            <p>Habilitados como empresa instaladora/mantenedora de PCI (conforme al <strong>RIPCI, RD 513/2017</strong>) y con seguro de responsabilidad civil de <strong>{EMPRESA.seguroRC}</strong>, como exige el reglamento.</p>
+          </div>
+          <div class="ig-why">
+            <span class="ig-why-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M8.21 13.89 7 22l5-3 5 3-1.21-8.11"/></svg></span>
+            <h3>Productos con DoP y ensayos ENAC</h3>
+            <p>Trabajamos con sistemas con <strong>Declaración de Prestaciones (DoP) y marcado CE</strong> cuando aplica, con ensayos en laboratorio acreditado ENAC, y somos aplicadores homologados por los fabricantes (Promat, Tecresa, Hilti, Rockwool).</p>
+          </div>
+          <div class="ig-why">
+            <span class="ig-why-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+            <h3>Especialistas locales en Barcelona</h3>
+            <p>Empresa <strong>de Barcelona</strong>, no una central de otra provincia con una página de ciudad. Equipo propio sin subcontratas y desplazamiento rápido a tu obra.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FORMULARIO PRINCIPAL ============ -->
+    <section class="ig-sec ig-sec--gris" id="presupuesto">
+      <div class="ig-inner">
+        <div class="ig-formsec-grid">
+          <div class="ig-formsec-info">
+            <span class="ig-kicker">Presupuesto sin compromiso</span>
+            <h2 class="ig-h2">Pide tu presupuesto de ignifugación</h2>
+            <p class="ig-lead">Rellena los datos de tu obra y te damos precio orientativo hoy y presupuesto cerrado en 24-48 h. ¿Prefieres hablar? Llámanos o escríbenos: en este sector es lo más rápido.</p>
+            <ContactButtons />
+          </div>
+
+          <div class="ig-formsec-form">
+            <PresupuestoForm anchorId="form-principal" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="ig-sec ig-sec--blanco" id="faq">
+      <div class="ig-inner ig-inner--medio">
+        <div class="ig-sec-head ig-sec-head--center">
+          <span class="ig-kicker">Preguntas frecuentes</span>
+          <h2 class="ig-h2">Todo sobre las ignifugaciones en Barcelona</h2>
+        </div>
+        <div class="ig-faq-list">
+          {faq.map((f) => (
+            <details class="ig-faq-item">
+              <summary>
+                <h3 class="ig-faq-q">{f.q}</h3>
+                <svg class="ig-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </summary>
+              <div class="ig-faq-a"><p>{f.a}</p></div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA FINAL ============ -->
+    <div class="ig-cta-band ig-bleed">
+      <div class="ig-cta-band-inner">
+        <div class="ig-cta-band-txt">
+          <h2>Tu certificado de ignifugación, a tiempo. Pide presupuesto hoy</h2>
+          <p>Presupuesto y visita a obra en 24-48 h · Certificado visado incluido · No bloqueamos tu fin de obra.</p>
+        </div>
+        <div class="ig-cta-band-side">
+          <ContactButtons />
+          <a href="#presupuesto" class="ig-btn ig-btn-white ig-btn-lg ig-cta-band-form">Rellenar formulario</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <Footer />
+  <StickyMobile />
+</Layout>

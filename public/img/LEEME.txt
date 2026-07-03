@@ -1,0 +1,25 @@
+CÓMO AÑADIR LAS FOTOS DE LA WEB
+================================
+
+Guarda en ESTA misma carpeta (public/img/) las 3 fotos con EXACTAMENTE
+estos nombres (en minúsculas y con la extensión .jpg):
+
+1) ignifugacion-mortero.jpg
+   → La foto del operario rociando (proyectando) mortero blanco en el
+     techo / las vigas metálicas.
+   → Se usa como FONDO del hero (primera sección) y en una tarjeta de obra.
+
+2) ignifugacion-intumescente.jpg
+   → La foto del operario con chaleco amarillo pintando el pilar metálico
+     (pintura intumescente).
+   → Se usa en la tarjeta de obra "Parking".
+
+3) estructura-metalica.jpg
+   → La foto de la estructura metálica blanca de la nave (vista amplia).
+   → Se usa en la tarjeta de obra "Nave logística".
+
+En cuanto los archivos estén aquí con esos nombres, aparecen solos en la
+web (no hay que tocar código). Si un archivo no está, esa foto simplemente
+no se muestra y el diseño sigue funcionando.
+
+Consejo: fotos horizontales, mínimo 1200 px de ancho, en .jpg.

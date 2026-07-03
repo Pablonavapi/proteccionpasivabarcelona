@@ -1,0 +1,731 @@
+/* =====================================================================
+   SISTEMA DE DISEÑO — Ignifugaciones Barcelona
+   Marca: NAVY (azul noche) + ÁMBAR/FUEGO (un único color de acción).
+   Estilo editorial premium, orientado a confianza B2B y conversión.
+   Prefijo de clases: .ig-
+   ===================================================================== */
+
+:root {
+  --navy: #12243D;
+  --navy-osc: #0C1A2E;
+  --navy-claro: #E9EFF7;
+  --navy-borde-osc: rgba(255,255,255,0.14);
+
+  /* Acento de marca = FUEGO / ÁMBAR (único color de acción) */
+  --fuego: #E1552B;
+  --fuego-osc: #BE4420;
+  --fuego-claro: #FCEBE3;
+  --fuego-br: #FF8A5B;       /* ámbar brillante para contraste sobre navy */
+
+  --acero: #64748B;          /* gris acero para detalles técnicos */
+  --fondo: #F5F7FB;
+  --texto: #1B2636;
+  --texto-suave: #5C6779;
+  --borde: #DDE3EC;
+  --exito: #0E8A5F;
+}
+
+/* Evita cualquier scroll horizontal (las bandas full-bleed usan 100vw) */
+html, body { overflow-x: clip; }
+
+.ig-wrap {
+  font-family: 'DM Sans', sans-serif;
+  color: var(--texto);
+  width: 100%;
+}
+.ig-wrap * { box-sizing: border-box; margin: 0; padding: 0; }
+.ig-wrap img { max-width: 100%; }
+
+/* Foco visible para navegación por teclado (accesibilidad WCAG 2.4.7) */
+:where(a, button, .ig-btn, summary, input, select, textarea, [tabindex]):focus-visible {
+  outline: 3px solid var(--fuego-br);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* Contenedor con scroll propio para tablas anchas en móvil */
+.ig-table-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+/* Utilidad full-bleed (rompe el ancho del contenedor) */
+.ig-bleed {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+/* =====================================================================
+   CABECERA FIJA (barra de contacto + navegación)
+   El teléfono y el email SIEMPRE a la vista.
+   ===================================================================== */
+.ig-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #fff;
+  border-bottom: 1px solid var(--borde);
+  box-shadow: 0 2px 14px rgba(18,36,61,0.05);
+}
+/* Barra superior fina (navy) con contacto */
+.ig-topbar {
+  background: var(--navy);
+  color: #fff;
+}
+.ig-topbar-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 7px clamp(16px, 5vw, 60px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 13px;
+}
+.ig-topbar-left { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+.ig-topbar-item { display: inline-flex; align-items: center; gap: 7px; color: #C9D6E8; }
+.ig-topbar-item svg { width: 14px; height: 14px; color: var(--fuego-br); flex-shrink: 0; }
+.ig-topbar-item.ig-strong { color: #fff; font-weight: 600; }
+.ig-topbar-item.ig-strong a { color: #fff; text-decoration: none; }
+.ig-topbar-item.ig-strong a:hover { color: var(--fuego-br); }
+.ig-topbar-right { display: inline-flex; align-items: center; gap: 8px; color: #A9BAD0; }
+.ig-topbar-right svg { width: 14px; height: 14px; }
+
+/* Fila principal: logo + teléfono grande + botones */
+.ig-nav {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 12px clamp(16px, 5vw, 60px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.ig-brand { display: inline-flex; align-items: center; gap: 11px; text-decoration: none; }
+.ig-brand-mark {
+  width: 44px; height: 44px;
+  border-radius: 9px;
+  background: var(--navy);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.09);
+  display: inline-flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+.ig-brand-mono {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 800;
+  font-size: 19px;
+  letter-spacing: 0.03em;
+  color: #fff;
+  line-height: 1;
+}
+.ig-brand-mono-i { color: var(--fuego-br); }
+.ig-brand-txt { display: flex; flex-direction: column; line-height: 1.1; }
+.ig-brand-name {
+  font-family: 'Lora', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: -0.01em;
+}
+.ig-brand-tag { font-size: 11px; color: var(--texto-suave); font-weight: 500; letter-spacing: 0.01em; }
+
+.ig-nav-actions { display: inline-flex; align-items: center; gap: 12px; }
+.ig-nav-tel {
+  display: inline-flex; align-items: center; gap: 9px;
+  text-decoration: none;
+  color: var(--navy);
+}
+.ig-nav-tel svg { width: 30px; height: 30px; color: var(--fuego); flex-shrink: 0; }
+.ig-nav-tel .ig-nav-tel-lbl { display: block; font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--texto-suave); font-weight: 700; }
+.ig-nav-tel .ig-nav-tel-num { display: block; font-family: 'Lora', serif; font-size: 20px; font-weight: 700; color: var(--navy); line-height: 1.1; }
+.ig-nav-tel:hover .ig-nav-tel-num { color: var(--fuego); }
+/* Email en el menú (junto al teléfono) */
+.ig-nav-mail .ig-nav-tel-num { font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 700; }
+
+/* =====================================================================
+   BOTONES
+   ===================================================================== */
+.ig-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15.5px; font-weight: 700;
+  text-decoration: none;
+  padding: 13px 24px;
+  border-radius: 11px;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  transition: all 0.22s ease;
+  line-height: 1;
+}
+.ig-btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+.ig-btn-fuego { background: var(--fuego); color: #fff; box-shadow: 0 6px 18px rgba(225,85,43,0.30); }
+.ig-btn-fuego:hover { background: var(--fuego-osc); transform: translateY(-2px); box-shadow: 0 12px 26px rgba(225,85,43,0.40); }
+.ig-btn-navy { background: var(--navy); color: #fff; }
+.ig-btn-navy:hover { background: var(--navy-osc); transform: translateY(-2px); box-shadow: 0 10px 24px rgba(18,36,61,0.25); }
+.ig-btn-out { background: #fff; color: var(--navy); border-color: var(--navy); }
+.ig-btn-out:hover { background: var(--navy); color: #fff; transform: translateY(-2px); }
+.ig-btn-wa { background: #25D366; color: #fff; }
+.ig-btn-wa:hover { background: #1EB958; transform: translateY(-2px); box-shadow: 0 10px 24px rgba(37,211,102,0.35); }
+.ig-btn-ghost { background: transparent; color: #fff; border-color: rgba(255,255,255,0.4); }
+.ig-btn-ghost:hover { background: rgba(255,255,255,0.10); border-color: #fff; }
+.ig-btn-white { background: #fff; color: var(--navy); }
+.ig-btn-white:hover { background: var(--navy-claro); transform: translateY(-2px); }
+.ig-btn-sm { padding: 9px 16px; font-size: 13.5px; border-radius: 9px; }
+.ig-btn-lg { padding: 16px 30px; font-size: 17px; }
+
+/* =====================================================================
+   HERO
+   ===================================================================== */
+.ig-hero {
+  position: relative;
+  background-color: var(--navy-osc);
+  background-image: linear-gradient(100deg, rgba(12,26,46,0.95) 0%, rgba(12,26,46,0.86) 46%, rgba(12,26,46,0.70) 100%);
+  background-size: cover;
+  background-position: center;
+  border-bottom: 1px solid var(--navy-borde-osc);
+}
+/* Hero oscuro (foto de fondo): texto en claro */
+.ig-hero .ig-h1 { color: #fff; }
+.ig-hero .ig-h1 em { color: var(--fuego-br); }
+.ig-hero .ig-hero-sub { color: #CBD7E7; }
+.ig-hero .ig-hero-promesas li { color: #E7EDF5; }
+.ig-hero .ig-hero-promesas strong { color: #fff; }
+.ig-hero .ig-hero-promesas svg { color: var(--fuego-br); }
+.ig-hero .ig-hero-badges { border-top-color: rgba(255,255,255,0.16); }
+.ig-hero .ig-hero-badge { color: #AEBDD0; }
+.ig-hero .ig-hero-badge svg { color: var(--fuego-br); }
+.ig-hero { min-height: 600px; display: flex; align-items: center; }
+.ig-hero-inner {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: clamp(44px, 6vw, 80px) clamp(16px, 5vw, 60px);
+}
+.ig-hero-text { max-width: 640px; }
+.ig-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--fuego-claro);
+  color: var(--fuego-osc);
+  font-size: 12.5px; font-weight: 700;
+  padding: 7px 14px;
+  border-radius: 100px;
+  margin-bottom: 20px;
+  letter-spacing: 0.02em;
+}
+.ig-eyebrow svg { width: 15px; height: 15px; }
+.ig-h1 {
+  font-family: 'Lora', serif;
+  font-size: clamp(30px, 4vw, 43px);
+  font-weight: 700;
+  line-height: 1.12;
+  color: var(--navy);
+  letter-spacing: -0.02em;
+  margin: 0 0 18px;
+}
+.ig-h1 em { font-style: normal; color: var(--fuego); }
+.ig-hero-sub {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--texto-suave);
+  margin-bottom: 24px;
+  max-width: 560px;
+}
+.ig-hero-promesas {
+  list-style: none; margin: 0 0 26px; padding: 0;
+  display: flex; flex-direction: column; gap: 11px;
+}
+.ig-hero-promesas li {
+  display: flex; align-items: flex-start; gap: 11px;
+  font-size: 15.5px; font-weight: 500; color: var(--texto); line-height: 1.4;
+}
+.ig-hero-promesas svg {
+  width: 22px; height: 22px; flex-shrink: 0;
+  color: var(--fuego);
+}
+.ig-hero-promesas strong { font-weight: 700; color: var(--navy); }
+.ig-hero-cta { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+.ig-hero-badges {
+  display: flex; gap: 18px; flex-wrap: wrap;
+  margin-top: 26px; padding-top: 22px;
+  border-top: 1px solid var(--borde);
+}
+.ig-hero-badge { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--texto-suave); font-weight: 600; }
+.ig-hero-badge svg { width: 26px; height: 26px; color: var(--navy); flex-shrink: 0; }
+
+/* =====================================================================
+   FORMULARIO (tarjeta reutilizable)
+   ===================================================================== */
+.ig-form-card {
+  background: #fff;
+  border: 1px solid var(--borde);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 24px 54px rgba(18,36,61,0.14);
+}
+.ig-form-head {
+  background: var(--navy);
+  background-image: radial-gradient(circle at 100% 0%, rgba(255,138,91,0.16), transparent 55%);
+  padding: 22px 26px 20px;
+}
+.ig-form-head h2, .ig-form-head .ig-form-titulo {
+  font-family: 'Lora', serif;
+  font-size: 20px; font-weight: 700; color: #fff; line-height: 1.25; margin: 0 0 8px;
+}
+.ig-form-head p { font-size: 13.5px; line-height: 1.5; color: #BFD0E6; margin: 0; }
+.ig-form-head .ig-form-flash {
+  display: inline-flex; align-items: center; gap: 7px;
+  margin-top: 12px; font-size: 12.5px; font-weight: 700; color: var(--fuego-br);
+}
+.ig-form-head .ig-form-flash svg { width: 15px; height: 15px; }
+.ig-form-body { padding: 20px 26px 24px; }
+.ig-form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 11px; }
+.ig-form-full { grid-column: 1 / -1; }
+.ig-field { display: flex; flex-direction: column; gap: 5px; }
+.ig-label { font-size: 11px; font-weight: 700; color: var(--texto); text-transform: uppercase; letter-spacing: 0.05em; }
+.ig-input, .ig-select, .ig-textarea {
+  width: 100%;
+  background: var(--fondo);
+  border: 1.5px solid var(--borde);
+  border-radius: 8px;
+  padding: 11px 13px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14.5px;
+  color: var(--texto);
+  outline: none;
+  transition: all 0.18s ease;
+  appearance: none;
+}
+.ig-select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%235C6779' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 34px;
+}
+.ig-input::placeholder, .ig-textarea::placeholder { color: #9AA5B4; }
+.ig-input:focus, .ig-select:focus, .ig-textarea:focus {
+  border-color: var(--fuego);
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(225,85,43,0.14);
+}
+.ig-textarea { resize: none; height: 80px; line-height: 1.5; }
+.ig-priv { display: flex; align-items: flex-start; gap: 9px; margin: 13px 0 14px; }
+.ig-checkbox {
+  width: 17px; height: 17px; min-width: 17px;
+  border: 1.5px solid var(--borde); border-radius: 4px; background: #fff;
+  cursor: pointer; appearance: none; -webkit-appearance: none; margin-top: 1px;
+  transition: all 0.18s; position: relative;
+}
+.ig-checkbox:checked { background: var(--fuego); border-color: var(--fuego); }
+.ig-checkbox:checked::after { content: '✓'; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); color: #fff; font-size: 11px; font-weight: 700; }
+.ig-priv-txt { font-size: 12px; color: var(--texto-suave); line-height: 1.5; }
+.ig-priv-txt a { color: var(--navy); text-decoration: underline; font-weight: 600; }
+.ig-form-error { display: none; color: #C4451F; background: var(--fuego-claro); border-radius: 7px; padding: 9px 12px; font-size: 12.5px; font-weight: 600; margin-bottom: 10px; }
+.ig-form-error.show { display: block; }
+.ig-form-btn { width: 100%; }
+.ig-form-trust { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-top: 13px; }
+.ig-form-trust-item { display: flex; align-items: center; gap: 5px; font-size: 11.5px; color: var(--texto-suave); font-weight: 600; }
+.ig-form-trust-item svg { width: 14px; height: 14px; color: var(--exito); }
+/* pantalla de éxito */
+.ig-form-exito { display: none; text-align: center; padding: 38px 26px; }
+.ig-form-exito.show { display: block; }
+.ig-form-exito-ico { margin-bottom: 14px; line-height: 0; }
+.ig-form-exito-ico svg { width: 52px; height: 52px; color: var(--exito); }
+.ig-form-exito h3 { font-family: 'Lora', serif; font-size: 21px; font-weight: 700; color: var(--navy); margin: 0 0 8px; }
+.ig-form-exito p { font-size: 14px; color: var(--texto-suave); line-height: 1.6; margin: 0 0 18px; }
+
+/* =====================================================================
+   SECCIONES GENÉRICAS
+   ===================================================================== */
+.ig-sec { padding: clamp(48px, 6vw, 78px) 0; }
+.ig-sec--gris { background: var(--fondo); }
+.ig-sec--blanco { background: #fff; }
+.ig-sec--navy {
+  background: var(--navy-osc);
+  background-image: radial-gradient(circle at 12% 0%, rgba(255,138,91,0.13), transparent 42%);
+  color: #fff;
+}
+.ig-inner { max-width: 1180px; margin: 0 auto; padding: 0 clamp(16px, 5vw, 60px); }
+.ig-inner--ancho { max-width: 1280px; }
+.ig-inner--medio { max-width: 900px; }
+
+.ig-sec-head { max-width: 760px; margin: 0 0 40px; }
+.ig-sec-head--center { margin-left: auto; margin-right: auto; text-align: center; }
+.ig-kicker {
+  display: inline-block; font-size: 12.5px; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase; color: var(--fuego-osc);
+  margin-bottom: 12px;
+}
+.ig-sec--navy .ig-kicker { color: var(--fuego-br); }
+.ig-h2 {
+  font-family: 'Lora', serif;
+  font-size: clamp(25px, 3.2vw, 34px);
+  font-weight: 700; line-height: 1.18; color: var(--navy);
+  letter-spacing: -0.02em; margin: 0 0 14px;
+}
+.ig-sec--navy .ig-h2 { color: #fff; }
+.ig-lead { font-size: 16.5px; line-height: 1.65; color: var(--texto-suave); }
+.ig-sec--navy .ig-lead { color: #B9C6D8; }
+.ig-lead strong { color: var(--texto); font-weight: 700; }
+.ig-sec--navy .ig-lead strong { color: #fff; }
+
+/* Prosa (párrafos ricos) */
+.ig-prose p { font-size: 16px; line-height: 1.72; color: var(--texto-suave); margin: 0 0 16px; }
+.ig-prose p:last-child { margin-bottom: 0; }
+.ig-prose strong { color: var(--texto); font-weight: 700; }
+.ig-prose a { color: var(--fuego); font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
+
+/* =====================================================================
+   TIRA DE CONFIANZA (logos / sellos)
+   ===================================================================== */
+.ig-trustbar { background: #fff; border-bottom: 1px solid var(--borde); }
+.ig-trustbar-inner {
+  max-width: 1180px; margin: 0 auto; padding: 18px clamp(16px, 5vw, 60px);
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: clamp(16px, 4vw, 44px);
+}
+.ig-trustbar-item {
+  display: flex; align-items: center; gap: 9px;
+  font-size: 13.5px; font-weight: 600; color: var(--texto-suave);
+}
+.ig-trustbar-item svg { width: 22px; height: 22px; color: var(--navy); flex-shrink: 0; }
+.ig-trustbar-item strong { color: var(--navy); font-weight: 700; }
+
+/* =====================================================================
+   BANNER CTA (barra de contacto destacada)
+   ===================================================================== */
+.ig-cta-band {
+  background: var(--navy);
+  background-image: radial-gradient(circle at 85% 0%, rgba(255,138,91,0.18), transparent 50%);
+  color: #fff;
+}
+.ig-cta-band-inner {
+  max-width: 900px; margin: 0 auto; padding: clamp(34px, 4vw, 52px) clamp(16px, 5vw, 60px);
+  display: flex; flex-direction: column; align-items: center; text-align: center; gap: 22px;
+}
+.ig-cta-band-txt { max-width: 640px; }
+.ig-cta-band-txt h2 { font-family: 'Lora', serif; font-size: clamp(21px, 2.6vw, 27px); font-weight: 700; color: #fff; line-height: 1.2; margin: 0 0 8px; }
+.ig-cta-band-txt p { font-size: 15px; line-height: 1.55; color: #C0CFE2; margin: 0; }
+.ig-cta-band-txt p a { color: #fff; font-weight: 700; text-decoration: none; }
+.ig-cta-band-txt p a:hover { color: var(--fuego-br); }
+.ig-cta-band-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+.ig-cta-band-side { width: 100%; max-width: 460px; }
+.ig-cta-band-form { width: 100%; margin-top: 12px; }
+.ig-paso-contact { margin-top: 22px; max-width: 640px; }
+
+/* =====================================================================
+   GRID DE SERVICIOS (tarjetas con icono)
+   ===================================================================== */
+.ig-serv-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.ig-serv {
+  background: #fff; border: 1px solid var(--borde); border-radius: 15px;
+  padding: 26px 24px 24px;
+  display: flex; flex-direction: column;
+  transition: border-color 0.22s ease, transform 0.22s ease, box-shadow 0.22s ease;
+}
+.ig-serv:hover { border-color: var(--fuego); transform: translateY(-3px); box-shadow: 0 18px 38px rgba(18,36,61,0.10); }
+.ig-serv-ico {
+  width: 52px; height: 52px; border-radius: 13px;
+  background: var(--fuego-claro); color: var(--fuego);
+  display: inline-flex; align-items: center; justify-content: center; margin-bottom: 16px;
+}
+.ig-serv-ico svg { width: 26px; height: 26px; }
+.ig-serv h3 { font-family: 'Lora', serif; font-size: 18.5px; font-weight: 700; color: var(--navy); line-height: 1.25; margin: 0 0 9px; }
+.ig-serv p { font-size: 14.5px; line-height: 1.62; color: var(--texto-suave); flex-grow: 1; margin: 0 0 14px; }
+.ig-serv-rf {
+  display: inline-flex; align-items: center; gap: 6px; align-self: flex-start;
+  font-size: 12px; font-weight: 700; letter-spacing: 0.02em;
+  color: var(--navy); background: var(--navy-claro);
+  padding: 5px 11px; border-radius: 100px;
+}
+.ig-serv-rf svg { width: 13px; height: 13px; color: var(--fuego); }
+
+/* =====================================================================
+   TABLA DE PRECIOS
+   ===================================================================== */
+.ig-precio-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: clamp(28px, 4vw, 48px); align-items: start; }
+.ig-precio-table { width: 100%; border-collapse: collapse; background: #fff; border: 1px solid var(--borde); border-radius: 14px; overflow: hidden; }
+.ig-precio-table thead th {
+  background: var(--navy); color: #fff; text-align: left;
+  font-size: 12.5px; font-weight: 700; letter-spacing: 0.03em; text-transform: uppercase;
+  padding: 14px 18px;
+}
+.ig-precio-table tbody td { padding: 15px 18px; border-top: 1px solid var(--borde); font-size: 14.5px; color: var(--texto); vertical-align: top; }
+.ig-precio-table tbody tr:nth-child(even) td { background: var(--fondo); }
+.ig-precio-serv { font-weight: 700; color: var(--navy); }
+.ig-precio-serv small { display: block; font-weight: 500; color: var(--texto-suave); font-size: 12.5px; margin-top: 3px; }
+.ig-precio-val { font-family: 'Lora', serif; font-weight: 700; color: var(--fuego-osc); white-space: nowrap; }
+.ig-precio-nota { font-size: 12.5px; color: var(--texto-suave); margin-top: 14px; line-height: 1.55; }
+.ig-precio-nota strong { color: var(--navy); }
+
+.ig-factores { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 16px; }
+.ig-factor { display: flex; gap: 14px; }
+.ig-factor-n {
+  flex-shrink: 0; width: 34px; height: 34px; border-radius: 9px;
+  background: var(--navy-claro); color: var(--navy);
+  font-family: 'Lora', serif; font-weight: 700; font-size: 15px;
+  display: inline-flex; align-items: center; justify-content: center;
+}
+.ig-factor h4 { font-size: 15px; font-weight: 700; color: var(--navy); margin: 2px 0 4px; }
+.ig-factor p { font-size: 14px; line-height: 1.55; color: var(--texto-suave); margin: 0; }
+
+/* =====================================================================
+   PROCESO (banda navy con pasos numerados)
+   ===================================================================== */
+.ig-pasos { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; margin-top: 8px; }
+.ig-pasos.cols-4 { grid-template-columns: repeat(4, 1fr); }
+.ig-paso { padding: 30px 26px 8px 0; border-top: 1px solid var(--navy-borde-osc); }
+.ig-paso + .ig-paso { padding-left: 26px; }
+.ig-paso-n { display: block; font-family: 'Lora', serif; font-size: 46px; font-weight: 700; line-height: 1; color: var(--fuego-br); margin-bottom: 16px; letter-spacing: -0.02em; }
+.ig-paso h3 { font-family: 'Lora', serif; font-size: 17px; font-weight: 700; color: #fff; margin: 0 0 9px; line-height: 1.3; }
+.ig-paso p { font-size: 14px; line-height: 1.6; color: #AEBDD0; }
+.ig-paso-cta { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 40px; }
+
+/* =====================================================================
+   TARJETAS DE NORMATIVA / CERTIFICADO (sobre navy)
+   ===================================================================== */
+.ig-norma-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 8px; }
+.ig-norma {
+  background: rgba(255,255,255,0.04); border: 1px solid var(--navy-borde-osc);
+  border-radius: 15px; padding: 24px 26px;
+}
+.ig-norma-ico {
+  width: 44px; height: 44px; border-radius: 11px;
+  background: rgba(255,138,91,0.15); color: var(--fuego-br);
+  display: inline-flex; align-items: center; justify-content: center; margin-bottom: 14px;
+}
+.ig-norma-ico svg { width: 22px; height: 22px; }
+.ig-norma h3 { font-family: 'Lora', serif; font-size: 17px; font-weight: 700; color: #fff; margin: 0 0 8px; line-height: 1.3; }
+.ig-norma p { font-size: 14px; line-height: 1.62; color: #B9C6D8; margin: 0; }
+.ig-norma strong { color: #fff; font-weight: 700; }
+.ig-norma .ig-tag {
+  display: inline-block; margin-top: 12px; font-size: 11.5px; font-weight: 700;
+  color: var(--fuego-br); background: rgba(255,138,91,0.12); padding: 4px 10px; border-radius: 6px;
+}
+
+/* Tabla de RF sobre navy */
+.ig-rf-table { width: 100%; border-collapse: collapse; margin-top: 24px; border: 1px solid var(--navy-borde-osc); border-radius: 12px; overflow: hidden; }
+.ig-rf-table th { background: rgba(255,255,255,0.06); color: #fff; text-align: left; font-size: 12.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em; padding: 12px 16px; }
+.ig-rf-table td { padding: 12px 16px; border-top: 1px solid var(--navy-borde-osc); font-size: 14px; color: #C6D3E4; }
+.ig-rf-table td strong { color: #fff; }
+.ig-rf-table .ig-rf-val { font-family: 'Lora', serif; font-weight: 700; color: var(--fuego-br); }
+
+/* =====================================================================
+   BLOQUE CERTIFICADO (2 columnas: texto + tarjeta ilustrada)
+   ===================================================================== */
+.ig-cert-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 4vw, 52px); align-items: center; }
+.ig-cert-list { list-style: none; margin: 20px 0 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+.ig-cert-list li { display: flex; align-items: flex-start; gap: 11px; font-size: 15px; line-height: 1.5; color: var(--texto); }
+.ig-cert-list svg { width: 22px; height: 22px; flex-shrink: 0; color: var(--exito); margin-top: 1px; }
+.ig-cert-list strong { color: var(--navy); }
+/* Tarjeta ilustrada tipo "documento" */
+.ig-cert-doc {
+  background: #fff; border: 1px solid var(--borde); border-radius: 16px;
+  box-shadow: 0 24px 54px rgba(18,36,61,0.13); overflow: hidden;
+}
+.ig-cert-doc-head { background: var(--navy); padding: 18px 22px; display: flex; align-items: center; gap: 12px; }
+.ig-cert-doc-head svg { width: 26px; height: 26px; color: var(--fuego-br); }
+.ig-cert-doc-head h3 { font-family: 'Lora', serif; font-size: 16px; color: #fff; font-weight: 700; margin: 0; line-height: 1.25; }
+.ig-cert-doc-head span { display: block; font-size: 11.5px; color: #A9BAD0; font-weight: 500; }
+.ig-cert-doc-body { padding: 20px 22px 22px; }
+.ig-cert-row { display: flex; justify-content: space-between; gap: 14px; padding: 10px 0; border-bottom: 1px dashed var(--borde); font-size: 13.5px; }
+.ig-cert-row:last-child { border-bottom: none; }
+.ig-cert-row span { color: var(--texto-suave); }
+.ig-cert-row strong { color: var(--navy); font-weight: 700; text-align: right; }
+.ig-cert-seal { display: inline-flex; align-items: center; gap: 8px; margin-top: 14px; padding: 9px 14px; background: var(--fuego-claro); border-radius: 9px; font-size: 12.5px; font-weight: 700; color: var(--fuego-osc); }
+.ig-cert-seal svg { width: 16px; height: 16px; }
+
+/* =====================================================================
+   EMPRESA / FURGONETA (prueba de autoridad)
+   ===================================================================== */
+.ig-furgo-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: clamp(28px, 4vw, 52px); align-items: center; }
+.ig-furgo-img { margin: 0; border-radius: 16px; overflow: hidden; border: 1px solid var(--borde); box-shadow: 0 22px 50px rgba(18,36,61,0.16); }
+.ig-furgo-img img { display: block; width: 100%; height: auto; }
+.ig-furgo-txt .ig-cert-list { margin-top: 20px; }
+@media (max-width: 900px) {
+  .ig-furgo-grid { grid-template-columns: 1fr; }
+}
+
+/* =====================================================================
+   SECTORES
+   ===================================================================== */
+.ig-sector-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.ig-sector {
+  background: #fff; border: 1px solid var(--borde); border-radius: 14px;
+  padding: 22px 22px; display: flex; gap: 15px; align-items: flex-start;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.ig-sector:hover { border-color: var(--fuego); transform: translateY(-2px); }
+.ig-sector-ico { flex-shrink: 0; width: 46px; height: 46px; border-radius: 11px; background: var(--navy-claro); color: var(--navy); display: inline-flex; align-items: center; justify-content: center; }
+.ig-sector-ico svg { width: 23px; height: 23px; }
+.ig-sector h3 { font-family: 'Lora', serif; font-size: 16.5px; font-weight: 700; color: var(--navy); margin: 2px 0 5px; line-height: 1.25; }
+.ig-sector p { font-size: 13.5px; line-height: 1.55; color: var(--texto-suave); margin: 0; }
+.ig-sector .ig-sector-rf { display: inline-block; margin-top: 8px; font-size: 11.5px; font-weight: 700; color: var(--fuego-osc); }
+
+/* =====================================================================
+   ESTADÍSTICAS / PRUEBA SOCIAL
+   ===================================================================== */
+.ig-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.ig-stat { text-align: center; padding: 26px 14px; background: rgba(255,255,255,0.04); border: 1px solid var(--navy-borde-osc); border-radius: 15px; }
+.ig-sec--gris .ig-stat, .ig-sec--blanco .ig-stat { background: #fff; border-color: var(--borde); }
+.ig-stat-n { display: block; font-family: 'Lora', serif; font-size: clamp(30px, 4vw, 42px); font-weight: 700; color: var(--fuego); line-height: 1; margin-bottom: 8px; letter-spacing: -0.02em; }
+.ig-sec--navy .ig-stat-n { color: var(--fuego-br); }
+.ig-stat-lbl { font-size: 12.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--texto-suave); }
+.ig-sec--navy .ig-stat-lbl { color: #9FB0C6; }
+
+/* =====================================================================
+   CASOS DE OBRA
+   ===================================================================== */
+.ig-casos-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 8px; }
+.ig-caso { background: #fff; border: 1px solid var(--borde); border-radius: 15px; overflow: hidden; display: flex; flex-direction: column; }
+.ig-caso-img { aspect-ratio: 3 / 2; background: linear-gradient(135deg, var(--navy) 0%, var(--navy-osc) 100%); position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.ig-caso-img img { width: 100%; height: 100%; object-fit: cover; }
+.ig-caso-img-ph { color: rgba(255,255,255,0.35); }
+.ig-caso-img-ph svg { width: 48px; height: 48px; }
+.ig-caso-rf { position: absolute; top: 12px; left: 12px; background: var(--fuego); color: #fff; font-size: 12px; font-weight: 700; padding: 5px 11px; border-radius: 7px; }
+.ig-caso-body { padding: 20px 22px 22px; display: flex; flex-direction: column; flex-grow: 1; }
+.ig-caso-sector { font-size: 11.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--fuego-osc); margin-bottom: 7px; }
+.ig-caso h3 { font-family: 'Lora', serif; font-size: 17.5px; font-weight: 700; color: var(--navy); line-height: 1.25; margin: 0 0 10px; }
+.ig-caso p { font-size: 14px; line-height: 1.6; color: var(--texto-suave); margin: 0 0 14px; flex-grow: 1; }
+.ig-caso-meta { display: flex; gap: 16px; flex-wrap: wrap; padding-top: 12px; border-top: 1px solid var(--borde); }
+.ig-caso-meta div { font-size: 12.5px; color: var(--texto-suave); }
+.ig-caso-meta strong { display: block; font-family: 'Lora', serif; font-size: 16px; color: var(--navy); }
+
+/* =====================================================================
+   POR QUÉ ELEGIRNOS (EEAT)
+   ===================================================================== */
+.ig-why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.ig-why { background: #fff; border: 1px solid var(--borde); border-radius: 15px; padding: 26px 24px; }
+.ig-why-ico { width: 48px; height: 48px; border-radius: 12px; background: var(--navy); color: var(--fuego-br); display: inline-flex; align-items: center; justify-content: center; margin-bottom: 15px; }
+.ig-why-ico svg { width: 24px; height: 24px; }
+.ig-why h3 { font-family: 'Lora', serif; font-size: 17px; font-weight: 700; color: var(--navy); margin: 0 0 8px; line-height: 1.3; }
+.ig-why p { font-size: 14px; line-height: 1.62; color: var(--texto-suave); margin: 0; }
+.ig-why strong { color: var(--navy); font-weight: 700; }
+
+/* =====================================================================
+   SECCIÓN FORMULARIO PRINCIPAL (2 columnas)
+   ===================================================================== */
+.ig-formsec-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(30px, 4vw, 56px); align-items: center; }
+.ig-formsec-info .ig-h2 { color: var(--navy); }
+.ig-contact-list { list-style: none; margin: 22px 0 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+.ig-contact-row {
+  display: flex; align-items: center; gap: 14px;
+  background: #fff; border: 1px solid var(--borde); border-radius: 12px; padding: 14px 18px;
+  text-decoration: none; transition: border-color 0.2s, transform 0.2s;
+}
+.ig-contact-row:hover { border-color: var(--fuego); transform: translateX(3px); }
+.ig-contact-ico { flex-shrink: 0; width: 42px; height: 42px; border-radius: 10px; display: inline-flex; align-items: center; justify-content: center; }
+.ig-contact-ico svg { width: 21px; height: 21px; }
+.ig-contact-ico.tel { background: var(--fuego-claro); color: var(--fuego); }
+.ig-contact-ico.mail { background: var(--navy-claro); color: var(--navy); }
+.ig-contact-ico.wa { background: #E4F8EC; color: #1EB958; }
+.ig-contact-txt span { display: block; font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.06em; font-weight: 700; color: var(--texto-suave); }
+.ig-contact-txt strong { display: block; font-family: 'Lora', serif; font-size: 18px; color: var(--navy); font-weight: 700; line-height: 1.2; }
+.ig-contact-val { overflow-wrap: anywhere; }
+
+/* Bloque reutilizable de botones de contacto (email + teléfono completos).
+   Apilados a lo ancho para que el email se lea entero en una línea. */
+.ig-contactbtns { display: flex; flex-direction: column; gap: 12px; margin-top: 4px; width: 100%; max-width: 560px; }
+.ig-contactbtns .ig-contact-row { margin: 0; }
+/* El email va destacado (canal principal): tarjeta con acento y algo más grande */
+.ig-contact-row--primary { border-color: var(--fuego); background: var(--fuego-claro); padding-top: 16px; padding-bottom: 16px; }
+.ig-contact-row--primary:hover { background: #fff; }
+.ig-contact-row--primary .ig-contact-val { font-size: 19px; }
+.ig-contact-ico.mail-p { background: var(--fuego); color: #fff; }
+/* Sobre fondos oscuros (navy) las tarjetas siguen siendo claras y legibles */
+.ig-sec--navy .ig-contact-row,
+.ig-cta-band .ig-contact-row { background: #fff; }
+.ig-sec--navy .ig-contact-row--primary,
+.ig-cta-band .ig-contact-row--primary { background: var(--fuego-claro); }
+
+/* =====================================================================
+   FAQ
+   ===================================================================== */
+.ig-faq-list { max-width: 820px; margin: 0 auto; }
+.ig-faq-item { border: 1.5px solid var(--borde); border-radius: 13px; margin-bottom: 12px; background: #fff; overflow: hidden; transition: border-color 0.2s; }
+.ig-faq-item[open] { border-color: var(--fuego); }
+.ig-faq-item summary { list-style: none; cursor: pointer; padding: 19px 22px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.ig-faq-item summary::-webkit-details-marker { display: none; }
+.ig-faq-q { font-family: 'Lora', serif; font-size: 16.5px; font-weight: 700; color: var(--navy); margin: 0; line-height: 1.35; }
+.ig-faq-chevron { flex-shrink: 0; width: 20px; height: 20px; color: var(--fuego); transition: transform 0.22s ease; }
+.ig-faq-item[open] .ig-faq-chevron { transform: rotate(180deg); }
+.ig-faq-a { padding: 0 22px 20px; }
+.ig-faq-a p { font-size: 15px; line-height: 1.68; color: var(--texto-suave); margin: 0; }
+.ig-faq-a p + p { margin-top: 10px; }
+.ig-faq-a strong { color: var(--texto); font-weight: 700; }
+
+/* =====================================================================
+   FOOTER
+   ===================================================================== */
+.ig-footer { background: var(--navy-osc); color: #A9BAD0; }
+.ig-footer-inner { max-width: 1180px; margin: 0 auto; padding: clamp(40px, 5vw, 60px) clamp(16px, 5vw, 60px) 0; }
+.ig-footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 36px; padding-bottom: 36px; border-bottom: 1px solid var(--navy-borde-osc); }
+.ig-footer-brand .ig-brand-name { color: #fff; }
+.ig-footer-brand p { font-size: 14px; line-height: 1.65; color: #94A6BE; margin: 14px 0 0; max-width: 330px; }
+.ig-footer-col h4 { font-size: 12.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #fff; margin: 4px 0 16px; }
+.ig-footer-col ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.ig-footer-col a, .ig-footer-col li { font-size: 14px; color: #A9BAD0; text-decoration: none; line-height: 1.5; }
+.ig-footer-col a:hover { color: var(--fuego-br); }
+.ig-footer-contact li { display: flex; align-items: flex-start; gap: 10px; }
+.ig-footer-contact svg { width: 16px; height: 16px; color: var(--fuego-br); flex-shrink: 0; margin-top: 2px; }
+.ig-footer-contact a { color: #fff; font-weight: 600; }
+.ig-footer-bottom {
+  max-width: 1180px; margin: 0 auto; padding: 18px clamp(16px, 5vw, 60px);
+  display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap;
+  font-size: 12.5px; color: #93A3BA;
+}
+.ig-footer-bottom a { color: #93A3BA; text-decoration: none; }
+.ig-footer-bottom a:hover { color: #fff; }
+.ig-footer-legal { display: flex; gap: 16px; flex-wrap: wrap; }
+
+/* =====================================================================
+   BARRA STICKY MÓVIL (Llamar + WhatsApp + Presupuesto)
+   ===================================================================== */
+.ig-mobilebar {
+  display: none;
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 200;
+  background: #fff; border-top: 1px solid var(--borde);
+  box-shadow: 0 -4px 20px rgba(18,36,61,0.12);
+  padding: 9px 10px; gap: 8px;
+  padding-bottom: calc(9px + env(safe-area-inset-bottom, 0px));
+}
+.ig-mobilebar .ig-btn { flex: 1; padding: 12px 8px; font-size: 14px; border-radius: 10px; }
+.ig-mobilebar .ig-btn svg { width: 17px; height: 17px; }
+
+/* =====================================================================
+   RESPONSIVE
+   ===================================================================== */
+@media (max-width: 980px) {
+  .ig-hero-inner { grid-template-columns: 1fr; }
+  .ig-hero-form { max-width: 520px; }
+  .ig-serv-grid, .ig-casos-grid, .ig-why-grid, .ig-sector-grid { grid-template-columns: repeat(2, 1fr); }
+  .ig-precio-grid, .ig-cert-grid, .ig-formsec-grid { grid-template-columns: 1fr; }
+  .ig-pasos, .ig-pasos.cols-4 { grid-template-columns: repeat(2, 1fr); }
+  .ig-paso, .ig-paso + .ig-paso { padding: 26px 0; }
+  .ig-stats { grid-template-columns: repeat(2, 1fr); }
+  .ig-norma-grid { grid-template-columns: 1fr; }
+  .ig-footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 720px) {
+  /* En móvil escondemos la barra superior fina y el teléfono grande del nav
+     porque abajo aparece la barra fija de acciones */
+  .ig-topbar { display: none; }
+  .ig-nav-tel-txt { display: none; }
+  .ig-nav-actions .ig-btn { display: none; }
+  .ig-mobilebar { display: flex; }
+  body { padding-bottom: 66px; }
+  .ig-serv-grid, .ig-casos-grid, .ig-why-grid, .ig-sector-grid, .ig-stats { grid-template-columns: 1fr; }
+  .ig-cta-band-inner { flex-direction: column; align-items: flex-start; }
+  .ig-form-grid { grid-template-columns: 1fr; }
+  .ig-footer-grid { grid-template-columns: 1fr; gap: 28px; }
+  .ig-footer-bottom { flex-direction: column; align-items: flex-start; }
+}
+@media (max-width: 460px) {
+  .ig-hero-cta, .ig-cta-band-btns, .ig-paso-cta { flex-direction: column; align-items: stretch; }
+  .ig-hero-cta .ig-btn, .ig-cta-band-btns .ig-btn { width: 100%; }
+  /* Email largo: reducir para que entre en una línea en móvil */
+  .ig-contact-val { font-size: 15.5px; }
+  .ig-contact-row--primary .ig-contact-val { font-size: 15.5px; letter-spacing: -0.01em; }
+  .ig-contact-row { padding: 13px 14px; gap: 11px; }
+  .ig-contact-ico { width: 38px; height: 38px; }
+}

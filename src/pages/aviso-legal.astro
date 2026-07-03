@@ -1,0 +1,31 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { EMPRESA } from '../config.mjs';
+---
+<Layout title={`Aviso legal | ${EMPRESA.nombre}`} description="Aviso legal e información del titular del sitio web." noindex={true}>
+  <Header />
+  <div class="ig-wrap">
+    <section class="ig-sec ig-sec--blanco">
+      <div class="ig-inner ig-inner--medio ig-prose">
+        <h1 class="ig-h2">Aviso legal</h1>
+        <p>En cumplimiento de la Ley 34/2002 de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSICE), se informa de los datos del titular de este sitio web:</p>
+        <p>
+          <strong>Titular:</strong> {EMPRESA.razonSocial}<br />
+          <strong>Nombre comercial:</strong> {EMPRESA.nombre}<br />
+          <strong>CIF:</strong> {EMPRESA.cif}<br />
+          <strong>Domicilio:</strong> {EMPRESA.direccion}, {EMPRESA.cp} {EMPRESA.ciudad} ({EMPRESA.provincia})<br />
+          <strong>Teléfono:</strong> {EMPRESA.telefonoMostrar}<br />
+          <strong>Email:</strong> {EMPRESA.email}<br />
+          <strong>Habilitación PCI (RII):</strong> {EMPRESA.registroRII}
+        </p>
+        <p><strong>Objeto.</strong> El presente aviso legal regula el uso del sitio web {EMPRESA.dominio}, cuyo titular presta servicios de ignifugación y protección pasiva contra incendios.</p>
+        <p><strong>Propiedad intelectual.</strong> Todos los contenidos del sitio (textos, imágenes, diseño y código) son titularidad de {EMPRESA.razonSocial} o de terceros que han autorizado su uso, y quedan protegidos por la normativa de propiedad intelectual e industrial.</p>
+        <p><strong>Responsabilidad.</strong> El titular no se responsabiliza del mal uso que se realice de los contenidos del sitio, siendo responsabilidad exclusiva de la persona que accede a ellos.</p>
+        <p><em>⚠️ Texto orientativo. Revísalo con tu asesor legal antes de publicar.</em></p>
+      </div>
+    </section>
+  </div>
+  <Footer />
+</Layout>

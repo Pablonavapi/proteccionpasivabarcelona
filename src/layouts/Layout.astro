@@ -1,0 +1,124 @@
+---
+// ===================================================================
+// LAYOUT = el "marco" que envuelve la página.
+// Aquí vive todo el SEO que Google lee pero el visitante no ve, y la
+// ficha de empresa (Schema.org) para el SEO local y los rich snippets.
+// Todos los datos salen de src/config.mjs (no hay que tocar nada aquí).
+// ===================================================================
+import '../styles/site.css';
+import { EMPRESA } from '../config.mjs';
+
+export interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  noindex?: boolean;
+  jsonLd?: Record<string, unknown>[]; // esquemas específicos de la página (FAQ, breadcrumb, servicios)
+}
+
+const {
+  title,
+  description,
+  image = `${EMPRESA.dominio}/og-ignifugaciones-barcelona.jpg`,
+  noindex = false,
+  jsonLd = [],
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).href;
+const telE164 = `+${EMPRESA.telefonoLink}`;
+const robotsContent = noindex
+  ? 'noindex, nofollow'
+  : 'index, follow, max-image-preview:large, max-snippet:-1';
+
+// --- Ficha de empresa para Google (SEO local + E-E-A-T) ---
+const negocio = {
+  '@type': ['LocalBusiness', 'HomeAndConstructionBusiness'],
+  '@id': `${EMPRESA.dominio}/#empresa`,
+  name: EMPRESA.nombre,
+  legalName: EMPRESA.razonSocial,
+  description:
+    'Empresa especializada en ignifugación y protección pasiva contra incendios en Barcelona: pintura intumescente y mortero ignífugo para estructura metálica, con certificado de aplicación visado.',
+  url: EMPRESA.dominio,
+  telephone: telE164,
+  email: EMPRESA.email,
+  image,
+  // El logo solo se incluye si lo has configurado (evita apuntar a un 404).
+  ...(EMPRESA.logo ? { logo: new URL(EMPRESA.logo, EMPRESA.dominio).href } : {}),
+  priceRange: '€€',
+  areaServed: [
+    { '@type': 'City', name: 'Barcelona' },
+    { '@type': 'AdministrativeArea', name: 'Provincia de Barcelona' },
+  ],
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: EMPRESA.direccion,
+    addressLocality: EMPRESA.ciudad,
+    addressRegion: EMPRESA.provincia,
+    postalCode: EMPRESA.cp,
+    addressCountry: 'ES',
+  },
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: '08:00',
+      closes: '18:00',
+    },
+  ],
+  knowsLanguage: ['es', 'ca'],
+  slogan: EMPRESA.claim,
+};
+
+const graph = [negocio, ...jsonLd];
+const schema = { '@context': 'https://schema.org', '@graph': graph };
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Fuentes (Lora para titulares + DM Sans para texto) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=DM+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- SEO básico -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+    <meta name="robots" content={robotsContent} />
+    <meta name="theme-color" content="#12243D" />
+
+    <!-- Geolocalización (SEO local Barcelona) -->
+    <meta name="geo.region" content="ES-CT" />
+    <meta name="geo.placename" content="Barcelona" />
+
+    <!-- Open Graph (Facebook, WhatsApp, LinkedIn...) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:image" content={image} />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:site_name" content={EMPRESA.nombre} />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+
+    <!-- Ficha de empresa + esquemas de la página (Schema.org) -->
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
