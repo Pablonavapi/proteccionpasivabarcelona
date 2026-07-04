@@ -269,9 +269,10 @@ const jsonLd = [
         <h2 class="ig-h2">{data.relacion.h2}</h2>
         <div class="ig-prose" style="max-width:none;margin-top:12px;">
           <p set:html={data.relacion.texto}></p>
+          <p>Como <a href="/">empresa de ignifugación en Barcelona</a>, la {data.servicioLargo} es solo una de las técnicas que aplicamos dentro de la protección pasiva contra incendios. Para el servicio completo, o si dudas entre esta técnica y la {otro.nombre.toLowerCase()}, cuéntanos tu obra y te asesoramos.</p>
         </div>
         <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:24px;">
-          <a href="/" class="ig-btn ig-btn-navy ig-btn-lg">Ver el servicio de ignifugación en Barcelona</a>
+          <a href="/" class="ig-btn ig-btn-navy ig-btn-lg">Ver todo el servicio de ignifugación</a>
           <a href={otro.href} class="ig-btn ig-btn-out ig-btn-lg">Ver {otro.nombre.toLowerCase()}</a>
         </div>
       </div>
