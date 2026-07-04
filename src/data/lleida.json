@@ -1,0 +1,141 @@
+{
+  "provincia": "Lleida",
+  "slug": "ignifugaciones-lleida",
+  "meta": {
+    "title": "Ignifugación en Lleida | Protección contra incendios PCI",
+    "desc": "Ignifugación en Lleida para naves agroalimentarias, cámaras frigoríficas y logística. Pintura intumescente, mortero y sellados con certificado visado."
+  },
+  "hero": {
+    "h1a": "Ignifugación en Lleida para estructuras, naves e industria",
+    "h1em": "con certificado visado",
+    "sub": "Aplicamos protección pasiva contra incendios en centrales hortofrutícolas, cámaras frigoríficas, mataderos, plataformas logísticas y edificios de las comarcas de Ponent y el Pirineu. Equipo propio y resistencia al fuego garantizada por ensayo.",
+    "promesas": [
+      { "s": "Visita a obra en 24-48 h", "t": "recorremos la provincia entera, del Segrià a la Val d'Aran, sin coste de desplazamiento." },
+      { "s": "Certificado de aplicación visado", "t": "válido para licencia de actividad, bombers de la Generalitat y compañía de seguros." },
+      { "s": "No bloqueamos el fin de obra", "t": "coordinamos plazos con el resto de gremios para no frenar la puesta en marcha de la nave." }
+    ]
+  },
+  "empresa": {
+    "kicker": "Grupo Ignífugo S.L. en Lleida",
+    "h2": "Especialistas en protección pasiva para la industria agroalimentaria y logística de Ponent",
+    "text": "Somos <strong>empresa habilitada PCI conforme al RIPCI (RD 513/2017)</strong> y trabajamos con equipo propio, furgoneta y plataforma elevadora para llegar a cualquier nave del Segrià, l'Urgell o el Pla d'Urgell. Contamos con un <strong>seguro de responsabilidad civil de 800.000 €</strong> y llevamos 15 años ignifugando estructura metálica, forjados y sectorizaciones en Catalunya.",
+    "bullets": [
+      { "s": "Equipo propio, sin subcontratas", "t": "los mismos operarios que visitan la central hortofrutícola son los que aplican y firman la obra." },
+      { "s": "Plataforma elevadora incluida", "t": "resolvemos cubiertas y estructuras de gran altura en almacenes de fruta y centros de distribución sin alquileres externos." },
+      { "s": "Productos con marcado CE y DoP", "t": "solo aplicamos sistemas ensayados en laboratorio ENAC con Declaración de Prestaciones vigente." }
+    ]
+  },
+  "servicios": {
+    "h2": "Servicios de ignifugación en Lleida",
+    "intro": "Cubrimos toda la protección pasiva que exige una obra industrial o de edificación en la provincia, desde la estructura hasta el último paso de instalaciones.",
+    "items": [
+      { "t": "Ignifugación de estructura metálica con pintura intumescente", "d": "Protegemos pilares y vigas de acero de naves agroindustriales y logísticas con pintura intumescente que, ante el fuego, forma una espuma aislante y mantiene la estabilidad de la estructura. Medimos la masividad de cada perfil para ajustar el espesor exacto a la resistencia exigida.", "rf": "R30 · R60 · R90 · R120" },
+      { "t": "Mortero ignífugo proyectado de perlita y vermiculita", "d": "Solución robusta para estructuras vistas de mataderos, fábricas de piensos y almacenes donde no importa el acabado estético. La proyección de mortero de perlita y vermiculita ofrece grandes espesores y alcanza las resistencias más altas con un coste por m² muy competitivo.", "rf": "Hasta R180" },
+      { "t": "Lana de roca proyectada en forjados y techos", "d": "Aplicamos lana de roca de proyección sobre forjados, techos y medianeras que necesitan un material incombustible y, a la vez, aislamiento térmico. Muy indicada en cámaras frigoríficas y salas de máquinas de la industria alimentaria de Lleida.", "rf": "Incombustible A1/A2" },
+      { "t": "Ignifugación de madera con barniz o pintura intumescente", "d": "Tratamos vigas, cerchas y revestimientos de madera de masías, bodegas, restaurantes y edificios del Pirineu leridano con barnices y pinturas intumescentes que retardan la propagación sin ocultar la veta.", "rf": "UNE-EN 16755" },
+      { "t": "Sellado cortafuegos de pasos de instalaciones", "d": "Sellamos el paso de cables, bandejas, tuberías y conductos entre sectores con collarines, morteros y masillas intumescentes. Imprescindible en salas técnicas, cuadros eléctricos y pasos de frío de las centrales hortofrutícolas.", "rf": "Hasta EI-120" },
+      { "t": "Sectorización contra incendios", "d": "Levantamos y sellamos sectores de incendio con sistemas homologados para que un fuego quede confinado en una zona de la nave. Es la clave para limitar daños en almacenes de fruta y centros logísticos con gran superficie continua.", "rf": "EI / REI 30 a 120" },
+      { "t": "Protección con paneles rígidos de silicato cálcico", "d": "Instalamos placas rígidas de silicato cálcico para proteger estructura, conductos de extracción y sectorizaciones donde no cabe proyectar. Acabado limpio y resistencia elevada en espesores reducidos.", "rf": "EI 60 · EI 90 · EI 120" },
+      { "t": "Ignifugación de hormigón y elementos mixtos", "d": "Reforzamos frente al fuego elementos de hormigón y estructuras mixtas acero-hormigón, comprobando el recubrimiento existente y completando la protección allí donde el proyecto lo requiere.", "rf": "Según proyecto" }
+    ]
+  },
+  "precio": {
+    "intro": "Cada nave es distinta, así que el precio final se cierra tras la visita. Estas horquillas orientativas sirven para que te hagas una idea antes de pedir presupuesto.",
+    "factores": [
+      { "h": "Resistencia exigida (R)", "d": "No cuesta lo mismo un R30 que un R120: a mayor resistencia, más espesor de producto y más coste por m²." },
+      { "h": "Masividad del perfil (Hp/A)", "d": "Los perfiles esbeltos se calientan antes y necesitan más espesor que los perfiles masivos para la misma resistencia." },
+      { "h": "Estado del soporte", "d": "Una estructura oxidada o mal imprimada exige limpieza y preparación previas que pueden sumar entre un 15 y un 30 %." },
+      { "h": "Superficie total", "d": "Las naves agroalimentarias y logísticas de gran metraje mejoran el precio unitario por economía de escala." }
+    ],
+    "nota": "A modo orientativo: <strong>pintura intumescente de 12 a 35 €/m²</strong>, mortero ignífugo proyectado de 9 a 22 €/m², sellados cortafuegos desde 30 €/ud y sectorización con placa rígida de 45 a 95 €/m². <strong>La visita y el presupuesto son gratuitos.</strong>"
+  },
+  "proceso": {
+    "intro": "Trabajamos con un método claro para que la ignifugación no frene la puesta en marcha de tu actividad en Lleida.",
+    "pasos": [
+      { "h": "Visita y toma de datos", "d": "Vamos a la obra en 24-48 h, medimos perfiles, revisamos el proyecto y comprobamos el riesgo intrínseco de la nave." },
+      { "h": "Cálculo y presupuesto cerrado", "d": "Definimos el sistema, el espesor por masividad y la resistencia R o EI necesaria, y entregamos un presupuesto sin sorpresas." },
+      { "h": "Preparación del soporte", "d": "Limpiamos, cepillamos e imprimamos el acero cuando hace falta para garantizar la adherencia del producto." },
+      { "h": "Aplicación y control de espesores", "d": "Proyectamos o pintamos con equipo propio y verificamos espesores húmedo y seco durante toda la ejecución." },
+      { "h": "Certificado visado y entrega", "d": "Emitimos el certificado de aplicación visado con las fichas técnicas y las DoP para tu licencia, bombers y seguro." }
+    ]
+  },
+  "normativa": {
+    "intro": "La protección contra incendios en Lleida se rige por normativa estatal y catalana. Te resumimos qué se te va a exigir según el tipo de edificio o nave.",
+    "cards": [
+      { "h": "CTE DB-SI (edificación)", "d": "El <strong>Código Técnico, Sección SI 6</strong>, fija la resistencia al fuego que debe mantener la estructura según el uso del edificio y su altura de evacuación. De ahí sale la clase <strong>R</strong> (R30, R60, R90, R120) que hay que garantizar con la ignifugación.", "tag": "Edificación" },
+      { "h": "Nuevo RSCIEI · RD 164/2025", "d": "El <strong>nuevo Reglamento de Seguridad contra Incendios en Establecimientos Industriales (RD 164/2025)</strong> deroga el RD 2267/2004 y está en vigor desde mayo de 2025. Exige estabilidad al fuego según el <strong>riesgo intrínseco</strong> y la configuración tipo A, B o C, con inspección única cada 5 años. Es la referencia clave para las naves agroalimentarias y logísticas de la provincia.", "tag": "Industria" },
+      { "h": "Qué significa R, E, I, EI y REI", "d": "<strong>R</strong> es capacidad portante (estabilidad), <strong>E</strong> integridad, <strong>I</strong> aislamiento térmico. Un <strong>EI-120</strong> aguanta 120 minutos sin dejar pasar llama ni calor, y un <strong>REI</strong> añade además la función estructural. Se clasifican según la UNE-EN 13501-2.", "tag": "Clasificación" },
+      { "h": "Espesor: masividad y temperatura crítica", "d": "El espesor de protección depende de la <strong>masividad del perfil (Hp/A)</strong> y de la <strong>temperatura crítica del acero (~500-550 °C)</strong>, punto en que pierde resistencia. Los sistemas se ensayan según UNE-EN 13381-8 para intumescentes y UNE-EN 13381-4 para morteros.", "tag": "Cálculo" }
+    ],
+    "nota": "En Catalunya, cuando aplica, la protección se valida mediante Organismo de Control (OCA/EIC) acreditado, además de la revisión de ajuntaments y bombers de la Generalitat."
+  },
+  "certificado": {
+    "kicker": "Documentación en regla",
+    "h2": "Certificado de aplicación visado incluido en cada obra",
+    "text": "Toda ignifugación que ejecutamos en Lleida se entrega con su certificado de aplicación visado, firmado por técnico competente. Es el documento que te piden para la licencia de actividad, la inspección de bombers y la póliza de seguro.",
+    "bullets": [
+      { "s": "Firmado por técnico competente", "t": "y validado por Organismo de Control (OCA/EIC) acreditado en Catalunya cuando el trámite lo exige." },
+      { "s": "Con espesores y resistencias reales", "t": "recogemos las mediciones de la obra, no valores genéricos de catálogo." },
+      { "s": "Fichas técnicas y DoP adjuntas", "t": "cada producto va acompañado de su marcado CE y su Declaración de Prestaciones." },
+      { "s": "Listo para trámites e inspección", "t": "válido de cara al RSCIEI, con inspección única cada 5 años en establecimientos industriales." }
+    ]
+  },
+  "sectores": {
+    "h2": "Sectores que ignifugamos en Lleida",
+    "intro": "Lleida es la capital catalana de la fruta dulce y un nudo logístico en crecimiento. Estos son los tipos de instalación en los que más intervenimos.",
+    "items": [
+      { "t": "Centrales hortofrutícolas y almacenes de fruta", "d": "Manzana, pera y melocotón mueven grandes naves de confección y almacenaje en el Segrià y el Pla d'Urgell. Ignifugamos su estructura metálica y sectorizamos las zonas de manipulación y expedición.", "rf": "Agroalimentario" },
+      { "t": "Cámaras frigoríficas y salas de frío", "d": "Los paneles y el aislamiento de las cámaras exigen un control estricto del fuego. Protegemos estructura y sellamos los pasos de tuberías de frío y cables entre sectores.", "rf": "Frío industrial" },
+      { "t": "Mataderos y empresas cárnicas", "d": "Las plantas de despiece y elaborados cárnicos de la provincia necesitan resistencia al fuego en estructura y sectorización de salas de máquinas, calderas y almacenes.", "rf": "Cárnico" },
+      { "t": "Fábricas de piensos y agroindustria", "d": "Silos, molinos y naves de fabricación de piensos concentran carga de fuego elevada. Aplicamos mortero y sellados adaptados a su riesgo intrínseco según el nuevo RSCIEI.", "rf": "Industria" },
+      { "t": "Plataformas logísticas y centros de distribución", "d": "La plataforma logística de Lleida y las naves de El Segre, Torreblanca-Quatre Pilans y los polígons de Mollerussa y Tàrrega exigen ignifugación de estructura y sectorización de gran superficie.", "rf": "Logística" },
+      { "t": "Edificación, comercio y sector público", "d": "Aparcamientos, equipamientos, hoteles del Pirineu y locales de La Seu d'Urgell, Balaguer o Cervera también requieren protección de estructura y sellados conforme al CTE DB-SI.", "rf": "Edificación" }
+    ]
+  },
+  "obras": {
+    "h2": "Obras de ignifugación realizadas",
+    "intro": "Una muestra representativa de intervenciones en la provincia de Lleida.",
+    "stats": [
+      { "n": "+250.000", "l": "m² ignifugados" },
+      { "n": "+400", "l": "obras" },
+      { "n": "15", "l": "años de experiencia" },
+      { "n": "100%", "l": "obras certificadas" }
+    ],
+    "casos": [
+      { "sector": "Agroalimentario", "t": "Central hortofrutícola en Alcarràs (Segrià)", "d": "Ignifugación de la estructura metálica de la nave de confección de fruta con pintura intumescente para R60, coordinada con el montaje de las líneas de calibrado.", "m2": "4.200 m²", "metodo": "Intumescente", "rf": "R60", "plazo": "9 días" },
+      { "sector": "Logística", "t": "Centro de distribución en Torreblanca-Quatre Pilans (Lleida)", "d": "Mortero de perlita y vermiculita proyectado sobre pilares y vigas de una nave logística de gran altura, con sectorización EI-90 de la zona de oficinas.", "m2": "6.800 m²", "metodo": "Mortero proyectado", "rf": "R90", "plazo": "14 días" },
+      { "sector": "Cárnico", "t": "Ampliación de sala de despiece en Mollerussa (Pla d'Urgell)", "d": "Lana de roca proyectada en forjado y sellado cortafuegos de los pasos de instalaciones entre la sala de máquinas y la cámara frigorífica.", "m2": "2.500 m²", "metodo": "Lana de roca + sellados", "rf": "EI-120", "plazo": "7 días" }
+    ]
+  },
+  "why": {
+    "h2": "Por qué elegir a Grupo Ignífugo en Lleida",
+    "intro": "Trabajamos para que la protección contra incendios sea una parte más de tu obra, no un problema.",
+    "items": [
+      { "h": "Conocemos la industria de Ponent", "d": "Sabemos cómo funcionan las <strong>centrales de fruta, las cámaras frigoríficas y las plataformas logísticas</strong> de Lleida y adaptamos la ignifugación a sus tiempos de campaña." },
+      { "h": "Cumplimiento normativo garantizado", "d": "Aplicamos sistemas ensayados según <strong>UNE-EN 13381</strong> y entregamos siempre el certificado visado válido para el <strong>nuevo RSCIEI (RD 164/2025)</strong> y el CTE DB-SI." },
+      { "h": "Sin frenar tu fin de obra", "d": "Nos <strong>coordinamos con el resto de gremios</strong> y ajustamos el calendario para que la ignifugación no retrase la licencia ni la puesta en marcha." }
+    ]
+  },
+  "form": {
+    "h2": "Pide presupuesto de ignifugación en Lleida",
+    "intro": "Cuéntanos qué tipo de nave o edificio tienes y qué resistencia te exige el proyecto. Te llamamos y concertamos la visita en 24-48 h."
+  },
+  "faq": [
+    { "q": "¿Cuánto cuesta la ignifugación por m² en Lleida?", "a": "Depende del sistema y de la resistencia exigida. Como referencia, la pintura intumescente va de 12 a 35 €/m² y el mortero proyectado de 9 a 22 €/m²; los sellados cortafuegos parten de 30 €/ud y la sectorización con placa rígida de 45 a 95 €/m². El precio final se ajusta tras la visita, según la masividad de los perfiles y el estado del soporte." },
+    { "q": "¿Es obligatorio ignifugar la estructura de mi nave?", "a": "Sí, cuando el CTE DB-SI (en edificación) o el nuevo RSCIEI RD 164/2025 (en establecimientos industriales) exigen una resistencia al fuego que el acero desnudo no alcanza. La mayoría de naves agroalimentarias y logísticas de Lleida necesitan proteger su estructura para cumplir la estabilidad al fuego según su riesgo intrínseco." },
+    { "q": "¿Qué diferencia hay entre pintura intumescente y mortero ignífugo?", "a": "La pintura intumescente forma una capa fina, se hincha con el calor y da un buen acabado, ideal para estructura vista en R30-R120. El mortero de perlita y vermiculita se proyecta con más espesor, resulta más económico y llega hasta R180, pero con acabado rugoso: es la opción habitual en naves donde la estética no es prioritaria." },
+    { "q": "¿Qué significan R, E, I y EI en un proyecto?", "a": "Son las prestaciones frente al fuego según la UNE-EN 13501-2. R es la capacidad portante (que la estructura aguante), E la integridad (que no pase la llama) e I el aislamiento térmico (que no pase el calor). Así, un EI-120 resiste 120 minutos sin dejar pasar fuego ni calor, y un REI añade además la función estructural." },
+    { "q": "¿El certificado de la ignifugación está incluido?", "a": "Sí. Todas nuestras obras se entregan con el certificado de aplicación visado, sin coste añadido. Recoge los espesores y resistencias reales medidos en obra e incluye las fichas técnicas y las Declaraciones de Prestaciones (DoP) de los productos empleados." },
+    { "q": "¿Quién firma el certificado de ignifugación en Catalunya?", "a": "Lo firma un técnico competente y, cuando el trámite lo requiere, se valida mediante un Organismo de Control (OCA/EIC) acreditado. Es la documentación que solicitan el ajuntament, los bombers de la Generalitat y la compañía de seguros para dar por buena la protección." },
+    { "q": "¿Cuánto se tarda en ignifugar una nave?", "a": "Depende de la superficie y del sistema. Una nave agroindustrial media suele estar entre una y dos semanas, incluyendo preparación del soporte y control de espesores. Nos coordinamos con el resto de gremios para no bloquear el fin de obra ni la puesta en marcha de tu actividad." },
+    { "q": "¿La ignifugación necesita mantenimiento?", "a": "El recubrimiento es duradero, pero conviene revisarlo periódicamente, sobre todo en ambientes húmedos o corrosivos como cámaras frigoríficas y salas de frío. El RSCIEI establece además una inspección única cada 5 años en establecimientos industriales, donde se comprueba el estado de la protección pasiva." },
+    { "q": "¿Qué pasa si mi estructura está oxidada?", "a": "El óxido impide la adherencia del producto, así que primero hay que cepillar, limpiar e imprimar el acero. Esta preparación es imprescindible para que la protección funcione y puede incrementar el presupuesto entre un 15 y un 30 % según el estado del soporte." },
+    { "q": "¿Cómo se protege del fuego una central hortofrutícola o un almacén de fruta?", "a": "En las centrales de fruta del Segrià y el Pla d'Urgell trabajamos sobre tres frentes: ignifugación de la estructura metálica para la resistencia R exigida, sectorización de las zonas de confección, cámara y expedición, y sellado cortafuegos de los pasos de tuberías de frío y cables. Todo dimensionado según el riesgo intrínseco de la nave conforme al nuevo RSCIEI." },
+    { "q": "¿Atendéis naves logísticas y cámaras frigoríficas en toda la provincia?", "a": "Sí. Intervenimos en la plataforma logística de Lleida, en polígons como El Segre, Torreblanca-Quatre Pilans, Mollerussa y Tàrrega, y en cámaras frigoríficas de toda la demarcación. Nuestro equipo propio con plataforma elevadora se desplaza del Segrià a la Cerdanya y la Val d'Aran sin coste añadido." }
+  ],
+  "ctaFinal": {
+    "h2": "Protege tu nave o edificio en Lleida con garantías",
+    "p": "Pide tu presupuesto y visita gratuita: te respondemos en 24-48 h con certificado visado incluido."
+  },
+  "cobertura": "Damos servicio en toda la provincia de Lleida: Segrià, Urgell, Pla d'Urgell, Noguera, Les Garrigues, Segarra, Alt Urgell, Solsonès, Pallars Jussà, Pallars Sobirà, Alta Ribagorça, Val d'Aran y Cerdanya, con presencia en Lleida, Balaguer, Tàrrega, Mollerussa, Cervera, La Seu d'Urgell, Alcarràs y Almacelles."
+}

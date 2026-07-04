@@ -144,6 +144,22 @@ html, body { overflow-x: clip; }
 /* Email en el menú (junto al teléfono) */
 .ig-nav-mail .ig-nav-tel-num { font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 700; }
 
+/* Menú de zonas (provincias) */
+.ig-zonas { border-top: 1px solid var(--borde); background: #fff; }
+.ig-zonas-inner {
+  max-width: 1280px; margin: 0 auto; padding: 0 clamp(16px, 5vw, 60px);
+  display: flex; align-items: center; gap: 2px; overflow-x: auto; scrollbar-width: none;
+}
+.ig-zonas-inner::-webkit-scrollbar { display: none; }
+.ig-zonas-label { font-size: 11.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--acero); padding-right: 8px; white-space: nowrap; }
+.ig-zonas a {
+  padding: 12px 15px; font-size: 14px; font-weight: 600; color: var(--texto-suave);
+  text-decoration: none; white-space: nowrap; border-bottom: 2px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.ig-zonas a:hover { color: var(--fuego-osc); }
+.ig-zonas a[aria-current="page"] { color: var(--navy); border-bottom-color: var(--fuego); }
+
 /* =====================================================================
    BOTONES
    ===================================================================== */
@@ -659,7 +675,7 @@ html, body { overflow-x: clip; }
    ===================================================================== */
 .ig-footer { background: var(--navy-osc); color: #A9BAD0; }
 .ig-footer-inner { max-width: 1180px; margin: 0 auto; padding: clamp(40px, 5vw, 60px) clamp(16px, 5vw, 60px) 0; }
-.ig-footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 36px; padding-bottom: 36px; border-bottom: 1px solid var(--navy-borde-osc); }
+.ig-footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 36px; padding-bottom: 36px; border-bottom: 1px solid var(--navy-borde-osc); }
 .ig-footer-brand .ig-brand-name { color: #fff; }
 .ig-footer-brand p { font-size: 14px; line-height: 1.65; color: #94A6BE; margin: 14px 0 0; max-width: 330px; }
 .ig-footer-col h4 { font-size: 12.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #fff; margin: 4px 0 16px; }

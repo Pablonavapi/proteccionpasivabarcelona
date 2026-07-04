@@ -1,0 +1,270 @@
+{
+  "provincia": "Girona",
+  "slug": "ignifugaciones-girona",
+  "meta": {
+    "title": "Ignifugación en Girona | Estructura y Sellados PCI",
+    "desc": "Ignifugación en Girona y toda la provincia: estructura metálica, mortero y sellados cortafuegos. Presupuesto en 24-48 h y certificado visado incluido."
+  },
+  "hero": {
+    "h1a": "Ignifugación en Girona con certificado visado y",
+    "h1em": "obra sin bloqueos",
+    "sub": "Protegemos estructuras metálicas, forjados y pasos de instalaciones en toda la provincia de Girona, del Gironès al Alt Empordà. Equipo propio, empresa habilitada según el RIPCI y certificado válido para bomberos, seguro y licencia de actividad.",
+    "promesas": [
+      { "s": "Visita a obra en 24-48 h", "t": "recorremos Girona, Figueres, Blanes u Olot para medir masividad y cerrar presupuesto sin compromiso." },
+      { "s": "Certificado de aplicación visado", "t": "incluido en cada proyecto y válido para licencia, bombers de la Generalitat y compañía de seguros." },
+      { "s": "No bloqueamos el fin de obra", "t": "nos coordinamos con el resto de gremios para no frenar la entrega de tu nave o local." }
+    ]
+  },
+  "empresa": {
+    "kicker": "Especialistas en PCI en la provincia de Girona",
+    "h2": "Una empresa habilitada que ignifuga de Riudellots a la Costa Brava",
+    "text": "En Grupo Ignífugo S.L. llevamos la protección pasiva contra incendios a cualquier punto de la provincia con <strong>equipo propio, furgoneta y plataforma elevadora</strong>. Somos <strong>empresa habilitada PCI conforme al RIPCI (RD 513/2017)</strong> y respondemos con un <strong>seguro de responsabilidad civil de 800.000 €</strong>, de modo que la promotora, el constructor y la propiedad trabajan con la misma tranquilidad en Girona capital que en un matadero del Empordà.",
+    "bullets": [
+      { "s": "Cobertura comarcal completa", "t": "Gironès, La Selva, Alt y Baix Empordà, Garrotxa, Pla de l'Estany, Ripollès y Cerdanya." },
+      { "s": "Cuadrilla estable y medios propios", "t": "sin subcontratas: los mismos aplicadores que empiezan la obra la terminan y la certifican." },
+      { "s": "Experiencia en el tejido local", "t": "naves agroalimentarias, cámaras frigoríficas, hoteles de playa y logística de Vilamalla o Riudellots." }
+    ]
+  },
+  "servicios": {
+    "h2": "Servicios de ignifugación y protección pasiva en Girona",
+    "intro": "Cubrimos todas las soluciones que exige el proyecto contra incendios, desde la estructura de acero de una nave de Celrà hasta el sellado de cada paso de tubería. Cada trabajo se ejecuta con productos con marcado CE y su Declaración de Prestaciones.",
+    "items": [
+      {
+        "t": "Ignifugación de estructura metálica con pintura intumescente",
+        "d": "Aplicamos recubrimiento intumescente sobre pilares y vigas de acero de naves y locales gironines. Al llegar a unos 200 °C el film se expande y forma una espuma aislante que retrasa que el perfil alcance su temperatura crítica, ganando la resistencia R que fija el proyecto sin ocultar la estructura vista.",
+        "rf": "R30 · R60 · R90 · R120"
+      },
+      {
+        "t": "Mortero ignífugo proyectado de perlita y vermiculita",
+        "d": "Proyección de mortero de perlita y vermiculita para exigencias altas de resistencia o soportes que no requieren acabado estético, típico de mataderos, almacenes frigoríficos y naves logísticas del Empordà. Ofrece un gran aislamiento por espesor y resiste bien ambientes húmedos.",
+        "rf": "Hasta R180"
+      },
+      {
+        "t": "Lana de roca proyectada en forjados y techos",
+        "d": "Proyectamos lana de roca sobre forjados, techos y bajocubiertas para aportar protección al fuego y aislamiento térmico-acústico en un solo paso. Al ser un material incombustible clasificado A1/A2, es una opción muy usada en aparcamientos y plantas industriales de la provincia.",
+        "rf": "Incombustible A1/A2"
+      },
+      {
+        "t": "Ignifugación de madera con barniz o pintura intumescente",
+        "d": "Tratamos vigas, cerchas y falsos techos de madera de masías rehabilitadas, restaurantes y hoteles rurales de la Garrotxa o el Ripollès. El barniz o pintura intumescente mejora la reacción al fuego del elemento respetando la veta según la UNE-EN 16755.",
+        "rf": "UNE-EN 16755"
+      },
+      {
+        "t": "Sellado cortafuegos de pasos de instalaciones",
+        "d": "Sellamos el paso de tuberías, bandejas eléctricas y conductos a través de muros y forjados con collarines, morteros y masillas intumescentes. Así se mantiene la compartimentación y el humo no salta de un sector a otro por las perforaciones de las instalaciones.",
+        "rf": "Hasta EI-120"
+      },
+      {
+        "t": "Sectorización contra incendios",
+        "d": "Levantamos y protegemos sectores de incendio con tabiquería y trasdosados resistentes al fuego para limitar la propagación entre zonas de una misma nave o edificio. Definimos cada sector según la ocupación y el uso previsto en el proyecto.",
+        "rf": "EI / REI 30 a 120"
+      },
+      {
+        "t": "Protección con paneles rígidos de silicato cálcico",
+        "d": "Encajonamos pilares, vigas o conductos con placas rígidas de silicato cálcico cuando interesa un acabado limpio, planos y montaje en seco. Solución ideal para pasos de ventilación y estructuras vistas en zonas comerciales de Girona o Lloret de Mar.",
+        "rf": "EI 60 · EI 90 · EI 120"
+      },
+      {
+        "t": "Ignifugación de hormigón y elementos mixtos",
+        "d": "Reforzamos la resistencia al fuego de forjados de hormigón y estructuras mixtas acero-hormigón que, tras un estudio, no llegan al R exigido. Aplicamos mortero o placa según el elemento para completar la protección sin rehacer la estructura.",
+        "rf": "Según proyecto"
+      }
+    ]
+  },
+  "precio": {
+    "intro": "Damos un precio cerrado por metro cuadrado o por unidad después de ver la obra, porque cada nave de Girona parte de una situación distinta. Estos rangos orientativos te ayudan a dimensionar la partida antes de la visita.",
+    "factores": [
+      { "h": "Resistencia exigida (R)", "d": "no cuesta lo mismo un R30 que un R120: a mayor resistencia, más espesor y más producto por metro." },
+      { "h": "Masividad del perfil (Hp/A)", "d": "los perfiles ligeros calientan antes y necesitan más recubrimiento que los perfiles macizos." },
+      { "h": "Estado del soporte", "d": "una estructura oxidada o sucia obliga a preparar la superficie y puede sumar un 15-30 % de trabajo previo." },
+      { "h": "Superficie total de obra", "d": "a más metros contratados en una misma nave, mejor rendimiento del equipo y precio más ajustado por m²." }
+    ],
+    "nota": "A modo orientativo: <strong>pintura intumescente 12-35 €/m²</strong>, <strong>mortero ignífugo proyectado 9-22 €/m²</strong>, <strong>sellado cortafuegos desde 30 €/ud</strong> y <strong>sectorización con placa rígida 45-95 €/m²</strong>. El presupuesto definitivo siempre se cierra tras la visita a obra."
+  },
+  "proceso": {
+    "intro": "Trabajamos con un método claro para que la ignifugación no se convierta en el cuello de botella de tu obra en Girona. En cinco pasos pasamos de la primera llamada al certificado firmado.",
+    "pasos": [
+      { "h": "Visita y toma de datos", "d": "medimos la estructura, calculamos la masividad de los perfiles y revisamos qué pide el proyecto contra incendios." },
+      { "h": "Presupuesto en 24-48 h", "d": "recibes una oferta detallada por sistema, espesor y metros, sin sorpresas ni partidas ocultas." },
+      { "h": "Preparación del soporte", "d": "limpiamos, desengrasamos y, si hace falta, tratamos el óxido para que el producto agarre y rinda como marca su ficha." },
+      { "h": "Aplicación y control de espesor", "d": "aplicamos el sistema y verificamos el espesor húmedo y seco con galga para garantizar la resistencia contratada." },
+      { "h": "Certificado visado y entrega", "d": "emitimos el certificado de aplicación visado y coordinamos con los demás gremios para no frenar el fin de obra." }
+    ]
+  },
+  "normativa": {
+    "intro": "La ignifugación no es opcional: la exige la normativa vigente y su cumplimiento se comprueba en la licencia y en la inspección. Te explicamos en corto qué marcos aplican a tu proyecto en Girona.",
+    "cards": [
+      {
+        "h": "CTE DB-SI (edificación)",
+        "d": "El Código Técnico, en su <strong>Sección SI 6</strong>, exige que la estructura mantenga una resistencia al fuego mínima (la clase <strong>R</strong>) durante el tiempo que fija según el uso del edificio y su altura de evacuación. Es el marco habitual en hoteles, comercios y viviendas colectivas de la provincia.",
+        "tag": "Edificación"
+      },
+      {
+        "h": "Nuevo RSCIEI · RD 164/2025",
+        "d": "El nuevo Reglamento de Seguridad contra Incendios en Establecimientos Industriales <strong>deroga el RD 2267/2004 y está en vigor desde mayo de 2025</strong>. Fija la estabilidad al fuego según el riesgo intrínseco y la configuración del establecimiento (tipo A, B o C) y establece una <strong>inspección única cada 5 años</strong>. Es la referencia para naves de Riudellots, Celrà o Vilamalla.",
+        "tag": "Industrial"
+      },
+      {
+        "h": "Qué significa R, E, I, EI y REI",
+        "d": "Según la <strong>UNE-EN 13501-2</strong>: <strong>R</strong> es la capacidad portante (que la estructura aguante), <strong>E</strong> la integridad (que no pasen llamas ni gases) e <strong>I</strong> el aislamiento (que no se transmita calor). El <strong>EI</strong> combina integridad y aislamiento y el <strong>REI</strong> añade además la capacidad portante.",
+        "tag": "Clasificación"
+      },
+      {
+        "h": "Espesor: masividad y temperatura crítica",
+        "d": "El espesor de producto se calcula a partir de la <strong>masividad del perfil (Hp/A)</strong> y de la <strong>temperatura crítica del acero (~500-550 °C)</strong>, según ensayos <strong>UNE-EN 13381-8</strong> para intumescentes y <strong>UNE-EN 13381-4</strong> para morteros. No es un dato aproximado: sale de tablas del fabricante ensayadas en laboratorio ENAC.",
+        "tag": "Cálculo"
+      }
+    ],
+    "nota": "En Catalunya, cuando aplica, la solución se valida ante Organismo de Control (OCA/EIC) acreditado y responde ante ajuntaments y bombers de la Generalitat."
+  },
+  "certificado": {
+    "kicker": "Documentación en regla",
+    "h2": "Un certificado visado que te sirve de verdad",
+    "text": "Toda ignifugación que ejecutamos se entrega con su certificado de aplicación visado por técnico competente. No es un papel de trámite: es la prueba de que el sistema, el espesor y la resistencia cumplen lo proyectado.",
+    "bullets": [
+      { "s": "Válido para licencia de actividad", "t": "el ajuntament de Girona, Figueres o el que corresponda lo admite como documentación de PCI." },
+      { "s": "Aceptado por bombers y seguro", "t": "acredita la protección ante la Generalitat y tu compañía aseguradora en caso de siniestro." },
+      { "s": "Con productos trazables", "t": "detallamos marcado CE, DoP y lote de cada producto empleado en tu obra." },
+      { "s": "Listo para el Organismo de Control", "t": "documentación preparada para la validación de la OCA/EIC cuando el proyecto lo requiere." }
+    ]
+  },
+  "sectores": {
+    "h2": "Sectores de Girona que confían en nuestra ignifugación",
+    "intro": "Conocemos las particularidades de la industria y el turismo de Girona, así que adaptamos el sistema al tipo de nave, a la actividad y a la exigencia de cada ajuntament o del proyecto.",
+    "items": [
+      {
+        "t": "Industria agroalimentaria y cárnica",
+        "d": "Mataderos, salas de despiece y fábricas de embutidos del Gironès y el Empordà, con estructuras metálicas y ambientes de limpieza intensa donde el mortero y la lana de roca rinden especialmente bien.",
+        "rf": "Naves cárnicas"
+      },
+      {
+        "t": "Cámaras frigoríficas y logística",
+        "d": "Almacenes refrigerados y plataformas logísticas de Riudellots de la Selva, Vilamalla o el Pont del Príncep, donde protegemos la estructura sin comprometer el aislamiento ni la cadena de frío.",
+        "rf": "Frío y almacenaje"
+      },
+      {
+        "t": "Hostelería y turismo de la Costa Brava",
+        "d": "Hoteles, restaurantes y apartamentos de Lloret de Mar, Blanes o Palafrugell, con especial atención a las zonas de evacuación y a la protección de forjados y madera vista.",
+        "rf": "Hoteles y ocio"
+      },
+      {
+        "t": "Industria del corcho del Empordà",
+        "d": "Naves de transformación y almacenaje de corcho, un material combustible por naturaleza, donde la sectorización y los sellados cortafuegos son claves para contener cualquier conato.",
+        "rf": "Corcho"
+      },
+      {
+        "t": "Comercio y equipamientos",
+        "d": "Superficies comerciales, aparcamientos y equipamientos públicos de Girona, Salt o Banyoles, donde combinamos ignifugación de estructura con protección de conductos y placa rígida vista.",
+        "rf": "Retail y aparcamientos"
+      },
+      {
+        "t": "Rehabilitación de masías y edificios históricos",
+        "d": "Cascos antiguos y masías de la Garrotxa, el Ripollès o el Pla de l'Estany, donde tratamos vigas de madera y estructuras mixtas respetando el carácter del edificio.",
+        "rf": "Patrimonio"
+      }
+    ]
+  },
+  "obras": {
+    "h2": "Obras de ignifugación ejecutadas en Girona y provincia",
+    "intro": "Una muestra del trabajo que respalda nuestra experiencia en la protección pasiva contra incendios.",
+    "stats": [
+      { "n": "+250.000", "l": "m² ignifugados" },
+      { "n": "+400", "l": "obras" },
+      { "n": "15", "l": "años de experiencia" },
+      { "n": "100%", "l": "obras certificadas" }
+    ],
+    "casos": [
+      {
+        "sector": "Agroalimentario",
+        "t": "Nave de despiece en Riudellots de la Selva",
+        "d": "Ignifugación de la estructura metálica de una sala cárnica con mortero proyectado para alcanzar el R exigido en un ambiente de humedad y limpieza continua.",
+        "m2": "3.400 m²",
+        "metodo": "Mortero proyectado",
+        "rf": "R90",
+        "plazo": "10 días"
+      },
+      {
+        "sector": "Hostelería",
+        "t": "Hotel frente al mar en Lloret de Mar",
+        "d": "Protección de pilares vistos con pintura intumescente y sellado de pasos de instalaciones para pasar la revisión de bombers antes de la reapertura de temporada.",
+        "m2": "1.800 m²",
+        "metodo": "Intumescente",
+        "rf": "R60",
+        "plazo": "7 días"
+      },
+      {
+        "sector": "Logística",
+        "t": "Plataforma logística en Vilamalla (Alt Empordà)",
+        "d": "Ignifugación de estructura y sectorización con placa rígida de una nave de almacenaje junto al eje del AVE, coordinada con el resto de gremios para no retrasar la entrega.",
+        "m2": "6.200 m²",
+        "metodo": "Intumescente + placa",
+        "rf": "R120",
+        "plazo": "14 días"
+      }
+    ]
+  },
+  "why": {
+    "h2": "Por qué elegir a Grupo Ignífugo en Girona",
+    "intro": "Somos el equipo que resuelve la PCI de tu obra sin sustos ni retrasos.",
+    "items": [
+      { "h": "Empresa habilitada y asegurada", "d": "Trabajamos como <strong>empresa habilitada PCI conforme al RIPCI</strong> y con un <strong>seguro de responsabilidad civil de 800.000 €</strong>, así que respondes ante la propiedad con total garantía." },
+      { "h": "Rapidez sin frenar la obra", "d": "Visitamos y presupuestamos en <strong>24-48 h</strong> y nos adaptamos al calendario del resto de gremios para que la ignifugación no bloquee el fin de obra." },
+      { "h": "Certificado que abre puertas", "d": "Cada trabajo se cierra con <strong>certificado visado</strong> válido para licencia, bombers y seguro, con productos trazables por marcado CE y DoP." }
+    ]
+  },
+  "form": {
+    "h2": "Pide tu presupuesto de ignifugación en Girona",
+    "intro": "Cuéntanos qué necesitas y dónde está la obra. Un técnico se pasa a medir y te entrega un presupuesto detallado en 24-48 h, sin compromiso."
+  },
+  "faq": [
+    {
+      "q": "¿Cuánto cuesta la ignifugación por metro cuadrado en Girona?",
+      "a": "Como orientación, la pintura intumescente ronda los 12-35 €/m² y el mortero ignífugo proyectado los 9-22 €/m². El precio final depende de la resistencia exigida (R), de la masividad de los perfiles, del estado del soporte y de la superficie total. Por eso siempre cerramos un precio en firme tras visitar la obra."
+    },
+    {
+      "q": "¿Es obligatorio ignifugar mi nave o local?",
+      "a": "Sí, cuando el proyecto lo exige. En edificación lo marca el CTE DB-SI (Sección SI 6) según el uso y la altura de evacuación, y en naves industriales el nuevo RSCIEI (RD 164/2025), que fija la estabilidad al fuego según el riesgo intrínseco y la configuración tipo A, B o C. Sin la protección exigida no se obtiene la licencia de actividad."
+    },
+    {
+      "q": "¿Qué diferencia hay entre pintura intumescente y mortero ignífugo?",
+      "a": "La pintura intumescente es un recubrimiento fino que, con el calor, se hincha y forma una espuma aislante; deja la estructura casi vista y es ideal para acabados cuidados. El mortero se proyecta con más espesor, aporta mucha resistencia y aguanta bien la humedad, así que se usa en naves y zonas técnicas donde el estético no es prioritario."
+    },
+    {
+      "q": "¿Qué significan R, EI y REI en la resistencia al fuego?",
+      "a": "Según la UNE-EN 13501-2, la R indica la capacidad portante (que el elemento aguante sin colapsar), la E la integridad (que no dejen pasar llamas ni gases calientes) y la I el aislamiento (que no transmita calor peligroso). EI combina integridad y aislamiento, y REI suma además la capacidad portante. El proyecto define qué clase y qué tiempo (30, 60, 90 o 120 minutos) necesitas."
+    },
+    {
+      "q": "¿El certificado de aplicación va incluido?",
+      "a": "Sí. En todas nuestras obras el certificado de aplicación visado está incluido en el precio. En él detallamos el sistema, el espesor aplicado, la resistencia alcanzada y los productos con su marcado CE y Declaración de Prestaciones, para que sirva ante la licencia, los bombers y tu seguro."
+    },
+    {
+      "q": "¿Quién firma el certificado de la ignifugación?",
+      "a": "Lo firma un técnico competente que acredita que la aplicación cumple lo proyectado. En Catalunya, cuando el proyecto lo requiere, la solución se valida además ante un Organismo de Control (OCA/EIC) acreditado, y la documentación queda preparada para los ajuntaments y los bombers de la Generalitat."
+    },
+    {
+      "q": "¿Cuánto tarda el trabajo de ignifugación?",
+      "a": "Depende de los metros y del sistema, pero para hacerte una idea: en las obras del muestrario ejecutamos entre 1.800 y 6.200 m² en plazos de 7 a 14 días. Antes de empezar te damos un calendario realista y nos coordinamos con el resto de gremios para no retrasar el fin de obra."
+    },
+    {
+      "q": "¿La ignifugación necesita mantenimiento?",
+      "a": "El recubrimiento es duradero, pero conviene revisarlo periódicamente por si hay golpes, humedades o reformas que dañen la capa protectora o abran nuevos pasos de instalaciones. Con el nuevo RSCIEI, además, los establecimientos industriales pasan una inspección única cada 5 años, un buen momento para comprobar el estado de la protección."
+    },
+    {
+      "q": "¿Se puede ignifugar una estructura metálica oxidada?",
+      "a": "Sí, pero el óxido y la suciedad impiden que el producto agarre y rinda, así que primero hay que preparar el soporte: limpiar, desengrasar y tratar la corrosión. Ese trabajo previo puede sumar un 15-30 % a la partida, pero es imprescindible para que el sistema alcance la resistencia certificada."
+    },
+    {
+      "q": "Tengo un hotel en la Costa Brava, ¿cómo afecta a la ignifugación?",
+      "a": "En hoteles de Lloret de Mar, Blanes o Palafrugell aplicamos el CTE DB-SI, con especial atención a la resistencia de la estructura, la protección de forjados y las vías de evacuación. Solemos programar los trabajos fuera de temporada alta y con pintura intumescente o placa vista para no alterar la imagen del establecimiento antes de reabrir."
+    },
+    {
+      "q": "¿Trabajáis en naves agroalimentarias y cámaras frigoríficas de la provincia?",
+      "a": "Sí, es uno de nuestros ámbitos habituales en el Gironès y el Empordà. En mataderos, salas de despiece y almacenes frigoríficos de zonas como Riudellots de la Selva elegimos sistemas que aguantan la limpieza intensa y la humedad, como el mortero proyectado o la lana de roca, sin comprometer el aislamiento de las cámaras."
+    }
+  ],
+  "ctaFinal": {
+    "h2": "Protege tu obra en Girona con quien la certifica",
+    "p": "Un solo interlocutor para ignifugar, sellar y sectorizar, con presupuesto en 24-48 h y certificado visado incluido."
+  },
+  "cobertura": "Trabajamos en toda la provincia de Girona: Gironès, La Selva, Alt Empordà, Baix Empordà, Garrotxa, Pla de l'Estany, Ripollès y Cerdanya, incluyendo Girona, Figueres, Blanes, Lloret de Mar, Olot, Salt, Palafrugell, Banyoles y sus polígonos de Riudellots de la Selva, Mas Xirgu, Celrà, Vilamalla y el Pont del Príncep."
+}

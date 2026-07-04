@@ -1,0 +1,279 @@
+{
+  "provincia": "Tarragona",
+  "slug": "ignifugaciones-tarragona",
+  "meta": {
+    "title": "Ignifugación en Tarragona | Protección pasiva PCI naves",
+    "desc": "Ignifugación en Tarragona para industria petroquímica, naves y hoteles. Pintura intumescente, mortero y sectorización con certificado visado. Visita en 24-48 h."
+  },
+  "hero": {
+    "h1a": "Ignifugación en Tarragona para estructuras, naves industriales y ",
+    "h1em": "riesgo químico",
+    "sub": "Protegemos el acero, la madera y el hormigón de tu edificio o planta con resistencias R30 a R180 y sectorización certificada. Trabajamos codo con codo con la industria del complejo petroquímico, el Puerto y la Costa Daurada.",
+    "promesas": [
+      { "s": "Visita a obra en 24-48 h", "t": "en toda la provincia, del Tarragonès al Montsià" },
+      { "s": "Certificado visado incluido", "t": "válido para bombers, licencia de actividad y seguro" },
+      { "s": "Equipo propio", "t": "furgoneta y plataforma elevadora, sin subcontratas" }
+    ]
+  },
+  "empresa": {
+    "kicker": "Grupo Ignífugo S.L. en Tarragona",
+    "h2": "Especialistas en protección pasiva para el sur de Catalunya",
+    "text": "Somos una empresa <strong>habilitada PCI conforme al RIPCI (RD 513/2017)</strong> con equipo propio, medios de acceso en altura y seguro de responsabilidad civil de <strong>800.000 €</strong>. Ejecutamos ignifugaciones en un entorno tan exigente como el de Tarragona, donde conviven la gran industria química, la logística portuaria y el turismo, y donde cada proyecto se cierra con documentación que aguanta la revisión de bombers y del Organismo de Control.",
+    "bullets": [
+      { "s": "Enfoque industrial", "t": "acostumbrados a naves con riesgo intrínseco medio y alto y sectorización RSCIEI" },
+      { "s": "Sin bloquear el fin de obra", "t": "nos coordinamos con el resto de gremios para no frenar tu planning" },
+      { "s": "Producto trazable", "t": "solo materiales con marcado CE y Declaración de Prestaciones (DoP)" }
+    ]
+  },
+  "servicios": {
+    "h2": "Nuestros servicios de ignifugación en Tarragona",
+    "intro": "Cubrimos toda la protección pasiva de tu edificio o instalación: desde la estructura metálica de una nave en el Riu Clar hasta la madera de un restaurante en Cambrils.",
+    "items": [
+      {
+        "t": "Ignifugación de estructura metálica con pintura intumescente",
+        "d": "Aplicamos recubrimientos intumescentes sobre pilares, vigas y correas de acero; ante el fuego, la película se expande formando una capa aislante que retrasa el calentamiento del perfil por debajo de su temperatura crítica. Acabado fino y estético, ideal para estructura vista en oficinas, comercios y naves de la Costa Daurada.",
+        "rf": "R30 · R60 · R90 · R120"
+      },
+      {
+        "t": "Mortero ignífugo proyectado de perlita y vermiculita",
+        "d": "Proyección de mortero ligero para grandes resistencias al fuego con muy buena relación coste-prestación. Es la solución que más aplicamos en naves logísticas del Puerto y en plantas del polo químico, donde se buscan tiempos de estabilidad altos sobre superficies de acero de mucho metraje.",
+        "rf": "Hasta R180"
+      },
+      {
+        "t": "Lana de roca proyectada en forjados y techos",
+        "d": "Proyectamos lana de roca sobre forjados, cubiertas y techos para aislar térmicamente y aportar protección al fuego con un material incombustible de origen mineral. Muy útil en aparcamientos, cámaras y naves donde interesa combinar reacción al fuego y aislamiento acústico.",
+        "rf": "Incombustible A1/A2"
+      },
+      {
+        "t": "Ignifugación de madera con barniz o pintura intumescente",
+        "d": "Mejoramos la reacción al fuego de vigas, entramados y revestimientos de madera con tratamientos intumescentes transparentes o pigmentados. Pensado para masías rehabilitadas, bodegas del Priorat, hoteles y chiringuitos de playa que quieren mantener la madera a la vista sin renunciar a la seguridad.",
+        "rf": "UNE-EN 16755"
+      },
+      {
+        "t": "Sellado cortafuegos de pasos de instalaciones",
+        "d": "Sellamos las penetraciones de cables, bandejas, tuberías y conductos que atraviesan muros y forjados con masillas, morteros y collarines cortafuegos. Es un punto crítico en las galerías de servicio de la industria química y en los cuadros y racks de la logística portuaria.",
+        "rf": "Hasta EI-120"
+      },
+      {
+        "t": "Sectorización contra incendios",
+        "d": "Levantamos y reforzamos sectores de incendio con tabiquería técnica, placas y protección de juntas para que el fuego quede confinado el tiempo que exige el proyecto. Clave para dividir naves grandes en sectores conforme al nuevo RSCIEI y limitar la superficie construida por sector.",
+        "rf": "EI / REI 30 a 120"
+      },
+      {
+        "t": "Protección con paneles rígidos de silicato cálcico",
+        "d": "Encajonamos pilares, vigas y conductos con placas rígidas de silicato cálcico cuando se necesita un acabado limpio, registrable y de altísima estabilidad al fuego. Solución habitual en escaleras protegidas, vestíbulos de independencia y locales de riesgo especial.",
+        "rf": "EI 60 · EI 90 · EI 120"
+      },
+      {
+        "t": "Ignifugación de hormigón y elementos mixtos",
+        "d": "Reforzamos la resistencia al fuego de forjados, losas y estructuras mixtas acero-hormigón cuando el recubrimiento existente no llega a lo que pide el proyecto, con morteros y placas específicas. Frecuente en rehabilitaciones y en cambios de uso de edificios industriales del Camp de Tarragona.",
+        "rf": "Según proyecto"
+      }
+    ]
+  },
+  "precio": {
+    "intro": "Cada obra se valora tras la visita técnica, pero estos precios orientativos te ayudan a hacerte una idea antes de pedir presupuesto en Tarragona.",
+    "factores": [
+      { "h": "Resistencia exigida (R)", "d": "no cuesta lo mismo llegar a R30 que a R120 o R180; a más minutos, más espesor y más material." },
+      { "h": "Masividad del perfil (Hp/A)", "d": "los perfiles esbeltos se calientan antes y necesitan más recubrimiento que los perfiles macizos." },
+      { "h": "Estado del soporte", "d": "una estructura oxidada obliga a preparar la superficie y puede encarecer la obra entre un 15 % y un 30 %." },
+      { "h": "Superficie total", "d": "a mayor metraje, mejor rendimiento y precio por m²; las grandes naves industriales optimizan mucho el coste." }
+    ],
+    "nota": "Como referencia: <strong>pintura intumescente 12-35 €/m²</strong>, <strong>mortero proyectado 9-22 €/m²</strong>, sellado cortafuegos desde 30 €/ud y sectorización con placa rígida 45-95 €/m². Te enviamos el presupuesto cerrado tras medir en obra."
+  },
+  "proceso": {
+    "intro": "Un método claro para que sepas en todo momento qué pasa en tu obra, sin sorpresas ni retrasos.",
+    "pasos": [
+      { "h": "Visita a obra en 24-48 h", "d": "vamos a medir, revisar el estado del soporte y entender el uso del edificio o la instalación." },
+      { "h": "Cálculo y presupuesto", "d": "determinamos la R necesaria según proyecto, el espesor por masividad y te pasamos oferta cerrada." },
+      { "h": "Planificación con los gremios", "d": "encajamos nuestra intervención en tu planning para no frenar al resto de oficios ni el fin de obra." },
+      { "h": "Aplicación certificada", "d": "ejecutamos con producto con marcado CE y controlamos espesores húmedos y secos durante los trabajos." },
+      { "h": "Certificado y cierre", "d": "entregamos el certificado de aplicación visado y la documentación técnica lista para bombers y seguro." }
+    ]
+  },
+  "normativa": {
+    "intro": "En Tarragona conviven la normativa de edificación y, muy especialmente, la industrial. Estas son las claves que ordenan cualquier proyecto de ignifugación.",
+    "cards": [
+      {
+        "h": "CTE DB-SI (edificación)",
+        "d": "El Código Técnico, en su <strong>Sección SI 6</strong>, fija la resistencia al fuego que debe tener la estructura según el uso del edificio y la altura de evacuación. De ahí sale la <strong>clase R</strong> (R30, R60, R90...) que hay que garantizar en hoteles, comercios, oficinas y viviendas de la provincia.",
+        "tag": "Edificación"
+      },
+      {
+        "h": "Nuevo RSCIEI · RD 164/2025",
+        "d": "El nuevo Reglamento de seguridad contra incendios en establecimientos industriales <strong>deroga el RD 2267/2004</strong> y está en vigor desde mayo de 2025. Exige estabilidad al fuego según el <strong>riesgo intrínseco</strong> y la configuración tipo A, B o C, e introduce una <strong>inspección única cada 5 años</strong>. Es la norma decisiva para las naves del complejo químico y la logística de Tarragona.",
+        "tag": "Industria"
+      },
+      {
+        "h": "Qué significa R, E, I, EI y REI",
+        "d": "Según la <strong>UNE-EN 13501-2</strong>: <strong>R</strong> es capacidad portante, <strong>E</strong> integridad (que no pasen llamas ni gases), <strong>I</strong> aislamiento térmico. Se combinan: <strong>EI</strong> para elementos separadores y <strong>REI</strong> cuando además soportan carga. El número son los minutos que aguanta el elemento.",
+        "tag": "Clases"
+      },
+      {
+        "h": "Espesor: masividad y temperatura crítica",
+        "d": "El espesor de protección depende de la <strong>masividad del perfil (Hp/A)</strong> y de la temperatura crítica del acero, en torno a <strong>500-550 °C</strong>. Se justifica con ensayos <strong>UNE-EN 13381-8</strong> para intumescentes y <strong>UNE-EN 13381-4</strong> para morteros, realizados en laboratorio acreditado ENAC.",
+        "tag": "Cálculo"
+      }
+    ],
+    "nota": "En Catalunya la comprobación la validan, cuando aplica, un Organismo de Control (OCA/EIC) acreditado, los ajuntaments y els bombers de la Generalitat."
+  },
+  "certificado": {
+    "kicker": "Documentación",
+    "h2": "Certificado de aplicación visado, incluido en todas las obras",
+    "text": "No entregamos una obra sin su papeleo en regla. Cada proyecto se cierra con un certificado de aplicación visado que acredita qué producto se ha usado, en qué espesor y para qué resistencia al fuego.",
+    "bullets": [
+      { "s": "Válido ante bombers", "t": "y para la licencia de actividad y la póliza de tu aseguradora" },
+      { "s": "Con producto trazable", "t": "referencia del sistema, marcado CE y Declaración de Prestaciones (DoP)" },
+      { "s": "Control de espesores", "t": "mediciones en obra que respaldan la R o el EI conseguido" },
+      { "s": "Listo para el OCA/EIC", "t": "documentación preparada para la validación del Organismo de Control" }
+    ]
+  },
+  "sectores": {
+    "h2": "Sectores a los que damos servicio en Tarragona",
+    "intro": "La provincia tiene un tejido muy particular: gran industria química, puerto, turismo y agroindustria. Adaptamos la protección pasiva a cada uno.",
+    "items": [
+      {
+        "t": "Industria petroquímica y química",
+        "d": "El complejo petroquímico de Tarragona, uno de los mayores del sur de Europa, concentra plantas y naves con riesgo intrínseco medio y alto donde la estabilidad al fuego y la sectorización RSCIEI son innegociables. Trabajamos sobre estructuras de acero de gran porte y galerías de instalaciones.",
+        "rf": "Riesgo intrínseco medio-alto"
+      },
+      {
+        "t": "Logística y Puerto de Tarragona",
+        "d": "Las naves logísticas ligadas al Puerto y a los polígonos de Constantí y el Riu Clar exigen sectorizar grandes superficies y proteger estructura metálica de mucho metraje. Ahí el mortero proyectado y la sectorización marcan la diferencia en plazo y coste.",
+        "rf": "Naves y almacenes"
+      },
+      {
+        "t": "Hoteles y turismo de la Costa Daurada",
+        "d": "Salou, Cambrils, La Pineda y el entorno de PortAventura suman una enorme planta hotelera y de ocio sujeta al CTE DB-SI. Protegemos estructura vista, escaleras y madera de terrazas con acabados cuidados que no rompen la estética.",
+        "rf": "Uso pública concurrencia"
+      },
+      {
+        "t": "Bodegas y agroindustria",
+        "d": "Las bodegas del Priorat, la Terra Alta y el Baix Penedès, junto a la agroindustria de Reus (Agroreus) y las Terres de l'Ebre, combinan madera vista, naves de elaboración y cámaras que requieren tratamientos ignífugos y sellados a medida.",
+        "rf": "Madera y naves agrarias"
+      },
+      {
+        "t": "Comercio, oficinas y equipamientos",
+        "d": "Superficies comerciales, edificios de oficinas y equipamientos públicos en Tarragona, Reus, Valls o El Vendrell necesitan garantizar la R de su estructura y sectorizar locales de riesgo especial y aparcamientos.",
+        "rf": "R según uso y altura"
+      },
+      {
+        "t": "Rehabilitación y cambio de uso",
+        "d": "Reformas de naves antiguas, masías y edificios del casco histórico de Tortosa o Tarragona que cambian de uso y deben actualizar su estructura de acero, madera u hormigón a las exigencias actuales de protección pasiva.",
+        "rf": "Refuerzo estructural"
+      }
+    ]
+  },
+  "obras": {
+    "h2": "Obras y experiencia",
+    "intro": "Los números que respaldan nuestro trabajo en Catalunya.",
+    "stats": [
+      { "n": "+250.000", "l": "m² ignifugados" },
+      { "n": "+400", "l": "obras" },
+      { "n": "15", "l": "años de experiencia" },
+      { "n": "100%", "l": "obras certificadas" }
+    ],
+    "casos": [
+      {
+        "sector": "Industria química",
+        "t": "Nave de proceso en el Polígon Riu Clar (Tarragona)",
+        "d": "Protección de la estructura metálica de una nave del entorno petroquímico con mortero proyectado y sellado de pasos de instalaciones, cumpliendo el riesgo intrínseco exigido por el nuevo RSCIEI.",
+        "m2": "6.500 m²",
+        "metodo": "Mortero",
+        "rf": "R120",
+        "plazo": "14 días"
+      },
+      {
+        "sector": "Logística",
+        "t": "Plataforma logística en Constantí (Puerto de Tarragona)",
+        "d": "Ignifugación de pilares y cerchas y sectorización de un almacén ligado a la actividad portuaria, coordinándonos con el resto de gremios para no retrasar el fin de obra.",
+        "m2": "9.000 m²",
+        "metodo": "Mortero + placa",
+        "rf": "R90 / EI 120",
+        "plazo": "18 días"
+      },
+      {
+        "sector": "Hotelero",
+        "t": "Reforma de hotel en Salou (Costa Daurada)",
+        "d": "Pintura intumescente sobre estructura vista y tratamiento de madera en zonas comunes de un hotel, con acabado estético y certificado visado para la licencia de actividad.",
+        "m2": "2.200 m²",
+        "metodo": "Intumescente",
+        "rf": "R60",
+        "plazo": "9 días"
+      }
+    ]
+  },
+  "why": {
+    "h2": "Por qué elegirnos en Tarragona",
+    "intro": "Motivos de peso para confiarnos la protección pasiva de tu proyecto.",
+    "items": [
+      {
+        "h": "Conocemos la industria del sur de Catalunya",
+        "d": "Estamos habituados al lenguaje del <strong>complejo petroquímico</strong>, el Puerto y el nuevo <strong>RSCIEI (RD 164/2025)</strong>: sabemos qué pide una nave de riesgo intrínseco alto y cómo justificarlo."
+      },
+      {
+        "h": "Documentación que aguanta la inspección",
+        "d": "Entregamos <strong>certificado visado</strong>, DoP y control de espesores; papeleo pensado para bombers, para el OCA/EIC y para tu aseguradora."
+      },
+      {
+        "h": "No frenamos tu obra",
+        "d": "Con <strong>equipo y plataforma propios</strong> y coordinación con el resto de gremios, cumplimos plazos y no bloqueamos el fin de obra."
+      }
+    ]
+  },
+  "form": {
+    "h2": "Pide tu presupuesto de ignifugación en Tarragona",
+    "intro": "Cuéntanos qué necesitas y adjunta plano o fotos si los tienes. Te visitamos en 24-48 h y te enviamos un presupuesto cerrado, sin compromiso."
+  },
+  "faq": [
+    {
+      "q": "¿Cuánto cuesta ignifugar por metro cuadrado en Tarragona?",
+      "a": "Depende del sistema y de la resistencia exigida. Como orientación, la pintura intumescente ronda los 12-35 €/m² y el mortero ignífugo proyectado los 9-22 €/m²; el sellado cortafuegos parte de 30 €/ud y la sectorización con placa rígida se mueve entre 45 y 95 €/m². El precio final se cierra tras medir en obra, porque influyen la R necesaria, la masividad del perfil y el estado del soporte."
+    },
+    {
+      "q": "¿Es obligatorio ignifugar la estructura de mi edificio o nave?",
+      "a": "Sí cuando el proyecto lo exige. En edificación, el CTE DB-SI (Sección SI 6) fija la clase R de la estructura según el uso y la altura de evacuación. En industria, el nuevo RSCIEI (RD 164/2025) obliga a garantizar una estabilidad al fuego en función del riesgo intrínseco y de la configuración tipo A, B o C. Si la estructura no alcanza esos minutos por sí sola, hay que protegerla."
+    },
+    {
+      "q": "¿Qué diferencia hay entre pintura intumescente y mortero ignífugo?",
+      "a": "La pintura intumescente es una película delgada que ante el fuego se hincha y aísla el acero; da un acabado fino y estético, ideal para estructura vista. El mortero proyectado es una capa más gruesa y de aspecto rugoso, muy competitiva para grandes resistencias y mucho metraje, como las naves del polo químico o de la logística portuaria. Elegimos uno u otro según la R exigida, la estética y el presupuesto."
+    },
+    {
+      "q": "¿Qué significan exactamente R, EI y REI?",
+      "a": "Son las clasificaciones de resistencia al fuego de la UNE-EN 13501-2. R es la capacidad portante (que la estructura no colapse), E la integridad (que no pasen llamas ni gases calientes) e I el aislamiento térmico. EI se aplica a elementos separadores como tabiques o sectores, y REI cuando además soportan carga. El número que las acompaña (30, 60, 90, 120) son los minutos que deben resistir."
+    },
+    {
+      "q": "¿El certificado va incluido en el precio?",
+      "a": "Sí. Todas nuestras obras se entregan con el certificado de aplicación visado incluido, que detalla el producto empleado, su espesor y la resistencia al fuego conseguida. Es un documento válido para els bombers de la Generalitat, para la licencia de actividad y para tu compañía de seguros, y lo dejamos preparado para la validación del Organismo de Control."
+    },
+    {
+      "q": "¿Quién firma el certificado de ignifugación en Catalunya?",
+      "a": "La empresa aplicadora habilitada emite y visa el certificado de aplicación con los datos del sistema, los espesores y el marcado CE del producto (con su Declaración de Prestaciones). Cuando el proyecto lo requiere, esa documentación se acompaña del proyecto o dirección de un técnico competente y de la validación de un Organismo de Control acreditado (OCA/EIC), que es la figura habitual en Catalunya para dar por buena la protección ejecutada."
+    },
+    {
+      "q": "¿Cuánto tardáis en ejecutar una obra?",
+      "a": "La visita para medir la hacemos en 24-48 h. El plazo de ejecución depende del metraje y del sistema: una reforma hotelera con intumescente puede resolverse en poco más de una semana, mientras que una nave industrial de miles de metros con mortero y sectorización lleva dos o tres semanas. En todos los casos nos coordinamos con el resto de gremios para no bloquear el fin de obra."
+    },
+    {
+      "q": "¿La ignifugación necesita mantenimiento?",
+      "a": "La protección pasiva es muy duradera, pero conviene revisarla. En instalaciones industriales, el nuevo RSCIEI establece una inspección única cada 5 años en la que se comprueba también el estado de la protección estructural y los sellados. Recomendamos vigilar golpes, humedades o reformas que puedan dañar la capa aplicada y reparar cualquier zona afectada para no perder la resistencia certificada."
+    },
+    {
+      "q": "Mi estructura está oxidada, ¿se puede ignifugar igual?",
+      "a": "Sí, pero primero hay que preparar el soporte. La oxidación impide una buena adherencia, así que saneamos y tratamos el acero antes de aplicar el recubrimiento. Ese trabajo previo puede encarecer la obra entre un 15 % y un 30 %, pero es imprescindible: sin un soporte firme, ni la pintura intumescente ni el mortero garantizan la resistencia al fuego prevista."
+    },
+    {
+      "q": "Tengo una nave en el complejo petroquímico con riesgo intrínseco alto, ¿cómo lo abordáis?",
+      "a": "Partimos del riesgo intrínseco y de la configuración tipo A, B o C que marca el proyecto RSCIEI (RD 164/2025). A partir de ahí definimos la estabilidad al fuego de la estructura, la sectorización necesaria para limitar la superficie por sector y el sellado de todas las penetraciones de instalaciones. Usamos sistemas ensayados según UNE-EN 13381 y dejamos la documentación lista para la inspección quinquenal y para el Organismo de Control."
+    },
+    {
+      "q": "¿Trabajáis en la logística del Puerto y en los polígonos de Reus o el Vendrell?",
+      "a": "Sí, damos servicio en toda la provincia. Intervenimos habitualmente en naves logísticas de Constantí y el Riu Clar ligadas al Puerto de Tarragona, en la agroindustria de Reus y en los polígonos del Baix Penedès como El Vendrell. En estas naves de gran superficie solemos combinar mortero proyectado en la estructura con sectorización EI para dividir el volumen conforme a la normativa industrial."
+    }
+  ],
+  "ctaFinal": {
+    "h2": "Protege tu proyecto en Tarragona con garantías",
+    "p": "Del Camp de Tarragona a les Terres de l'Ebre, ponemos la protección pasiva de tu edificio o instalación en regla, con certificado visado y plazos cumplidos."
+  },
+  "cobertura": "Damos servicio en toda la provincia de Tarragona: Tarragonès, Baix Camp, Alt Camp, Baix Penedès, Conca de Barberà, Priorat, Ribera d'Ebre, Baix Ebre, Montsià y Terra Alta, con presencia en Tarragona, Reus, Cambrils, Salou, Valls, Tortosa, El Vendrell y Amposta."
+}

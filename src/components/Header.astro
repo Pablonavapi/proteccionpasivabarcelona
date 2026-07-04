@@ -6,6 +6,16 @@ const tel = `tel:+${EMPRESA.telefonoLink}`;
 const wa = `https://wa.me/${EMPRESA.whatsapp}`;
 const mail = `mailto:${EMPRESA.email}`;
 const showWa = !!EMPRESA.whatsapp;
+
+// Menú de zonas (provincias). La activa se resalta según la URL.
+const currentPath = Astro.url.pathname;
+const zonas = [
+  { nombre: 'Barcelona', href: '/' },
+  { nombre: 'Girona', href: '/ignifugaciones-girona/' },
+  { nombre: 'Tarragona', href: '/ignifugaciones-tarragona/' },
+  { nombre: 'Lleida', href: '/ignifugaciones-lleida/' },
+];
+const isActive = (href) => currentPath === href;
 ---
 
 <header class="ig-header">
@@ -37,7 +47,7 @@ const showWa = !!EMPRESA.whatsapp;
       <BrandMark />
       <span class="ig-brand-txt">
         <span class="ig-brand-name">{EMPRESA.nombre}</span>
-        <span class="ig-brand-tag">Protección pasiva contra incendios · Barcelona</span>
+        <span class="ig-brand-tag">Protección pasiva contra incendios · Catalunya</span>
       </span>
     </a>
 
@@ -58,4 +68,14 @@ const showWa = !!EMPRESA.whatsapp;
       </a>
     </div>
   </div>
+
+  <!-- Menú de zonas (provincias) -->
+  <nav class="ig-zonas" aria-label="Provincias donde trabajamos">
+    <div class="ig-zonas-inner">
+      <span class="ig-zonas-label">Zonas:</span>
+      {zonas.map((z) => (
+        <a href={z.href} aria-current={isActive(z.href) ? 'page' : undefined}>{z.nombre}</a>
+      ))}
+    </div>
+  </nav>
 </header>
