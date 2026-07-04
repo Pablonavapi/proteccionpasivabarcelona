@@ -6,13 +6,22 @@
     "desc": "Ignifugación en Girona y toda la provincia: estructura metálica, mortero y sellados cortafuegos. Presupuesto en 24-48 h y certificado visado incluido."
   },
   "hero": {
-    "h1a": "Ignifugación en Girona con certificado visado y",
-    "h1em": "obra sin bloqueos",
+    "h1a": "Empresa de ignifugación en Girona:",
+    "h1em": "protección pasiva de incendios",
     "sub": "Protegemos estructuras metálicas, forjados y pasos de instalaciones en toda la provincia de Girona, del Gironès al Alt Empordà. Equipo propio, empresa habilitada según el RIPCI y certificado válido para bomberos, seguro y licencia de actividad.",
     "promesas": [
-      { "s": "Visita a obra en 24-48 h", "t": "recorremos Girona, Figueres, Blanes u Olot para medir masividad y cerrar presupuesto sin compromiso." },
-      { "s": "Certificado de aplicación visado", "t": "incluido en cada proyecto y válido para licencia, bombers de la Generalitat y compañía de seguros." },
-      { "s": "No bloqueamos el fin de obra", "t": "nos coordinamos con el resto de gremios para no frenar la entrega de tu nave o local." }
+      {
+        "s": "Visita a obra en 24-48 h",
+        "t": "recorremos Girona, Figueres, Blanes u Olot para medir masividad y cerrar presupuesto sin compromiso."
+      },
+      {
+        "s": "Certificado de aplicación visado",
+        "t": "incluido en cada proyecto y válido para licencia, bombers de la Generalitat y compañía de seguros."
+      },
+      {
+        "s": "No bloqueamos el fin de obra",
+        "t": "nos coordinamos con el resto de gremios para no frenar la entrega de tu nave o local."
+      }
     ]
   },
   "empresa": {
@@ -20,9 +29,18 @@
     "h2": "Una empresa habilitada que ignifuga de Riudellots a la Costa Brava",
     "text": "En Grupo Ignífugo S.L. llevamos la protección pasiva contra incendios a cualquier punto de la provincia con <strong>equipo propio, furgoneta y plataforma elevadora</strong>. Somos <strong>empresa habilitada PCI conforme al RIPCI (RD 513/2017)</strong> y respondemos con un <strong>seguro de responsabilidad civil de 800.000 €</strong>, de modo que la promotora, el constructor y la propiedad trabajan con la misma tranquilidad en Girona capital que en un matadero del Empordà.",
     "bullets": [
-      { "s": "Cobertura comarcal completa", "t": "Gironès, La Selva, Alt y Baix Empordà, Garrotxa, Pla de l'Estany, Ripollès y Cerdanya." },
-      { "s": "Cuadrilla estable y medios propios", "t": "sin subcontratas: los mismos aplicadores que empiezan la obra la terminan y la certifican." },
-      { "s": "Experiencia en el tejido local", "t": "naves agroalimentarias, cámaras frigoríficas, hoteles de playa y logística de Vilamalla o Riudellots." }
+      {
+        "s": "Cobertura comarcal completa",
+        "t": "Gironès, La Selva, Alt y Baix Empordà, Garrotxa, Pla de l'Estany, Ripollès y Cerdanya."
+      },
+      {
+        "s": "Cuadrilla estable y medios propios",
+        "t": "sin subcontratas: los mismos aplicadores que empiezan la obra la terminan y la certifican."
+      },
+      {
+        "s": "Experiencia en el tejido local",
+        "t": "naves agroalimentarias, cámaras frigoríficas, hoteles de playa y logística de Vilamalla o Riudellots."
+      }
     ]
   },
   "servicios": {
@@ -74,21 +92,48 @@
   "precio": {
     "intro": "Damos un precio cerrado por metro cuadrado o por unidad después de ver la obra, porque cada nave de Girona parte de una situación distinta. Estos rangos orientativos te ayudan a dimensionar la partida antes de la visita.",
     "factores": [
-      { "h": "Resistencia exigida (R)", "d": "no cuesta lo mismo un R30 que un R120: a mayor resistencia, más espesor y más producto por metro." },
-      { "h": "Masividad del perfil (Hp/A)", "d": "los perfiles ligeros calientan antes y necesitan más recubrimiento que los perfiles macizos." },
-      { "h": "Estado del soporte", "d": "una estructura oxidada o sucia obliga a preparar la superficie y puede sumar un 15-30 % de trabajo previo." },
-      { "h": "Superficie total de obra", "d": "a más metros contratados en una misma nave, mejor rendimiento del equipo y precio más ajustado por m²." }
+      {
+        "h": "Resistencia exigida (R)",
+        "d": "no cuesta lo mismo un R30 que un R120: a mayor resistencia, más espesor y más producto por metro."
+      },
+      {
+        "h": "Masividad del perfil (Hp/A)",
+        "d": "los perfiles ligeros calientan antes y necesitan más recubrimiento que los perfiles macizos."
+      },
+      {
+        "h": "Estado del soporte",
+        "d": "una estructura oxidada o sucia obliga a preparar la superficie y puede sumar un 15-30 % de trabajo previo."
+      },
+      {
+        "h": "Superficie total de obra",
+        "d": "a más metros contratados en una misma nave, mejor rendimiento del equipo y precio más ajustado por m²."
+      }
     ],
     "nota": "A modo orientativo: <strong>pintura intumescente 12-35 €/m²</strong>, <strong>mortero ignífugo proyectado 9-22 €/m²</strong>, <strong>sellado cortafuegos desde 30 €/ud</strong> y <strong>sectorización con placa rígida 45-95 €/m²</strong>. El presupuesto definitivo siempre se cierra tras la visita a obra."
   },
   "proceso": {
     "intro": "Trabajamos con un método claro para que la ignifugación no se convierta en el cuello de botella de tu obra en Girona. En cinco pasos pasamos de la primera llamada al certificado firmado.",
     "pasos": [
-      { "h": "Visita y toma de datos", "d": "medimos la estructura, calculamos la masividad de los perfiles y revisamos qué pide el proyecto contra incendios." },
-      { "h": "Presupuesto en 24-48 h", "d": "recibes una oferta detallada por sistema, espesor y metros, sin sorpresas ni partidas ocultas." },
-      { "h": "Preparación del soporte", "d": "limpiamos, desengrasamos y, si hace falta, tratamos el óxido para que el producto agarre y rinda como marca su ficha." },
-      { "h": "Aplicación y control de espesor", "d": "aplicamos el sistema y verificamos el espesor húmedo y seco con galga para garantizar la resistencia contratada." },
-      { "h": "Certificado visado y entrega", "d": "emitimos el certificado de aplicación visado y coordinamos con los demás gremios para no frenar el fin de obra." }
+      {
+        "h": "Visita y toma de datos",
+        "d": "medimos la estructura, calculamos la masividad de los perfiles y revisamos qué pide el proyecto contra incendios."
+      },
+      {
+        "h": "Presupuesto en 24-48 h",
+        "d": "recibes una oferta detallada por sistema, espesor y metros, sin sorpresas ni partidas ocultas."
+      },
+      {
+        "h": "Preparación del soporte",
+        "d": "limpiamos, desengrasamos y, si hace falta, tratamos el óxido para que el producto agarre y rinda como marca su ficha."
+      },
+      {
+        "h": "Aplicación y control de espesor",
+        "d": "aplicamos el sistema y verificamos el espesor húmedo y seco con galga para garantizar la resistencia contratada."
+      },
+      {
+        "h": "Certificado visado y entrega",
+        "d": "emitimos el certificado de aplicación visado y coordinamos con los demás gremios para no frenar el fin de obra."
+      }
     ]
   },
   "normativa": {
@@ -122,10 +167,22 @@
     "h2": "Un certificado visado que te sirve de verdad",
     "text": "Toda ignifugación que ejecutamos se entrega con su certificado de aplicación visado por técnico competente. No es un papel de trámite: es la prueba de que el sistema, el espesor y la resistencia cumplen lo proyectado.",
     "bullets": [
-      { "s": "Válido para licencia de actividad", "t": "el ajuntament de Girona, Figueres o el que corresponda lo admite como documentación de PCI." },
-      { "s": "Aceptado por bombers y seguro", "t": "acredita la protección ante la Generalitat y tu compañía aseguradora en caso de siniestro." },
-      { "s": "Con productos trazables", "t": "detallamos marcado CE, DoP y lote de cada producto empleado en tu obra." },
-      { "s": "Listo para el Organismo de Control", "t": "documentación preparada para la validación de la OCA/EIC cuando el proyecto lo requiere." }
+      {
+        "s": "Válido para licencia de actividad",
+        "t": "el ajuntament de Girona, Figueres o el que corresponda lo admite como documentación de PCI."
+      },
+      {
+        "s": "Aceptado por bombers y seguro",
+        "t": "acredita la protección ante la Generalitat y tu compañía aseguradora en caso de siniestro."
+      },
+      {
+        "s": "Con productos trazables",
+        "t": "detallamos marcado CE, DoP y lote de cada producto empleado en tu obra."
+      },
+      {
+        "s": "Listo para el Organismo de Control",
+        "t": "documentación preparada para la validación de la OCA/EIC cuando el proyecto lo requiere."
+      }
     ]
   },
   "sectores": {
@@ -168,10 +225,22 @@
     "h2": "Obras de ignifugación ejecutadas en Girona y provincia",
     "intro": "Una muestra del trabajo que respalda nuestra experiencia en la protección pasiva contra incendios.",
     "stats": [
-      { "n": "+250.000", "l": "m² ignifugados" },
-      { "n": "+400", "l": "obras" },
-      { "n": "15", "l": "años de experiencia" },
-      { "n": "100%", "l": "obras certificadas" }
+      {
+        "n": "+250.000",
+        "l": "m² ignifugados"
+      },
+      {
+        "n": "+400",
+        "l": "obras"
+      },
+      {
+        "n": "15",
+        "l": "años de experiencia"
+      },
+      {
+        "n": "100%",
+        "l": "obras certificadas"
+      }
     ],
     "casos": [
       {
@@ -207,9 +276,18 @@
     "h2": "Por qué elegir a Grupo Ignífugo en Girona",
     "intro": "Somos el equipo que resuelve la PCI de tu obra sin sustos ni retrasos.",
     "items": [
-      { "h": "Empresa habilitada y asegurada", "d": "Trabajamos como <strong>empresa habilitada PCI conforme al RIPCI</strong> y con un <strong>seguro de responsabilidad civil de 800.000 €</strong>, así que respondes ante la propiedad con total garantía." },
-      { "h": "Rapidez sin frenar la obra", "d": "Visitamos y presupuestamos en <strong>24-48 h</strong> y nos adaptamos al calendario del resto de gremios para que la ignifugación no bloquee el fin de obra." },
-      { "h": "Certificado que abre puertas", "d": "Cada trabajo se cierra con <strong>certificado visado</strong> válido para licencia, bombers y seguro, con productos trazables por marcado CE y DoP." }
+      {
+        "h": "Empresa habilitada y asegurada",
+        "d": "Trabajamos como <strong>empresa habilitada PCI conforme al RIPCI</strong> y con un <strong>seguro de responsabilidad civil de 800.000 €</strong>, así que respondes ante la propiedad con total garantía."
+      },
+      {
+        "h": "Rapidez sin frenar la obra",
+        "d": "Visitamos y presupuestamos en <strong>24-48 h</strong> y nos adaptamos al calendario del resto de gremios para que la ignifugación no bloquee el fin de obra."
+      },
+      {
+        "h": "Certificado que abre puertas",
+        "d": "Cada trabajo se cierra con <strong>certificado visado</strong> válido para licencia, bombers y seguro, con productos trazables por marcado CE y DoP."
+      }
     ]
   },
   "form": {

@@ -6,13 +6,22 @@
     "desc": "Ignifugación en Tarragona para industria petroquímica, naves y hoteles. Pintura intumescente, mortero y sectorización con certificado visado. Visita en 24-48 h."
   },
   "hero": {
-    "h1a": "Ignifugación en Tarragona para estructuras, naves industriales y ",
-    "h1em": "riesgo químico",
+    "h1a": "Empresa de ignifugación en Tarragona:",
+    "h1em": "protección pasiva de incendios",
     "sub": "Protegemos el acero, la madera y el hormigón de tu edificio o planta con resistencias R30 a R180 y sectorización certificada. Trabajamos codo con codo con la industria del complejo petroquímico, el Puerto y la Costa Daurada.",
     "promesas": [
-      { "s": "Visita a obra en 24-48 h", "t": "en toda la provincia, del Tarragonès al Montsià" },
-      { "s": "Certificado visado incluido", "t": "válido para bombers, licencia de actividad y seguro" },
-      { "s": "Equipo propio", "t": "furgoneta y plataforma elevadora, sin subcontratas" }
+      {
+        "s": "Visita a obra en 24-48 h",
+        "t": "en toda la provincia, del Tarragonès al Montsià"
+      },
+      {
+        "s": "Certificado visado incluido",
+        "t": "válido para bombers, licencia de actividad y seguro"
+      },
+      {
+        "s": "Equipo propio",
+        "t": "furgoneta y plataforma elevadora, sin subcontratas"
+      }
     ]
   },
   "empresa": {
@@ -20,9 +29,18 @@
     "h2": "Especialistas en protección pasiva para el sur de Catalunya",
     "text": "Somos una empresa <strong>habilitada PCI conforme al RIPCI (RD 513/2017)</strong> con equipo propio, medios de acceso en altura y seguro de responsabilidad civil de <strong>800.000 €</strong>. Ejecutamos ignifugaciones en un entorno tan exigente como el de Tarragona, donde conviven la gran industria química, la logística portuaria y el turismo, y donde cada proyecto se cierra con documentación que aguanta la revisión de bombers y del Organismo de Control.",
     "bullets": [
-      { "s": "Enfoque industrial", "t": "acostumbrados a naves con riesgo intrínseco medio y alto y sectorización RSCIEI" },
-      { "s": "Sin bloquear el fin de obra", "t": "nos coordinamos con el resto de gremios para no frenar tu planning" },
-      { "s": "Producto trazable", "t": "solo materiales con marcado CE y Declaración de Prestaciones (DoP)" }
+      {
+        "s": "Enfoque industrial",
+        "t": "acostumbrados a naves con riesgo intrínseco medio y alto y sectorización RSCIEI"
+      },
+      {
+        "s": "Sin bloquear el fin de obra",
+        "t": "nos coordinamos con el resto de gremios para no frenar tu planning"
+      },
+      {
+        "s": "Producto trazable",
+        "t": "solo materiales con marcado CE y Declaración de Prestaciones (DoP)"
+      }
     ]
   },
   "servicios": {
@@ -74,21 +92,48 @@
   "precio": {
     "intro": "Cada obra se valora tras la visita técnica, pero estos precios orientativos te ayudan a hacerte una idea antes de pedir presupuesto en Tarragona.",
     "factores": [
-      { "h": "Resistencia exigida (R)", "d": "no cuesta lo mismo llegar a R30 que a R120 o R180; a más minutos, más espesor y más material." },
-      { "h": "Masividad del perfil (Hp/A)", "d": "los perfiles esbeltos se calientan antes y necesitan más recubrimiento que los perfiles macizos." },
-      { "h": "Estado del soporte", "d": "una estructura oxidada obliga a preparar la superficie y puede encarecer la obra entre un 15 % y un 30 %." },
-      { "h": "Superficie total", "d": "a mayor metraje, mejor rendimiento y precio por m²; las grandes naves industriales optimizan mucho el coste." }
+      {
+        "h": "Resistencia exigida (R)",
+        "d": "no cuesta lo mismo llegar a R30 que a R120 o R180; a más minutos, más espesor y más material."
+      },
+      {
+        "h": "Masividad del perfil (Hp/A)",
+        "d": "los perfiles esbeltos se calientan antes y necesitan más recubrimiento que los perfiles macizos."
+      },
+      {
+        "h": "Estado del soporte",
+        "d": "una estructura oxidada obliga a preparar la superficie y puede encarecer la obra entre un 15 % y un 30 %."
+      },
+      {
+        "h": "Superficie total",
+        "d": "a mayor metraje, mejor rendimiento y precio por m²; las grandes naves industriales optimizan mucho el coste."
+      }
     ],
     "nota": "Como referencia: <strong>pintura intumescente 12-35 €/m²</strong>, <strong>mortero proyectado 9-22 €/m²</strong>, sellado cortafuegos desde 30 €/ud y sectorización con placa rígida 45-95 €/m². Te enviamos el presupuesto cerrado tras medir en obra."
   },
   "proceso": {
     "intro": "Un método claro para que sepas en todo momento qué pasa en tu obra, sin sorpresas ni retrasos.",
     "pasos": [
-      { "h": "Visita a obra en 24-48 h", "d": "vamos a medir, revisar el estado del soporte y entender el uso del edificio o la instalación." },
-      { "h": "Cálculo y presupuesto", "d": "determinamos la R necesaria según proyecto, el espesor por masividad y te pasamos oferta cerrada." },
-      { "h": "Planificación con los gremios", "d": "encajamos nuestra intervención en tu planning para no frenar al resto de oficios ni el fin de obra." },
-      { "h": "Aplicación certificada", "d": "ejecutamos con producto con marcado CE y controlamos espesores húmedos y secos durante los trabajos." },
-      { "h": "Certificado y cierre", "d": "entregamos el certificado de aplicación visado y la documentación técnica lista para bombers y seguro." }
+      {
+        "h": "Visita a obra en 24-48 h",
+        "d": "vamos a medir, revisar el estado del soporte y entender el uso del edificio o la instalación."
+      },
+      {
+        "h": "Cálculo y presupuesto",
+        "d": "determinamos la R necesaria según proyecto, el espesor por masividad y te pasamos oferta cerrada."
+      },
+      {
+        "h": "Planificación con los gremios",
+        "d": "encajamos nuestra intervención en tu planning para no frenar al resto de oficios ni el fin de obra."
+      },
+      {
+        "h": "Aplicación certificada",
+        "d": "ejecutamos con producto con marcado CE y controlamos espesores húmedos y secos durante los trabajos."
+      },
+      {
+        "h": "Certificado y cierre",
+        "d": "entregamos el certificado de aplicación visado y la documentación técnica lista para bombers y seguro."
+      }
     ]
   },
   "normativa": {
@@ -122,10 +167,22 @@
     "h2": "Certificado de aplicación visado, incluido en todas las obras",
     "text": "No entregamos una obra sin su papeleo en regla. Cada proyecto se cierra con un certificado de aplicación visado que acredita qué producto se ha usado, en qué espesor y para qué resistencia al fuego.",
     "bullets": [
-      { "s": "Válido ante bombers", "t": "y para la licencia de actividad y la póliza de tu aseguradora" },
-      { "s": "Con producto trazable", "t": "referencia del sistema, marcado CE y Declaración de Prestaciones (DoP)" },
-      { "s": "Control de espesores", "t": "mediciones en obra que respaldan la R o el EI conseguido" },
-      { "s": "Listo para el OCA/EIC", "t": "documentación preparada para la validación del Organismo de Control" }
+      {
+        "s": "Válido ante bombers",
+        "t": "y para la licencia de actividad y la póliza de tu aseguradora"
+      },
+      {
+        "s": "Con producto trazable",
+        "t": "referencia del sistema, marcado CE y Declaración de Prestaciones (DoP)"
+      },
+      {
+        "s": "Control de espesores",
+        "t": "mediciones en obra que respaldan la R o el EI conseguido"
+      },
+      {
+        "s": "Listo para el OCA/EIC",
+        "t": "documentación preparada para la validación del Organismo de Control"
+      }
     ]
   },
   "sectores": {
@@ -168,10 +225,22 @@
     "h2": "Obras y experiencia",
     "intro": "Los números que respaldan nuestro trabajo en Catalunya.",
     "stats": [
-      { "n": "+250.000", "l": "m² ignifugados" },
-      { "n": "+400", "l": "obras" },
-      { "n": "15", "l": "años de experiencia" },
-      { "n": "100%", "l": "obras certificadas" }
+      {
+        "n": "+250.000",
+        "l": "m² ignifugados"
+      },
+      {
+        "n": "+400",
+        "l": "obras"
+      },
+      {
+        "n": "15",
+        "l": "años de experiencia"
+      },
+      {
+        "n": "100%",
+        "l": "obras certificadas"
+      }
     ],
     "casos": [
       {
