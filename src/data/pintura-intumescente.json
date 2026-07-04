@@ -1,0 +1,111 @@
+{
+  "servicio": "Pintura intumescente",
+  "servicioLargo": "pintura intumescente",
+  "slug": "pintura-intumescente-barcelona",
+  "meta": {
+    "title": "Pintura intumescente en Barcelona | Estructura vista",
+    "desc": "Pintura intumescente en Barcelona para estructura metálica vista: R30 a R120, acabado estético y certificado visado. Visita a obra y presupuesto en 24-48 h."
+  },
+  "hero": {
+    "h1a": "Pintura intumescente en Barcelona para tu estructura metálica",
+    "h1em": "vista y protegida",
+    "sub": "Protegemos pilares y vigas de acero con recubrimiento intumescente que se hincha con el fuego y evita el colapso, manteniendo el perfil metálico a la vista con acabado tipo pintura. De R30 a R120, con certificado válido para licencia, bomberos y seguro.",
+    "promesas": [
+      { "s": "Visita a obra en 24-48 h", "t": "medimos la masividad perfil a perfil en Barcelona y provincia y cerramos un presupuesto en firme sin compromiso." },
+      { "s": "Espesor calculado y verificado", "t": "prescribimos las micras de película seca según la R exigida y las comprobamos con medidor de espesores." },
+      { "s": "Certificado de aplicación visado", "t": "incluido en cada obra y válido para la licencia de actividad, los bomberos y la compañía de seguros." }
+    ]
+  },
+  "queEs": {
+    "kicker": "Protección reactiva del acero",
+    "h2": "¿Qué es la pintura intumescente y cómo funciona?",
+    "parrafos": [
+      "La pintura intumescente es un <strong>recubrimiento reactivo</strong> que protege el acero frente al fuego sin ocultarlo. En condiciones normales se comporta como una pintura convencional, pero cuando la temperatura del incendio supera los <strong>200-250 °C reacciona y se hincha (intumescencia)</strong> hasta decenas de veces su espesor original, formando una espuma carbonosa aislante llamada char.",
+      "Ese char actúa como una manta térmica: <strong>retrasa que el acero alcance su temperatura crítica (unos 500-550 °C)</strong>, que es la temperatura a la que el perfil pierde resistencia y la estructura puede colapsar. Cuantos más minutos aguante el acero por debajo de ese umbral, mayor es la resistencia al fuego (R) que conseguimos: R30, R60, R90 o R120.",
+      "A diferencia del mortero proyectado, la pintura intumescente <strong>mantiene el perfil metálico visto</strong> con un acabado estético tipo pintura y en el color que elija el proyecto. Por eso es la solución preferida cuando la estructura de acero queda a la vista y prima la limpieza visual: oficinas, comercios, restaurantes y arquitectura de estructura vista."
+    ]
+  },
+  "ventajas": {
+    "h2": "Ventajas de proteger el acero con pintura intumescente",
+    "intro": "No es solo una capa de color: es un sistema de protección al fuego certificado que resuelve la resistencia exigida sin renunciar al diseño de la estructura vista.",
+    "items": [
+      { "t": "Deja la estructura vista", "d": "Respeta la geometría del pilar o la viga y ofrece un acabado tipo pintura, ideal cuando el acero forma parte de la estética del local o el edificio." },
+      { "t": "Añade muy poco peso y espesor", "d": "Se aplica en micras, no en centímetros, por lo que apenas carga la estructura ni resta espacio útil frente a las soluciones de mortero." },
+      { "t": "Acabado en el color del proyecto", "d": "La capa de sellado se puede tintar, así la protección contra incendios se integra con el interiorismo en lugar de imponerse." },
+      { "t": "Resistencia calculada perfil a perfil", "d": "El espesor de película se prescribe según la masividad de cada perfil y la R del proyecto, sin aplicar de más ni de menos." },
+      { "t": "Certificada y trazable", "d": "Productos con marcado CE, Declaración de Prestaciones y ensayo UNE-EN 13381-8, más el certificado de aplicación visado que exige la administración." }
+    ]
+  },
+  "tecnico": {
+    "h2": "Cómo aplicamos la pintura intumescente: sistema y espesores",
+    "intro": "La eficacia del recubrimiento depende de aplicar el sistema completo y el espesor correcto. Esto es lo que hay detrás de cada obra bien ejecutada.",
+    "cards": [
+      { "h": "Sistema de tres capas", "d": "Aplicamos una <strong>imprimación anticorrosiva compatible</strong>, una o varias <strong>capas intumescentes</strong> con el espesor prescrito y un <strong>sellador de acabado</strong> que protege el char y aporta el color. Las tres capas trabajan juntas: si falta una, el conjunto no rinde.", "tag": "3 capas" },
+      { "h": "Espesor de película seca (DFT)", "d": "El <strong>DFT en micras es lo que determina la resistencia alcanzada</strong>. Se calcula perfil a perfil según su masividad (factor de forma Hp/A) y la R exigida, y se verifica con <strong>medidor de espesores</strong> una vez seco para dejarlo documentado.", "tag": "Micras (DFT)" },
+      { "h": "Factor de forma Hp/A", "d": "No todos los perfiles piden lo mismo. Un perfil <strong>esbelto y muy expuesto (Hp/A alto) se calienta antes</strong> y necesita más micras que uno macizo, por eso medimos cada pieza en lugar de aplicar un espesor único a toda la obra.", "tag": "Masividad" },
+      { "h": "Aplicación airless", "d": "Trabajamos preferentemente con <strong>equipo airless</strong> por calidad de película y rapidez, y rematamos con brocha o rodillo donde el acceso lo exige. Usamos sistemas homologados de fabricantes como <strong>Promat o Tecresa</strong>.", "tag": "Airless" }
+    ]
+  },
+  "proceso": {
+    "intro": "Un método claro para que la pintura intumescente pase la inspección a la primera y no frene el fin de obra.",
+    "pasos": [
+      { "h": "Visita y toma de datos", "d": "Vamos a la obra, identificamos los perfiles, medimos su masividad y confirmamos la R que exige el proyecto." },
+      { "h": "Cálculo de espesores", "d": "Prescribimos las micras de cada perfil según su factor de forma y la resistencia objetivo, y preparamos el presupuesto en firme." },
+      { "h": "Preparación del soporte", "d": "Limpiamos el acero y sanamos la corrosión hasta el grado necesario para que la imprimación y el intumescente agarren bien." },
+      { "h": "Aplicación del sistema", "d": "Damos imprimación, capa intumescente al espesor prescrito y sellador de acabado, dejando el secado que indica la ficha técnica." },
+      { "h": "Control y certificado", "d": "Verificamos el espesor con medidor, documentamos la obra y entregamos el certificado de aplicación visado." }
+    ]
+  },
+  "precio": {
+    "h2": "¿Cuánto cuesta la pintura intumescente por m²?",
+    "intro": "El precio se mueve dentro de una horquilla porque cada obra tiene su resistencia, sus perfiles y su estado de soporte. Como orientación:",
+    "rango": "12 – 35 €/m²",
+    "factores": [
+      { "h": "La resistencia exigida (R)", "d": "Pasar de R30 a R90 o R120 implica más micras de intumescente y, por tanto, más material y más coste por metro." },
+      { "h": "La masividad del perfil", "d": "Los perfiles esbeltos y muy expuestos necesitan más espesor que los macizos, así que encarecen el metro cuadrado protegido." },
+      { "h": "El estado del soporte", "d": "Una estructura oxidada obliga a preparación previa y sanear la corrosión, lo que suele suponer un sobrecoste del 15-30 %." },
+      { "h": "La superficie y el acceso", "d": "El volumen de obra y la necesidad de plataforma elevadora o trabajos en altura influyen en el precio final." }
+    ],
+    "nota": "Estas cifras son orientativas: el precio real siempre se cierra tras la visita a obra, cuando conocemos los perfiles y su estado. <strong>La visita y el presupuesto son gratuitos y sin compromiso, y los tenemos listos en 24-48 h.</strong>"
+  },
+  "aplicaciones": {
+    "h2": "Dónde se usa la pintura intumescente",
+    "intro": "Es la protección de referencia siempre que la estructura de acero queda a la vista y se busca un acabado limpio, en obra nueva o en reforma.",
+    "items": [
+      { "t": "Oficinas y espacios de trabajo", "d": "Protege pilares y vigas vistas en reformas de oficinas donde el acero forma parte del diseño interior." },
+      { "t": "Comercios y locales", "d": "Resuelve la resistencia al fuego de la estructura sin perder acabado en tiendas, showrooms y locales comerciales." },
+      { "t": "Restaurantes y hostelería", "d": "Deja la estructura metálica limpia y en color en restaurantes, bares y hoteles de estilo industrial." },
+      { "t": "Arquitectura de estructura vista", "d": "Ideal en proyectos que dejan el acero expuesto como elemento arquitectónico y no admiten el mortero." },
+      { "t": "Entreplantas y altillos metálicos", "d": "Protege las entreplantas de acero añadidas en naves y locales sin cargar la estructura con espesores de mortero." },
+      { "t": "Rehabilitación y refuerzos de acero", "d": "Aporta la R necesaria a estructuras metálicas nuevas o de refuerzo en edificios existentes que se reforman." }
+    ]
+  },
+  "obras": {
+    "h2": "Obras de pintura intumescente en Barcelona",
+    "intro": "Algunos proyectos recientes de estructura vista protegida con recubrimiento intumescente.",
+    "casos": [
+      { "sector": "Oficinas", "t": "Oficinas diáfanas en el 22@ (Barcelona)", "d": "Protección de pilares y vigas vistas de una planta de oficinas rehabilitada, con acabado en gris para integrarse con el interiorismo.", "m2": "1.800 m²", "metodo": "Intumescente", "rf": "R90", "plazo": "7 días" },
+      { "sector": "Retail", "t": "Local comercial en L'Hospitalet de Llobregat", "d": "Recubrimiento intumescente sobre la estructura metálica vista de un local de doble altura antes de su apertura al público.", "m2": "950 m²", "metodo": "Intumescente", "rf": "R60", "plazo": "5 días" },
+      { "sector": "Hostelería", "t": "Restaurante de estilo industrial en Badalona", "d": "Estructura de acero vista tratada con pintura intumescente en negro, manteniendo el aspecto industrial del proyecto de interiorismo.", "m2": "620 m²", "metodo": "Intumescente", "rf": "R30", "plazo": "4 días" }
+    ]
+  },
+  "relacion": {
+    "h2": "La pintura intumescente dentro de la protección pasiva",
+    "texto": "La pintura intumescente es <strong>una de las técnicas de la protección pasiva contra incendios</strong>: la que se elige cuando la estructura metálica queda vista y prima el acabado, el menor peso y la limpieza visual. Es una solución concreta dentro de un abanico más amplio de ignifugación de estructuras, sellados y sectorización. Cuando la estructura va <strong>oculta tras falsos techos, o en grandes naves y exigencias de resistencia muy altas</strong>, suele salir más a cuenta el <strong>mortero ignífugo proyectado</strong>, más económico por metro y con mayor capacidad de aislamiento. Si aún no tienes claro qué técnica pide tu proyecto, en la visita a obra te asesoramos sobre cuál es la más adecuada."
+  },
+  "faq": [
+    { "q": "¿Qué es exactamente la pintura intumescente?", "a": "Es un recubrimiento reactivo que se aplica sobre el acero para protegerlo del fuego. En frío parece una pintura normal, pero al superar los 200-250 °C reacciona y se hincha formando una espuma aislante (char) que retrasa el calentamiento del perfil. Su gran ventaja es que deja la estructura metálica a la vista con acabado estético." },
+    { "q": "¿Cómo funciona frente a un incendio?", "a": "Cuando el fuego eleva la temperatura por encima de unos 200-250 °C, el recubrimiento se expande decenas de veces su espesor y crea una capa carbonosa que aísla el acero. Así retrasa que el perfil alcance su temperatura crítica (unos 500-550 °C), que es cuando pierde resistencia y la estructura podría colapsar." },
+    { "q": "¿Cuánto cuesta la pintura intumescente por m²?", "a": "Como orientación, se mueve entre 12 y 35 €/m². El precio depende de la resistencia exigida (R30, R60, R90 o R120), de la masividad de los perfiles y del estado del soporte; una estructura oxidada que necesita preparación previa suele suponer un 15-30 % más. El precio en firme siempre lo cerramos tras la visita a obra." },
+    { "q": "¿Qué diferencia hay entre pintura intumescente y mortero ignífugo?", "a": "La pintura intumescente se aplica en micras y deja el perfil visto con acabado tipo pintura, ideal cuando la estructura se ve y prima la estética. El mortero se proyecta con espesores de centímetros, es más económico y se usa cuando la estructura va oculta o para resistencias muy altas. Ambas son técnicas de protección pasiva; elegimos la adecuada según el caso." },
+    { "q": "¿Qué resistencia al fuego alcanza?", "a": "Con pintura intumescente se consiguen habitualmente clasificaciones R30, R60, R90 e incluso R120. Para resistencias muy altas puede convenir pasar al mortero proyectado. La R real se logra aplicando el espesor de película seca (DFT) que corresponde a cada perfil según su masividad y la exigencia del proyecto." },
+    { "q": "¿Se puede aplicar sobre estructura ya pintada u oxidada?", "a": "Sí, pero primero hay que preparar el soporte. Si el acero está oxidado, saneamos la corrosión y aplicamos una imprimación anticorrosiva compatible con el sistema intumescente. Sobre pinturas antiguas hay que comprobar la compatibilidad y su adherencia; a veces conviene retirarlas. Esta preparación suele añadir un 15-30 % al presupuesto." },
+    { "q": "¿La pintura intumescente mantiene el acabado visto?", "a": "Sí, esa es precisamente su mayor ventaja. El sistema se remata con un sellador de acabado que se puede tintar en el color del proyecto, de modo que la estructura de acero queda a la vista con aspecto de pintura y sin ocultar la geometría de pilares y vigas." },
+    { "q": "¿Cuánto dura y qué mantenimiento necesita?", "a": "Bien aplicada y en interior es una protección duradera que no requiere apenas mantenimiento. Conviene revisar periódicamente que la capa no presente golpes, desconchones o humedades que la dañen, sobre todo en ambientes semiexpuestos o exteriores, donde se emplean sistemas con la Evaluación Técnica Europea (ETA) adecuada a esa exposición. Cualquier zona deteriorada se repara puntualmente." },
+    { "q": "¿Entregáis certificado válido para bomberos y licencia?", "a": "Sí. Trabajamos con productos con marcado CE, Declaración de Prestaciones (DoP) y ensayo según la UNE-EN 13381-8, y entregamos el certificado de aplicación visado incluido en la obra, con los espesores verificados con medidor. Es el documento válido para la licencia de actividad, los bomberos y la compañía de seguros." }
+  ],
+  "cta": {
+    "h2": "Protege tu estructura vista con pintura intumescente",
+    "p": "Cuéntanos tu proyecto en Barcelona y en 24-48 h tendrás la visita a obra y un presupuesto en firme, con certificado visado incluido."
+  }
+}

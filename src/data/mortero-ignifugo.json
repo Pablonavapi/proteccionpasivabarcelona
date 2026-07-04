@@ -1,0 +1,111 @@
+{
+  "servicio": "Mortero ignífugo proyectado",
+  "servicioLargo": "mortero ignífugo proyectado",
+  "slug": "mortero-ignifugo-proyectado-barcelona",
+  "meta": {
+    "title": "Mortero Ignífugo Proyectado en Barcelona | Grupo Ignífugo",
+    "desc": "Mortero ignífugo proyectado en Barcelona para estructura metálica: perlita-vermiculita y lana de roca, hasta R180. Presupuesto en 24-48 h y certificado visado."
+  },
+  "hero": {
+    "h1a": "Mortero ignífugo proyectado en Barcelona para",
+    "h1em": "estructura metálica",
+    "sub": "Proyectamos mortero mineral incombustible sobre vigas y pilares de acero para garantizar la resistencia al fuego exigida. La solución más competitiva por m² en naves, parkings y forjados de gran superficie.",
+    "promesas": [
+      { "s": "Presupuesto y visita a obra en 24-48 h", "t": " con medición del espesor según la masividad de cada perfil." },
+      { "s": "Certificado de aplicación visado", "t": ", válido para licencia, bomberos y compañía de seguros." },
+      { "s": "Equipo de proyección propio", "t": " con furgoneta y plataforma elevadora: no bloqueamos el fin de obra." }
+    ]
+  },
+  "queEs": {
+    "kicker": "La técnica de protección pasiva más económica por m²",
+    "h2": "¿Qué es el mortero ignífugo proyectado y cómo funciona?",
+    "parrafos": [
+      "El <strong>mortero ignífugo proyectado</strong> es un revestimiento mineral que se aplica por proyección mecánica, en vía húmeda, directamente sobre la estructura de acero. A diferencia de la pintura intumescente, no reacciona ni se hincha con el calor: protege por su <strong>baja conductividad térmica</strong> desde el primer instante del incendio, formando una barrera aislante que envuelve por completo el perfil metálico.",
+      "Existen dos grandes familias. El mortero de <strong>perlita y vermiculita</strong> combina estos minerales volcánicos expandidos con ligantes hidráulicos inorgánicos; y el mortero de <strong>lana de roca</strong> parte de roca basáltica proyectada. Ambos son incombustibles, con reacción al fuego A1 o A2 según la norma UNE-EN 13501-1, por lo que no aportan carga de fuego ni emiten humos tóxicos.",
+      "Su función es <strong>retrasar el calentamiento del acero</strong>. El acero pierde capacidad portante al aproximarse a su temperatura crítica, en torno a los 500-550 °C; el mortero ralentiza ese calentamiento el tiempo que marque la normativa (R30, R60, R90, R120 e incluso R180). La clave es el <strong>espesor aplicado</strong>: a mayor resistencia exigida y mayor esbeltez del perfil, más milímetros de mortero se proyectan."
+    ]
+  },
+  "ventajas": {
+    "h2": "Por qué elegir mortero proyectado para tu estructura de acero",
+    "intro": "Cuando la estructura queda oculta y se buscan resistencias altas, el mortero proyectado es casi siempre la opción más rentable. Estas son sus ventajas de partida.",
+    "items": [
+      { "t": "El mejor precio por m²", "d": "En grandes superficies es la solución de protección pasiva más económica, muy por debajo de la pintura intumescente para las mismas resistencias." },
+      { "t": "Resistencias altas sin esfuerzo", "d": "Alcanza R120 y R180 con facilidad, e incluso valores superiores en sistemas específicos, algo difícil y caro de lograr con otras técnicas." },
+      { "t": "Aplicación muy rápida", "d": "La proyección mecánica cubre grandes metrajes en pocos días, lo que reduce el plazo de obra y el coste de mano de obra por metro cuadrado." },
+      { "t": "Protección incombustible", "d": "Al ser 100 % mineral (clase A1/A2), no arde, no propaga la llama ni genera humo, aportando seguridad añadida al conjunto." },
+      { "t": "Durabilidad y bajo mantenimiento", "d": "Una vez fraguado es un revestimiento estable y robusto que no se degrada con el tiempo en interiores protegidos de la intemperie." }
+    ]
+  },
+  "tecnico": {
+    "h2": "Normativa, ensayos y control del mortero proyectado",
+    "intro": "Toda instalación se ejecuta conforme a la normativa europea de protección pasiva y con productos certificados. Estos son los puntos técnicos que garantizan el resultado.",
+    "cards": [
+      { "h": "Protección no reactiva del acero", "d": "El comportamiento del mortero se evalúa según la <strong>UNE-EN 13381-4</strong>, la norma de referencia para protecciones no reactivas aplicadas a estructuras de acero, que define las tablas de espesor por resistencia.", "tag": "UNE-EN 13381-4" },
+      { "h": "Clasificación de resistencia al fuego", "d": "La resistencia del elemento protegido se clasifica según la <strong>UNE-EN 13501-2</strong> (R30 a R180), mientras que la reacción al fuego del propio mortero (A1/A2) se rige por la UNE-EN 13501-1.", "tag": "UNE-EN 13501-2" },
+      { "h": "Marcado CE y DoP", "d": "Empleamos morteros con <strong>marcado CE y Declaración de Prestaciones (DoP)</strong>, ensayados en laboratorio acreditado por ENAC. Es la garantía documental de que el producto rinde lo que se especifica.", "tag": "Marcado CE + DoP" },
+      { "h": "Espesor calculado por masividad", "d": "El espesor se calcula a partir del <strong>factor de forma (Hp/A)</strong> de cada perfil y de la R exigida. Se replantea en obra y se verifica con galgas durante la aplicación para asegurar el recubrimiento correcto.", "tag": "Factor Hp/A" }
+    ]
+  },
+  "proceso": {
+    "intro": "Trabajamos con un método ordenado que asegura la adherencia del mortero y el espesor exacto en cada perfil, con la documentación lista para la licencia.",
+    "pasos": [
+      { "h": "Visita y cálculo de espesores", "d": "Medimos la estructura, identificamos la masividad de los perfiles y calculamos el espesor necesario según la R exigida." },
+      { "h": "Preparación del soporte", "d": "Limpiamos el acero de polvo, grasa y óxido; si hay oxidación importante se trata previamente para garantizar la adherencia." },
+      { "h": "Proyección del mortero", "d": "Aplicamos el mortero con equipo proyector en las capas necesarias hasta alcanzar el espesor de proyecto sobre vigas y pilares." },
+      { "h": "Control de espesor y acabado", "d": "Verificamos milímetro a milímetro con galga y repasamos las zonas de menor recubrimiento antes del fraguado." },
+      { "h": "Certificado visado", "d": "Emitimos el certificado de aplicación visado, con productos y espesores, listo para licencia, bomberos y seguro." }
+    ]
+  },
+  "precio": {
+    "h2": "¿Cuánto cuesta el mortero ignífugo por m²?",
+    "intro": "El precio depende sobre todo de la resistencia al fuego exigida y del estado del soporte. Como referencia orientativa, estos son los rangos habituales.",
+    "rango": "9 – 22 €/m²",
+    "factores": [
+      { "h": "Resistencia exigida", "d": "Pasar de R60 a R120 o R180 implica más espesor de mortero y, por tanto, más material y horas de aplicación." },
+      { "h": "Masividad de los perfiles", "d": "Los perfiles esbeltos (baja masa por unidad de superficie) se calientan antes y requieren mayor espesor que las secciones robustas." },
+      { "h": "Estado del soporte", "d": "Una estructura oxidada o sucia necesita preparación previa, lo que suele incrementar el coste entre un 15 % y un 30 %." },
+      { "h": "Superficie total", "d": "A mayor metraje continuo, mejor rendimiento del equipo de proyección y menor precio por metro cuadrado." }
+    ],
+    "nota": "Es solo una horquilla orientativa. Para dar un precio cerrado necesitamos ver la obra: <strong>preparamos presupuesto tras la visita en 24-48 h</strong>, sin compromiso y con los espesores ya calculados."
+  },
+  "aplicaciones": {
+    "h2": "Dónde se aplica el mortero ignífugo proyectado",
+    "intro": "Su acabado rugoso, blanco marfil y no estético lo hace ideal para toda estructura que quede oculta o donde prime la resistencia y el precio sobre el aspecto.",
+    "items": [
+      { "t": "Naves industriales y logísticas", "d": "Protección de la estructura metálica de grandes cubiertas y pórticos donde el ahorro por m² es decisivo." },
+      { "t": "Aparcamientos y parkings", "d": "Vigas y pilares de plantas de garaje, donde la normativa exige resistencias altas y la estructura suele quedar vista pero sin exigencia estética." },
+      { "t": "Forjados y entreplantas", "d": "Cara inferior de forjados de chapa colaborante y entreplantas metálicas ocultas por el uso." },
+      { "t": "Falsos techos y estructura oculta", "d": "Perfiles que quedan por encima de un falso techo, donde el acabado del mortero es irrelevante." },
+      { "t": "Almacenes y centros de distribución", "d": "Grandes superficies de racks y estructura de soporte que necesitan una protección rápida y económica." },
+      { "t": "Locales técnicos y sótanos", "d": "Salas de máquinas, cuartos de instalaciones y plantas bajo rasante con estructura de acero vista." }
+    ]
+  },
+  "obras": {
+    "h2": "Obras de mortero proyectado en Barcelona y provincia",
+    "intro": "Una muestra de proyectos recientes ejecutados con mortero ignífugo proyectado.",
+    "casos": [
+      { "sector": "Logística", "t": "Nave logística en la Zona Franca (Barcelona)", "d": "Ignifugación de toda la estructura de pórticos de una plataforma logística con mortero de lana de roca, coordinados con el resto de gremios para no frenar la obra.", "m2": "8.500 m²", "metodo": "Mortero", "rf": "R120", "plazo": "12 días" },
+      { "sector": "Aparcamiento", "t": "Parking de comunidad en l'Hospitalet de Llobregat", "d": "Protección de vigas y pilares de dos plantas de garaje con mortero de perlita y vermiculita, con certificado visado para la licencia de actividad.", "m2": "3.200 m²", "metodo": "Mortero", "rf": "R90", "plazo": "6 días" },
+      { "sector": "Industrial", "t": "Entreplanta metálica en polígono de Sabadell", "d": "Proyección del mortero sobre el forjado de chapa colaborante y la estructura de una entreplanta oculta destinada a almacén.", "m2": "1.900 m²", "metodo": "Mortero", "rf": "R60", "plazo": "4 días" }
+    ]
+  },
+  "relacion": {
+    "h2": "El mortero proyectado dentro de la protección pasiva",
+    "texto": "El mortero ignífugo proyectado es <strong>una de las técnicas de la protección pasiva contra incendios</strong>, la que mejor rinde cuando la estructura queda oculta y se buscan resistencias altas al menor coste por m². No es la única: cuando la estructura de acero queda vista y se quiere conservar su forma y estética, suele convenir la <strong>pintura intumescente</strong>, que forma una capa fina y elegante. En cada obra estudiamos qué solución encaja mejor, o combinamos ambas según la zona. Si quieres una visión general de todas las técnicas de protección pasiva, consulta nuestra página principal de ignifugación."
+  },
+  "faq": [
+    { "q": "¿Qué es exactamente el mortero ignífugo proyectado?", "a": "Es un revestimiento mineral que se aplica por proyección mecánica sobre la estructura de acero para retrasar su calentamiento en caso de incendio. Protege por su baja conductividad térmica, sin reaccionar al calor, y el espesor aplicado determina la resistencia al fuego alcanzada." },
+    { "q": "¿Qué diferencia hay entre el mortero de perlita-vermiculita y el de lana de roca?", "a": "El de perlita y vermiculita se basa en minerales volcánicos expandidos con ligantes hidráulicos inorgánicos; el de lana de roca parte de roca basáltica. Ambos son incombustibles (A1/A2) y ofrecen prestaciones equivalentes: la elección depende del soporte, el espesor requerido y las especificaciones del proyecto." },
+    { "q": "¿Cuánto cuesta el mortero ignífugo por metro cuadrado?", "a": "Orientativamente entre 9 y 22 €/m², según la resistencia al fuego exigida, la masividad de los perfiles y el estado del soporte. Una estructura oxidada exige preparación previa y encarece el trabajo entre un 15 % y un 30 %. El precio cerrado siempre lo damos tras la visita a obra." },
+    { "q": "¿En qué se diferencia del pintura intumescente?", "a": "El mortero es una protección no reactiva de acabado rugoso, ideal para estructura oculta, resistencias altas y grandes superficies al mejor precio. La pintura intumescente se hincha con el calor, tiene acabado fino y estético, y se usa cuando la estructura queda vista y prima la imagen." },
+    { "q": "¿Qué resistencia al fuego alcanza el mortero proyectado?", "a": "Cubre desde R30 hasta R180 con facilidad, e incluso valores superiores en sistemas específicos. La resistencia se logra ajustando el espesor de mortero según el factor de forma del perfil y se clasifica conforme a la UNE-EN 13501-2." },
+    { "q": "¿Cómo queda el acabado del mortero ignífugo?", "a": "Es un acabado rugoso y de color blanco marfil, pensado para proteger, no para decorar. Por eso resulta perfecto en estructura oculta, forjados, falsos techos, naves y parkings, donde el aspecto no es relevante. Si la estructura queda vista y se busca estética, es mejor la pintura intumescente." },
+    { "q": "¿Sobre qué elementos se aplica?", "a": "Principalmente sobre estructura metálica: vigas y pilares de acero, forjados de chapa colaborante y entreplantas. Es la solución habitual en naves industriales, aparcamientos, almacenes, falsos techos y locales técnicos donde la estructura queda oculta." },
+    { "q": "¿El mortero proyectado necesita mantenimiento?", "a": "En interiores protegidos de la intemperie es un revestimiento estable y duradero que apenas requiere mantenimiento. Solo hay que reparar el mortero si se daña puntualmente por un golpe o por la instalación posterior de otros elementos, restituyendo el espesor en esa zona." },
+    { "q": "¿Entregáis certificado del trabajo realizado?", "a": "Sí. Al terminar emitimos un certificado de aplicación visado en el que constan el producto empleado, los espesores aplicados y la resistencia al fuego alcanzada. Es un documento válido para la licencia de actividad, la inspección de bomberos y la compañía de seguros." }
+  ],
+  "cta": {
+    "h2": "¿Necesitas ignifugar tu estructura de acero?",
+    "p": "Cuéntanos tu obra y en 24-48 h tendrás la visita, el cálculo de espesores y el presupuesto cerrado del mortero proyectado."
+  }
+}

@@ -1,32 +1,27 @@
 ---
 // =====================================================================
-// FORMULARIO DE PRESUPUESTO orientado a obra. Admite 2 variantes:
-//   compact = true  → versión corta para el hero (menos campos)
-//   compact = false → versión completa (sección de conversión)
-// Sin backend: si config.mjs no tiene formEndpoint, al enviar abre el
-// correo del cliente ya rellenado hacia tu email. Si defines el endpoint
-// (Google Apps Script), envía el lead allí.
+// FORMULARIO DE PRESUPUESTO (versión simple): nombre, teléfono, email y
+// detalles de la obra. Sin backend: si config.mjs no tiene formEndpoint,
+// al enviar abre el correo del cliente ya rellenado hacia tu email.
+// Si defines el endpoint (Google Apps Script), envía el lead allí.
 // =====================================================================
 import { EMPRESA } from '../config.mjs';
 
 export interface Props {
-  compact?: boolean;
   anchorId?: string;
   titulo?: string;
   sub?: string;
   origen?: string;
 }
 const {
-  compact = false,
   anchorId,
   titulo = 'Pide tu presupuesto de ignifugación',
   sub = 'Cuéntanos los datos de tu obra y te damos precio orientativo hoy y presupuesto cerrado en 24-48 h.',
-  origen = compact ? 'Hero' : 'Formulario principal',
+  origen = 'Formulario principal',
 } = Astro.props;
 
-// Prefijo único para los id de campo (hay 2 formularios en la misma página)
-const uid = anchorId ?? (compact ? 'hero' : 'main');
-const rOpciones = ['No lo sé (os paso el proyecto)', 'R30', 'R60', 'R90', 'R120', 'R180', 'Sectorización EI', 'Sellado cortafuegos'];
+// Prefijo único para los id de campo
+const uid = anchorId ?? 'main';
 ---
 
 <div
@@ -56,37 +51,14 @@ const rOpciones = ['No lo sé (os paso el proyecto)', 'R30', 'R60', 'R90', 'R120
         <label class="ig-label" for={`${uid}-tel`}>Teléfono</label>
         <input type="tel" class="ig-input" id={`${uid}-tel`} name="telefono" data-fgen="tel" placeholder="600 000 000" autocomplete="tel" required />
       </div>
-
-      {!compact && (
-        <div class="ig-field ig-form-full">
-          <label class="ig-label" for={`${uid}-email`}>Email</label>
-          <input type="email" class="ig-input" id={`${uid}-email`} name="email" data-fgen="email" placeholder="tu@email.com" autocomplete="email" />
-        </div>
-      )}
-
-      <div class="ig-field">
-        <label class="ig-label" for={`${uid}-m2`}>m² aproximados</label>
-        <input type="text" class="ig-input" id={`${uid}-m2`} name="m2" data-fgen="m2" placeholder="Ej. 1.200 m²" inputmode="numeric" />
+      <div class="ig-field ig-form-full">
+        <label class="ig-label" for={`${uid}-email`}>Email</label>
+        <input type="email" class="ig-input" id={`${uid}-email`} name="email" data-fgen="email" placeholder="tu@email.com" autocomplete="email" />
       </div>
-      <div class="ig-field">
-        <label class="ig-label" for={`${uid}-rf`}>Resistencia al fuego (R/EI)</label>
-        <select class="ig-select" id={`${uid}-rf`} name="resistencia" data-fgen="rf">
-          {rOpciones.map((o) => <option value={o}>{o}</option>)}
-        </select>
+      <div class="ig-field ig-form-full">
+        <label class="ig-label" for={`${uid}-detalle`}>Detalles de la obra</label>
+        <textarea class="ig-textarea" id={`${uid}-detalle`} name="detalle" data-fgen="detalle" placeholder="Cuéntanos: tipo de estructura, m² aproximados, ubicación, plazo y, si lo tienes, la resistencia (R) o el proyecto."></textarea>
       </div>
-
-      {!compact && (
-        <div class="ig-field ig-form-full">
-          <label class="ig-label" for={`${uid}-ubicacion`}>Ubicación de la obra</label>
-          <input type="text" class="ig-input" id={`${uid}-ubicacion`} name="ubicacion" data-fgen="ubicacion" placeholder="Población / polígono / dirección de la obra" />
-        </div>
-      )}
-      {!compact && (
-        <div class="ig-field ig-form-full">
-          <label class="ig-label" for={`${uid}-detalle`}>Detalles de la obra (opcional)</label>
-          <textarea class="ig-textarea" id={`${uid}-detalle`} name="detalle" data-fgen="detalle" placeholder="Tipo de estructura, plazo, si tienes proyecto/planos, etc."></textarea>
-        </div>
-      )}
     </div>
 
     <label class="ig-priv">
@@ -140,9 +112,6 @@ const rOpciones = ['No lo sé (os paso el proyecto)', 'R30', 'R60', 'R90', 'R120
       const nombre = val('nombre');
       const tel = val('tel');
       const email = val('email');
-      const m2 = val('m2');
-      const rf = val('rf');
-      const ubicacion = val('ubicacion');
       const detalle = val('detalle');
       const privEl = field('priv');
       const priv = privEl ? privEl.checked : false;
@@ -156,7 +125,7 @@ const rOpciones = ['No lo sé (os paso el proyecto)', 'R30', 'R60', 'R90', 'R120
       const endpoint = wrap.dataset.endpoint;
       const emailEmpresa = wrap.dataset.email || '';
       const origen = wrap.dataset.origen || '';
-      const datos = { nombre, telefono: tel, email, m2, resistencia: rf, ubicacion, detalle, origen };
+      const datos = { nombre, telefono: tel, email, detalle, origen };
 
       const finish = () => {
         const body = wrap.querySelector('[data-fgen="form"]');
@@ -177,10 +146,7 @@ const rOpciones = ['No lo sé (os paso el proyecto)', 'R30', 'R60', 'R90', 'R120
             `Nombre / empresa: ${nombre}\n` +
             `Teléfono: ${tel}\n` +
             (email ? `Email: ${email}\n` : '') +
-            (ubicacion ? `Ubicación de la obra: ${ubicacion}\n` : '') +
-            (m2 ? `m² aproximados: ${m2}\n` : '') +
-            (rf ? `Resistencia (R/EI): ${rf}\n` : '') +
-            (detalle ? `Detalles: ${detalle}\n` : '') +
+            (detalle ? `Detalles de la obra: ${detalle}\n` : '') +
             `\n(Enviado desde el formulario web · ${origen})`;
           window.location.href =
             `mailto:${emailEmpresa}?subject=${encodeURIComponent(asunto)}&body=${encodeURIComponent(cuerpo)}`;

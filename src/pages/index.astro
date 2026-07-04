@@ -45,12 +45,14 @@ const servicios = [
     desc: 'Protegemos pilares, vigas y perfiles de acero conservando el perfil visto. La pintura reacciona con el calor formando una espuma aislante que retrasa el colapso de la estructura.',
     rf: 'R30 · R60 · R90 · R120',
     icon: '<path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/>',
+    href: '/pintura-intumescente-barcelona/',
   },
   {
     titulo: 'Mortero ignífugo proyectado (perlita y vermiculita)',
     desc: 'Proyección de mortero mineral incombustible sobre estructura oculta, forjados y naves. Muy competitivo por m² y capaz de alcanzar resistencias altas.',
     rf: 'Hasta R180',
     icon: '<path d="M2 20h20"/><path d="M4 20V8l8-4 8 4v12"/><path d="m4 12 8 4 8-4"/>',
+    href: '/mortero-ignifugo-proyectado-barcelona/',
   },
   {
     titulo: 'Lana de roca proyectada en forjados y techos',
@@ -297,6 +299,7 @@ const jsonLd = [
               <h3>{s.titulo}</h3>
               <p>{s.desc}</p>
               <span class="ig-serv-rf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg> {s.rf}</span>
+              {s.href && <a href={s.href} class="ig-serv-link">Más sobre este servicio <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>}
             </article>
           ))}
         </div>

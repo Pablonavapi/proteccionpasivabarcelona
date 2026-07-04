@@ -1,0 +1,345 @@
+---
+// =====================================================================
+// PLANTILLA de landing de SERVICIO (pintura intumescente, mortero...).
+// Enfocada en UNA técnica concreta (su propia keyword), con enlaces a la
+// home de ignifugación (pilar) y a la otra técnica (evita canibalizar).
+// Contenido único por servicio en la prop `data` (un JSON).
+// =====================================================================
+import Layout from '../layouts/Layout.astro';
+import Header from './Header.astro';
+import Footer from './Footer.astro';
+import StickyMobile from './StickyMobile.astro';
+import PresupuestoForm from './PresupuestoForm.astro';
+import ContactButtons from './ContactButtons.astro';
+import { EMPRESA } from '../config.mjs';
+import fs from 'node:fs';
+import path from 'node:path';
+
+export interface Props { data: any }
+const { data } = Astro.props;
+
+const tel = `tel:+${EMPRESA.telefonoLink}`;
+const mail = `mailto:${EMPRESA.email}`;
+
+// Enlace cruzado a la otra técnica (evita canibalización, refuerza el silo)
+const OTHER = {
+  'pintura-intumescente-barcelona': { href: '/mortero-ignifugo-proyectado-barcelona/', nombre: 'Mortero ignífugo proyectado' },
+  'mortero-ignifugo-proyectado-barcelona': { href: '/pintura-intumescente-barcelona/', nombre: 'Pintura intumescente' },
+};
+const otro = OTHER[data.slug] || { href: '/', nombre: 'Ignifugación' };
+
+// Imágenes (las mismas que la home)
+const IMG = { mortero: '/img/ignifugacion-mortero.jpg', intumescente: '/img/ignifugacion-intumescente.jpg', estructura: '/img/estructura-metalica.jpg' };
+const publicHas = (rel) => { try { return fs.existsSync(path.join(process.cwd(), 'public', rel)); } catch { return false; } };
+const img = (rel) => (publicHas(rel) ? rel : null);
+// La imagen del hero depende del servicio: mortero → foto de mortero; intumescente → foto de pilar
+const heroFile = data.slug.startsWith('pintura') ? IMG.intumescente : IMG.mortero;
+const heroImg = img(heroFile);
+const casoImgs = data.slug.startsWith('pintura')
+  ? [img(IMG.intumescente), img(IMG.estructura), img(IMG.mortero)]
+  : [img(IMG.mortero), img(IMG.estructura), img(IMG.intumescente)];
+const heroStyle = heroImg
+  ? `background-image: linear-gradient(100deg, rgba(12,26,46,0.92) 0%, rgba(12,26,46,0.72) 44%, rgba(12,26,46,0.34) 100%), url('${heroImg}');`
+  : undefined;
+
+const VENT_ICONS = [
+  '<circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/>',
+  '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>',
+  '<circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>',
+  '<path d="m12 2 9 5-9 5-9-5 9-5z"/><path d="m3 12 9 5 9-5"/><path d="m3 17 9 5 9-5"/>',
+  '<path d="M20 6 9 17l-5-5"/>',
+];
+const TEC_ICONS = [
+  '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/>',
+  '<path d="M20 7 7 20l-3-3L17 4z"/><path d="m14 7 3 3"/>',
+  '<path d="M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0z"/>',
+  '<circle cx="12" cy="8" r="6"/><path d="M8.21 13.89 7 22l5-3 5 3-1.21-8.11"/>',
+];
+const APP_ICONS = [
+  '<path d="M3 21V8l6-4v4l6-4v4l6-4v13"/><path d="M3 21h18"/>',
+  '<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 17V7h4a3 3 0 0 1 0 6H9"/>',
+  '<path d="M2 22h20"/><path d="M4 22V6l8-4 8 4v16"/><path d="M9 22v-5h6v5"/>',
+  '<path d="M3 9 4 4h16l1 5"/><path d="M4 9v11h16V9"/><path d="M9 20v-6h6v6"/>',
+  '<path d="M12 3v18"/><path d="M8 3v6a4 4 0 0 0 8 0V3"/><path d="M19 3v18"/>',
+  '<path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/>',
+];
+
+// SEO / Schema.org
+const pageUrl = `${EMPRESA.dominio}/${data.slug}/`;
+const ogImage = heroImg ? `${EMPRESA.dominio}${heroFile}` : undefined;
+const jsonLd = [
+  {
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Ignifugación en Barcelona', item: `${EMPRESA.dominio}/` },
+      { '@type': 'ListItem', position: 2, name: data.servicio, item: pageUrl },
+    ],
+  },
+  {
+    '@type': 'Service',
+    name: `${data.servicio} en Barcelona`,
+    serviceType: data.servicio,
+    provider: { '@id': `${EMPRESA.dominio}/#empresa` },
+    areaServed: { '@type': 'City', name: 'Barcelona' },
+    isRelatedTo: { '@type': 'Service', name: 'Ignifugación y protección pasiva contra incendios', url: `${EMPRESA.dominio}/` },
+  },
+  {
+    '@type': 'FAQPage',
+    mainEntity: data.faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+  },
+];
+---
+
+<Layout title={data.meta.title} description={data.meta.desc} image={ogImage} jsonLd={jsonLd}>
+  <Header />
+
+  <div class="ig-wrap">
+
+    <!-- HERO -->
+    <section class="ig-hero" style={heroStyle}>
+      <div class="ig-hero-inner">
+        <div class="ig-hero-text">
+          <nav class="ig-crumbs" aria-label="Migas de pan"><a href="/">Inicio · Ignifugación Barcelona</a> <span aria-hidden="true">›</span> {data.servicio}</nav>
+          <span class="ig-eyebrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.5 9 8 11 4.5-2 8-6 8-11V5l-8-3z"/></svg>
+            Protección pasiva contra incendios · Barcelona y provincia
+          </span>
+          <h1 class="ig-h1">{data.hero.h1a} <em>{data.hero.h1em}</em></h1>
+          <p class="ig-hero-sub">{data.hero.sub}</p>
+          <ul class="ig-hero-promesas">
+            {data.hero.promesas.map((p) => (
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> <span><strong>{p.s}</strong> {p.t}</span></li>
+            ))}
+          </ul>
+          <ContactButtons />
+        </div>
+      </div>
+    </section>
+
+    <!-- QUÉ ES / CÓMO FUNCIONA -->
+    <section class="ig-sec ig-sec--blanco" id="que-es">
+      <div class="ig-inner ig-inner--medio">
+        <span class="ig-kicker">{data.queEs.kicker}</span>
+        <h2 class="ig-h2">{data.queEs.h2}</h2>
+        <div class="ig-prose" style="max-width:none;margin-top:14px;">
+          {data.queEs.parrafos.map((p) => (<p set:html={p}></p>))}
+        </div>
+      </div>
+    </section>
+
+    <!-- VENTAJAS -->
+    <section class="ig-sec ig-sec--gris" id="ventajas">
+      <div class="ig-inner">
+        <div class="ig-sec-head ig-sec-head--center">
+          <span class="ig-kicker">Ventajas</span>
+          <h2 class="ig-h2">{data.ventajas.h2}</h2>
+          <p class="ig-lead">{data.ventajas.intro}</p>
+        </div>
+        <div class="ig-why-grid">
+          {data.ventajas.items.map((v, i) => (
+            <div class="ig-why">
+              <span class="ig-why-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><Fragment set:html={VENT_ICONS[i % VENT_ICONS.length]} /></svg></span>
+              <h3>{v.t}</h3>
+              <p>{v.d}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- FICHA TÉCNICA -->
+    <section class="ig-sec ig-sec--navy ig-bleed" id="tecnico">
+      <div class="ig-inner">
+        <div class="ig-sec-head">
+          <span class="ig-kicker">Ficha técnica</span>
+          <h2 class="ig-h2">{data.tecnico.h2}</h2>
+          <p class="ig-lead">{data.tecnico.intro}</p>
+        </div>
+        <div class="ig-norma-grid">
+          {data.tecnico.cards.map((c, i) => (
+            <div class="ig-norma">
+              <span class="ig-norma-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><Fragment set:html={TEC_ICONS[i % TEC_ICONS.length]} /></svg></span>
+              <h3>{c.h}</h3>
+              <p set:html={c.d}></p>
+              <span class="ig-tag">{c.tag}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- PRECIO -->
+    <section class="ig-sec ig-sec--blanco" id="precio">
+      <div class="ig-inner ig-inner--medio">
+        <div class="ig-sec-head">
+          <span class="ig-kicker">Precio orientativo</span>
+          <h2 class="ig-h2">{data.precio.h2}</h2>
+          <p class="ig-lead">{data.precio.intro}</p>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin:6px 0 26px;">
+          <span style="font-family:'Lora',serif;font-size:clamp(34px,5vw,52px);font-weight:700;color:var(--fuego-osc);line-height:1;">{data.precio.rango}</span>
+          <span style="color:var(--texto-suave);font-size:14.5px;">orientativo · según R, masividad y estado del soporte</span>
+        </div>
+        <ul class="ig-factores">
+          {data.precio.factores.map((f, i) => (
+            <li class="ig-factor"><span class="ig-factor-n">{i + 1}</span><div><h4>{f.h}</h4><p>{f.d}</p></div></li>
+          ))}
+        </ul>
+        <p class="ig-precio-nota" set:html={data.precio.nota} style="margin-top:16px;"></p>
+        <div class="ig-hero-cta" style="margin-top:22px;">
+          <a href="#presupuesto" class="ig-btn ig-btn-fuego">Pídenos precio para tu obra</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESO -->
+    <section class="ig-sec ig-sec--navy ig-bleed" id="proceso">
+      <div class="ig-inner">
+        <div class="ig-sec-head">
+          <span class="ig-kicker">Cómo lo aplicamos</span>
+          <h2 class="ig-h2">Del soporte al certificado, paso a paso</h2>
+          <p class="ig-lead">{data.proceso.intro}</p>
+        </div>
+        <div class="ig-pasos">
+          {data.proceso.pasos.map((p, i) => (
+            <div class="ig-paso"><span class="ig-paso-n">{String(i + 1).padStart(2, '0')}</span><h3>{p.h}</h3><p>{p.d}</p></div>
+          ))}
+        </div>
+        <div class="ig-paso-cta"><a href="#presupuesto" class="ig-btn ig-btn-fuego">Pide presupuesto</a></div>
+        <div class="ig-paso-contact"><ContactButtons /></div>
+      </div>
+    </section>
+
+    <!-- APLICACIONES -->
+    <section class="ig-sec ig-sec--gris" id="aplicaciones">
+      <div class="ig-inner">
+        <div class="ig-sec-head ig-sec-head--center">
+          <span class="ig-kicker">Dónde se usa</span>
+          <h2 class="ig-h2">{data.aplicaciones.h2}</h2>
+          <p class="ig-lead">{data.aplicaciones.intro}</p>
+        </div>
+        <div class="ig-sector-grid">
+          {data.aplicaciones.items.map((a, i) => (
+            <article class="ig-sector">
+              <span class="ig-sector-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><Fragment set:html={APP_ICONS[i % APP_ICONS.length]} /></svg></span>
+              <div><h3>{a.t}</h3><p>{a.d}</p></div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- OBRAS -->
+    <section class="ig-sec ig-sec--navy ig-bleed" id="obras">
+      <div class="ig-inner">
+        <div class="ig-sec-head ig-sec-head--center">
+          <span class="ig-kicker">Obras realizadas</span>
+          <h2 class="ig-h2">{data.obras.h2}</h2>
+          <p class="ig-lead">{data.obras.intro}</p>
+        </div>
+        <div class="ig-casos-grid">
+          {data.obras.casos.map((c, i) => (
+            <article class="ig-caso">
+              <div class="ig-caso-img">
+                <span class="ig-caso-rf">{c.rf}</span>
+                {casoImgs[i]
+                  ? <img src={casoImgs[i]} alt={`${c.t} — ${data.servicio} en Barcelona`} loading="lazy" decoding="async" width="600" height="400" />
+                  : <span class="ig-caso-img-ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg></span>}
+              </div>
+              <div class="ig-caso-body">
+                <span class="ig-caso-sector">{c.sector}</span>
+                <h3>{c.t}</h3>
+                <p>{c.d}</p>
+                <div class="ig-caso-meta">
+                  <div><strong>{c.m2}</strong>superficie</div>
+                  <div><strong>{c.metodo}</strong>método</div>
+                  <div><strong>{c.plazo}</strong>ejecución</div>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- RELACIÓN CON IGNIFUGACIÓN (enlaces internos: pilar + servicio hermano) -->
+    <section class="ig-sec ig-sec--blanco" id="relacion">
+      <div class="ig-inner ig-inner--medio">
+        <span class="ig-kicker">Parte de un servicio integral</span>
+        <h2 class="ig-h2">{data.relacion.h2}</h2>
+        <div class="ig-prose" style="max-width:none;margin-top:12px;">
+          <p set:html={data.relacion.texto}></p>
+        </div>
+        <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:24px;">
+          <a href="/" class="ig-btn ig-btn-navy ig-btn-lg">Ver el servicio de ignifugación en Barcelona</a>
+          <a href={otro.href} class="ig-btn ig-btn-out ig-btn-lg">Ver {otro.nombre.toLowerCase()}</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORMULARIO -->
+    <section class="ig-sec ig-sec--gris" id="presupuesto">
+      <div class="ig-inner">
+        <div class="ig-formsec-grid">
+          <div class="ig-formsec-info">
+            <span class="ig-kicker">Presupuesto sin compromiso</span>
+            <h2 class="ig-h2">Pide precio de {data.servicioLargo} para tu obra</h2>
+            <p class="ig-lead">Cuéntanos los datos de tu obra y te damos precio orientativo hoy y presupuesto cerrado en 24-48 h. ¿Prefieres hablar? Llámanos o escríbenos.</p>
+            <ul class="ig-contact-list">
+              <a href={mail} class="ig-contact-row ig-contact-row--primary">
+                <span class="ig-contact-ico mail-p"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span>
+                <span class="ig-contact-txt"><span>Escríbenos</span><strong class="ig-contact-val">{EMPRESA.email}</strong></span>
+              </a>
+              <a href={tel} class="ig-contact-row">
+                <span class="ig-contact-ico tel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+                <span class="ig-contact-txt"><span>Llámanos</span><strong class="ig-contact-val">{EMPRESA.telefonoMostrar}</strong></span>
+              </a>
+            </ul>
+          </div>
+          <div class="ig-formsec-form">
+            <PresupuestoForm anchorId="form-principal" origen={`Servicio: ${data.servicio}`} titulo={`Presupuesto de ${data.servicioLargo}`} />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="ig-sec ig-sec--blanco" id="faq">
+      <div class="ig-inner ig-inner--medio">
+        <div class="ig-sec-head ig-sec-head--center">
+          <span class="ig-kicker">Preguntas frecuentes</span>
+          <h2 class="ig-h2">{data.servicio}: preguntas frecuentes</h2>
+        </div>
+        <div class="ig-faq-list">
+          {data.faq.map((f) => (
+            <details class="ig-faq-item">
+              <summary>
+                <h3 class="ig-faq-q">{f.q}</h3>
+                <svg class="ig-faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </summary>
+              <div class="ig-faq-a"><p>{f.a}</p></div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <div class="ig-cta-band ig-bleed">
+      <div class="ig-cta-band-inner">
+        <div class="ig-cta-band-txt">
+          <h2>{data.cta.h2}</h2>
+          <p>{data.cta.p}</p>
+        </div>
+        <div class="ig-cta-band-side">
+          <ContactButtons />
+          <a href="#presupuesto" class="ig-btn ig-btn-white ig-btn-lg ig-cta-band-form">Rellenar formulario</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <Footer />
+  <StickyMobile />
+</Layout>

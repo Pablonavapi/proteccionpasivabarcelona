@@ -36,6 +36,12 @@ html, body { overflow-x: clip; }
 .ig-wrap * { box-sizing: border-box; margin: 0; padding: 0; }
 .ig-wrap img { max-width: 100%; }
 
+/* Migas de pan (breadcrumb) sobre el hero oscuro */
+.ig-crumbs { font-size: 13px; color: #A9BAD0; margin-bottom: 16px; }
+.ig-crumbs a { color: #C6D3E4; text-decoration: none; font-weight: 600; }
+.ig-crumbs a:hover { color: var(--fuego-br); text-decoration: underline; }
+.ig-crumbs span { color: #7F91A8; margin: 0 4px; }
+
 /* Foco visible para navegación por teclado (accesibilidad WCAG 2.4.7) */
 :where(a, button, .ig-btn, summary, input, select, textarea, [tabindex]):focus-visible {
   outline: 3px solid var(--fuego-br);
@@ -455,6 +461,9 @@ html, body { overflow-x: clip; }
   padding: 5px 11px; border-radius: 100px;
 }
 .ig-serv-rf svg { width: 13px; height: 13px; color: var(--fuego); }
+.ig-serv-link { display: inline-flex; align-items: center; gap: 6px; margin-top: 13px; font-size: 14px; font-weight: 700; color: var(--fuego-osc); text-decoration: none; transition: gap 0.2s ease; }
+.ig-serv-link svg { width: 16px; height: 16px; }
+.ig-serv:hover .ig-serv-link { gap: 11px; }
 
 /* =====================================================================
    TABLA DE PRECIOS
